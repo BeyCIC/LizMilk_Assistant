@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];
+    _rootViewController = [[WelcomeViewController alloc] init];
+    [window setRootViewController:_rootViewController];
+    [window makeKeyAndVisible];
+    [self setWindow:window];
     return YES;
 }
 

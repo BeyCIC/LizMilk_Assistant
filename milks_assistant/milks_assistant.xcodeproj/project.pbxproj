@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		508B3E9A1E8E40C800C5CA2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E991E8E40C800C5CA2D /* main.m */; };
-		508B3E9D1E8E40C800C5CA2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E9C1E8E40C800C5CA2D /* AppDelegate.m */; };
+		508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E9C1E8E40C800C5CA2D /* AppDelegate.mm */; };
 		508B3EA01E8E40C800C5CA2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E9F1E8E40C800C5CA2D /* ViewController.m */; };
 		508B3EA31E8E40C800C5CA2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508B3EA11E8E40C800C5CA2D /* Main.storyboard */; };
 		508B3EA51E8E40C800C5CA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508B3EA41E8E40C800C5CA2D /* Assets.xcassets */; };
 		508B3EA81E8E40C800C5CA2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508B3EA61E8E40C800C5CA2D /* LaunchScreen.storyboard */; };
 		508B3EB31E8E40C800C5CA2D /* milks_assistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3EB21E8E40C800C5CA2D /* milks_assistantTests.m */; };
 		508B3EBE1E8E40C800C5CA2D /* milks_assistantUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3EBD1E8E40C800C5CA2D /* milks_assistantUITests.m */; };
+		508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 508B3EEB1E8E468200C5CA2D /* WelcomeViewController.mm */; };
+		508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F111E8E514300C5CA2D /* LMBaseViewController.m */; };
+		508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F171E8E535A00C5CA2D /* LMMainViewController.m */; };
+		508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		508B3E951E8E40C800C5CA2D /* milks_assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = milks_assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508B3E991E8E40C800C5CA2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		508B3E9B1E8E40C800C5CA2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		508B3E9C1E8E40C800C5CA2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		508B3E9C1E8E40C800C5CA2D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		508B3E9E1E8E40C800C5CA2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		508B3E9F1E8E40C800C5CA2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		508B3EA21E8E40C800C5CA2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,16 @@
 		508B3EB91E8E40C800C5CA2D /* milks_assistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = milks_assistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		508B3EBD1E8E40C800C5CA2D /* milks_assistantUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = milks_assistantUITests.m; sourceTree = "<group>"; };
 		508B3EBF1E8E40C800C5CA2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508B3EEA1E8E468200C5CA2D /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		508B3EEB1E8E468200C5CA2D /* WelcomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WelcomeViewController.mm; sourceTree = "<group>"; };
+		508B3F101E8E514300C5CA2D /* LMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBaseViewController.h; sourceTree = "<group>"; };
+		508B3F111E8E514300C5CA2D /* LMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBaseViewController.m; sourceTree = "<group>"; };
+		508B3F141E8E51E800C5CA2D /* LMMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMarco.h; sourceTree = "<group>"; };
+		508B3F151E8E521D00C5CA2D /* milks.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = milks.pch; sourceTree = "<group>"; };
+		508B3F161E8E535A00C5CA2D /* LMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMainViewController.h; sourceTree = "<group>"; };
+		508B3F171E8E535A00C5CA2D /* LMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMainViewController.m; sourceTree = "<group>"; };
+		508B3F191E8E537000C5CA2D /* LMMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMineViewController.h; sourceTree = "<group>"; };
+		508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,8 @@
 		508B3E971E8E40C800C5CA2D /* milks_assistant */ = {
 			isa = PBXGroup;
 			children = (
+				508B3F131E8E51E800C5CA2D /* Macros */,
+				508B3F0F1E8E4F8D00C5CA2D /* Network */,
 				508B3ECB1E8E417400C5CA2D /* FrameWorks */,
 				508B3ECC1E8E417400C5CA2D /* Models */,
 				508B3ECD1E8E417400C5CA2D /* Requests */,
@@ -109,7 +125,7 @@
 				508B3ED01E8E417400C5CA2D /* Vendor */,
 				508B3ED11E8E417400C5CA2D /* ViewControllers */,
 				508B3E9B1E8E40C800C5CA2D /* AppDelegate.h */,
-				508B3E9C1E8E40C800C5CA2D /* AppDelegate.m */,
+				508B3E9C1E8E40C800C5CA2D /* AppDelegate.mm */,
 				508B3E9E1E8E40C800C5CA2D /* ViewController.h */,
 				508B3E9F1E8E40C800C5CA2D /* ViewController.m */,
 				508B3EA11E8E40C800C5CA2D /* Main.storyboard */,
@@ -117,6 +133,7 @@
 				508B3EA61E8E40C800C5CA2D /* LaunchScreen.storyboard */,
 				508B3EA91E8E40C800C5CA2D /* Info.plist */,
 				508B3E981E8E40C800C5CA2D /* Supporting Files */,
+				508B3F151E8E521D00C5CA2D /* milks.pch */,
 			);
 			path = milks_assistant;
 			sourceTree = "<group>";
@@ -192,6 +209,9 @@
 		508B3ED11E8E417400C5CA2D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				508B3EEA1E8E468200C5CA2D /* WelcomeViewController.h */,
+				508B3EEB1E8E468200C5CA2D /* WelcomeViewController.mm */,
+				508B3ED41E8E463500C5CA2D /* Base */,
 				508B3ED21E8E440900C5CA2D /* Main */,
 				508B3ED31E8E440900C5CA2D /* Mine */,
 			);
@@ -201,6 +221,8 @@
 		508B3ED21E8E440900C5CA2D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				508B3F161E8E535A00C5CA2D /* LMMainViewController.h */,
+				508B3F171E8E535A00C5CA2D /* LMMainViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -208,8 +230,34 @@
 		508B3ED31E8E440900C5CA2D /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				508B3F191E8E537000C5CA2D /* LMMineViewController.h */,
+				508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */,
 			);
 			path = Mine;
+			sourceTree = "<group>";
+		};
+		508B3ED41E8E463500C5CA2D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				508B3F101E8E514300C5CA2D /* LMBaseViewController.h */,
+				508B3F111E8E514300C5CA2D /* LMBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		508B3F0F1E8E4F8D00C5CA2D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		508B3F131E8E51E800C5CA2D /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				508B3F141E8E51E800C5CA2D /* LMMarco.h */,
+			);
+			path = Macros;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +327,7 @@
 				TargetAttributes = {
 					508B3E941E8E40C800C5CA2D = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = P3V7X37F97;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					508B3EAD1E8E40C800C5CA2D = {
 						CreatedOnToolsVersion = 8.2;
@@ -349,8 +396,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				508B3EA01E8E40C800C5CA2D /* ViewController.m in Sources */,
-				508B3E9D1E8E40C800C5CA2D /* AppDelegate.m in Sources */,
+				508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */,
+				508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */,
+				508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */,
+				508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */,
 				508B3E9A1E8E40C800C5CA2D /* main.m in Sources */,
+				508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -486,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -497,10 +548,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P3V7X37F97;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "China-Unionpay-Co.-Ltd..milks-assistant";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -509,10 +561,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P3V7X37F97;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "China-Unionpay-Co.-Ltd..milks-assistant";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -586,6 +639,7 @@
 				508B3EC41E8E40C800C5CA2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		508B3EC51E8E40C800C5CA2D /* Build configuration list for PBXNativeTarget "milks_assistantTests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +648,7 @@
 				508B3EC71E8E40C800C5CA2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		508B3EC81E8E40C800C5CA2D /* Build configuration list for PBXNativeTarget "milks_assistantUITests" */ = {
 			isa = XCConfigurationList;
@@ -602,6 +657,7 @@
 				508B3ECA1E8E40C800C5CA2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
