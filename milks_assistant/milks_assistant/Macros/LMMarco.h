@@ -14,18 +14,14 @@
 
 #define UP_IPAD (!(UP_IPHONE4||UP_IPHONE5||UP_IPHONE6||UP_IPHONE6_PLUS))
 
-//iPhone4分辨率
-#define UP_IPHONE4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 
-//iPhone5分辨率
-#define UP_IPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define SCREEN_WIDTH            [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT           [[UIScreen mainScreen] bounds].size.height
 
-//iPhone6分辨率
-#define UP_IPHONE6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
-
-//iPhone6 plus分辨率 标准模式分辨率为1242x2208，放大模式分辨率为1125x2001
-#define UP_IPHONE6_PLUS ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size)||CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) : NO)
-
+#define IS_IPHONE_4             ([UIScreen mainScreen].bounds.size.height == 480)
+#define IS_IPHONE_5             ([UIScreen mainScreen].bounds.size.height == 568)
+#define IS_IPHONE_6             ([UIScreen mainScreen].bounds.size.width == 375)
+#define IS_IPHONE_6PLUS         ([UIScreen mainScreen].bounds.size.width == 414)
 
 //配置文件相关
 #define UP_STR(X) [UPWAppUtil localizedStringWithKey:X]

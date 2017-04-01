@@ -11,3 +11,15 @@
 @interface LMMineViewController : LMBaseViewController
 
 @end
+
+
+@interface LuHeaderCell : UITableViewCell
+
+@property(nonatomic,strong)UIImageView *headerIcon;
+@property(nonatomic,strong)UILabel *name;
+
+- (void)setUserHeader:(NSString*)header;
+
+- (void)setUserName:(NSString*)name;
+
+@end
