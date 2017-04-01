@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */; };
+		503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */; };
+		503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */; };
+		503A60061E8F9DA900D3AF51 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFF1E8F9DA900D3AF51 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		503A60071E8F9DA900D3AF51 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60011E8F9DA900D3AF51 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		503A60081E8F9DA900D3AF51 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60031E8F9DA900D3AF51 /* FMResultSet.m */; };
+		503A600C1E8F9EB200D3AF51 /* DWTimingDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A600B1E8F9EB200D3AF51 /* DWTimingDataInfo.m */; };
+		503A600F1E8F9FC200D3AF51 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A600E1E8F9FC200D3AF51 /* Util.m */; };
+		503A602A1E8FA24400D3AF51 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60131E8FA24400D3AF51 /* JSONModel.m */; };
+		503A602B1E8FA24400D3AF51 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60151E8FA24400D3AF51 /* JSONModelArray.m */; };
+		503A602C1E8FA24400D3AF51 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60171E8FA24400D3AF51 /* JSONModelClassProperty.m */; };
+		503A602D1E8FA24400D3AF51 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60191E8FA24400D3AF51 /* JSONModelError.m */; };
+		503A602E1E8FA24400D3AF51 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A601C1E8FA24400D3AF51 /* NSArray+JSONModel.m */; };
+		503A602F1E8FA24400D3AF51 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60201E8FA24400D3AF51 /* JSONAPI.m */; };
+		503A60301E8FA24400D3AF51 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60221E8FA24400D3AF51 /* JSONHTTPClient.m */; };
+		503A60311E8FA24400D3AF51 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60241E8FA24400D3AF51 /* JSONModel+networking.m */; };
+		503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60271E8FA24400D3AF51 /* JSONKeyMapper.m */; };
+		503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */; };
+		503A60361E8FA28400D3AF51 /* LizzieDiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */; };
+		507F5D7F1E8FA58000FDD2CB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D7E1E8FA58000FDD2CB /* libsqlite3.0.tbd */; };
+		507F5D811E8FA58B00FDD2CB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D801E8FA58B00FDD2CB /* CoreTelephony.framework */; };
+		507F5D841E8FA59500FDD2CB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D821E8FA59500FDD2CB /* AddressBook.framework */; };
+		507F5D851E8FA59500FDD2CB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D831E8FA59500FDD2CB /* AddressBookUI.framework */; };
+		507F5D871E8FA5A800FDD2CB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D861E8FA5A800FDD2CB /* libz.tbd */; };
+		507F5D891E8FA5B300FDD2CB /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D881E8FA5B300FDD2CB /* libxml2.tbd */; };
+		507F5D8B1E8FA5BA00FDD2CB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D8A1E8FA5BA00FDD2CB /* StoreKit.framework */; };
+		507F5D8E1E8FA5C600FDD2CB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D8C1E8FA5C600FDD2CB /* AudioToolbox.framework */; };
+		507F5D8F1E8FA5C600FDD2CB /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D8D1E8FA5C600FDD2CB /* CoreAudio.framework */; };
+		507F5D911E8FA5CE00FDD2CB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D901E8FA5CE00FDD2CB /* OpenGLES.framework */; };
+		507F5D931E8FA5D300FDD2CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D921E8FA5D300FDD2CB /* QuartzCore.framework */; };
+		507F5D951E8FA5D900FDD2CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D941E8FA5D900FDD2CB /* UIKit.framework */; };
+		507F5D971E8FA5E000FDD2CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D961E8FA5E000FDD2CB /* SystemConfiguration.framework */; };
+		507F5D991E8FA5E700FDD2CB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D981E8FA5E700FDD2CB /* CFNetwork.framework */; };
+		507F5D9B1E8FA5EC00FDD2CB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D9A1E8FA5EC00FDD2CB /* AVFoundation.framework */; };
+		507F5D9D1E8FA5F500FDD2CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D9C1E8FA5F500FDD2CB /* CoreGraphics.framework */; };
 		508B3E9A1E8E40C800C5CA2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E991E8E40C800C5CA2D /* main.m */; };
 		508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E9C1E8E40C800C5CA2D /* AppDelegate.mm */; };
 		508B3EA01E8E40C800C5CA2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3E9F1E8E40C800C5CA2D /* ViewController.m */; };
@@ -39,6 +74,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbConfig.h; sourceTree = "<group>"; };
+		503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
+		503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
+		503A5FFA1E8F9DA900D3AF51 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		503A5FFC1E8F9DA900D3AF51 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		503A5FFE1E8F9DA900D3AF51 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		503A5FFF1E8F9DA900D3AF51 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		503A60001E8F9DA900D3AF51 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		503A60011E8F9DA900D3AF51 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		503A60021E8F9DA900D3AF51 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		503A60031E8F9DA900D3AF51 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		503A600A1E8F9EB200D3AF51 /* DWTimingDataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTimingDataInfo.h; sourceTree = "<group>"; };
+		503A600B1E8F9EB200D3AF51 /* DWTimingDataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTimingDataInfo.m; sourceTree = "<group>"; };
+		503A600D1E8F9FC200D3AF51 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		503A600E1E8F9FC200D3AF51 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		503A60121E8FA24400D3AF51 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		503A60131E8FA24400D3AF51 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		503A60141E8FA24400D3AF51 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		503A60151E8FA24400D3AF51 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		503A60161E8FA24400D3AF51 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		503A60171E8FA24400D3AF51 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		503A60181E8FA24400D3AF51 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		503A60191E8FA24400D3AF51 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		503A601B1E8FA24400D3AF51 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		503A601C1E8FA24400D3AF51 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		503A601D1E8FA24400D3AF51 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		503A601F1E8FA24400D3AF51 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		503A60201E8FA24400D3AF51 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		503A60211E8FA24400D3AF51 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		503A60221E8FA24400D3AF51 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		503A60231E8FA24400D3AF51 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		503A60241E8FA24400D3AF51 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		503A60261E8FA24400D3AF51 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		503A60271E8FA24400D3AF51 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		503A60281E8FA24400D3AF51 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		503A60341E8FA28400D3AF51 /* LizzieDiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LizzieDiaryModel.h; sourceTree = "<group>"; };
+		503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LizzieDiaryModel.m; sourceTree = "<group>"; };
+		507F5D7E1E8FA58000FDD2CB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		507F5D801E8FA58B00FDD2CB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		507F5D821E8FA59500FDD2CB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		507F5D831E8FA59500FDD2CB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		507F5D861E8FA5A800FDD2CB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		507F5D881E8FA5B300FDD2CB /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		507F5D8A1E8FA5BA00FDD2CB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		507F5D8C1E8FA5C600FDD2CB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		507F5D8D1E8FA5C600FDD2CB /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		507F5D901E8FA5CE00FDD2CB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		507F5D921E8FA5D300FDD2CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		507F5D941E8FA5D900FDD2CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		507F5D961E8FA5E000FDD2CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		507F5D981E8FA5E700FDD2CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		507F5D9A1E8FA5EC00FDD2CB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		507F5D9C1E8FA5F500FDD2CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		508B3E951E8E40C800C5CA2D /* milks_assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = milks_assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508B3E991E8E40C800C5CA2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		508B3E9B1E8E40C800C5CA2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +163,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507F5D9D1E8FA5F500FDD2CB /* CoreGraphics.framework in Frameworks */,
+				507F5D9B1E8FA5EC00FDD2CB /* AVFoundation.framework in Frameworks */,
+				507F5D991E8FA5E700FDD2CB /* CFNetwork.framework in Frameworks */,
+				507F5D971E8FA5E000FDD2CB /* SystemConfiguration.framework in Frameworks */,
+				507F5D951E8FA5D900FDD2CB /* UIKit.framework in Frameworks */,
+				507F5D931E8FA5D300FDD2CB /* QuartzCore.framework in Frameworks */,
+				507F5D911E8FA5CE00FDD2CB /* OpenGLES.framework in Frameworks */,
+				507F5D8E1E8FA5C600FDD2CB /* AudioToolbox.framework in Frameworks */,
+				507F5D8F1E8FA5C600FDD2CB /* CoreAudio.framework in Frameworks */,
+				507F5D8B1E8FA5BA00FDD2CB /* StoreKit.framework in Frameworks */,
+				507F5D891E8FA5B300FDD2CB /* libxml2.tbd in Frameworks */,
+				507F5D871E8FA5A800FDD2CB /* libz.tbd in Frameworks */,
+				507F5D841E8FA59500FDD2CB /* AddressBook.framework in Frameworks */,
+				507F5D851E8FA59500FDD2CB /* AddressBookUI.framework in Frameworks */,
+				507F5D811E8FA58B00FDD2CB /* CoreTelephony.framework in Frameworks */,
+				507F5D7F1E8FA58000FDD2CB /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +199,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		503A5FF91E8F9DA900D3AF51 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				503A5FFA1E8F9DA900D3AF51 /* FMDatabase.h */,
+				503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */,
+				503A5FFC1E8F9DA900D3AF51 /* FMDatabaseAdditions.h */,
+				503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */,
+				503A5FFE1E8F9DA900D3AF51 /* FMDatabasePool.h */,
+				503A5FFF1E8F9DA900D3AF51 /* FMDatabasePool.m */,
+				503A60001E8F9DA900D3AF51 /* FMDatabaseQueue.h */,
+				503A60011E8F9DA900D3AF51 /* FMDatabaseQueue.m */,
+				503A60021E8F9DA900D3AF51 /* FMResultSet.h */,
+				503A60031E8F9DA900D3AF51 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		503A60091E8F9EB200D3AF51 /* DBUtils */ = {
+			isa = PBXGroup;
+			children = (
+				503A60341E8FA28400D3AF51 /* LizzieDiaryModel.h */,
+				503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */,
+				503A600A1E8F9EB200D3AF51 /* DWTimingDataInfo.h */,
+				503A600B1E8F9EB200D3AF51 /* DWTimingDataInfo.m */,
+			);
+			path = DBUtils;
+			sourceTree = "<group>";
+		};
+		503A60101E8FA24400D3AF51 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				503A60111E8FA24400D3AF51 /* JSONModel */,
+				503A601A1E8FA24400D3AF51 /* JSONModelCategories */,
+				503A601D1E8FA24400D3AF51 /* JSONModelLib.h */,
+				503A601E1E8FA24400D3AF51 /* JSONModelNetworking */,
+				503A60251E8FA24400D3AF51 /* JSONModelTransformations */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		503A60111E8FA24400D3AF51 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				503A60121E8FA24400D3AF51 /* JSONModel.h */,
+				503A60131E8FA24400D3AF51 /* JSONModel.m */,
+				503A60141E8FA24400D3AF51 /* JSONModelArray.h */,
+				503A60151E8FA24400D3AF51 /* JSONModelArray.m */,
+				503A60161E8FA24400D3AF51 /* JSONModelClassProperty.h */,
+				503A60171E8FA24400D3AF51 /* JSONModelClassProperty.m */,
+				503A60181E8FA24400D3AF51 /* JSONModelError.h */,
+				503A60191E8FA24400D3AF51 /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		503A601A1E8FA24400D3AF51 /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				503A601B1E8FA24400D3AF51 /* NSArray+JSONModel.h */,
+				503A601C1E8FA24400D3AF51 /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		503A601E1E8FA24400D3AF51 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				503A601F1E8FA24400D3AF51 /* JSONAPI.h */,
+				503A60201E8FA24400D3AF51 /* JSONAPI.m */,
+				503A60211E8FA24400D3AF51 /* JSONHTTPClient.h */,
+				503A60221E8FA24400D3AF51 /* JSONHTTPClient.m */,
+				503A60231E8FA24400D3AF51 /* JSONModel+networking.h */,
+				503A60241E8FA24400D3AF51 /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		503A60251E8FA24400D3AF51 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				503A60261E8FA24400D3AF51 /* JSONKeyMapper.h */,
+				503A60271E8FA24400D3AF51 /* JSONKeyMapper.m */,
+				503A60281E8FA24400D3AF51 /* JSONValueTransformer.h */,
+				503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		507F5D7D1E8FA57F00FDD2CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				507F5D9C1E8FA5F500FDD2CB /* CoreGraphics.framework */,
+				507F5D9A1E8FA5EC00FDD2CB /* AVFoundation.framework */,
+				507F5D981E8FA5E700FDD2CB /* CFNetwork.framework */,
+				507F5D961E8FA5E000FDD2CB /* SystemConfiguration.framework */,
+				507F5D941E8FA5D900FDD2CB /* UIKit.framework */,
+				507F5D921E8FA5D300FDD2CB /* QuartzCore.framework */,
+				507F5D901E8FA5CE00FDD2CB /* OpenGLES.framework */,
+				507F5D8C1E8FA5C600FDD2CB /* AudioToolbox.framework */,
+				507F5D8D1E8FA5C600FDD2CB /* CoreAudio.framework */,
+				507F5D8A1E8FA5BA00FDD2CB /* StoreKit.framework */,
+				507F5D881E8FA5B300FDD2CB /* libxml2.tbd */,
+				507F5D861E8FA5A800FDD2CB /* libz.tbd */,
+				507F5D821E8FA59500FDD2CB /* AddressBook.framework */,
+				507F5D831E8FA59500FDD2CB /* AddressBookUI.framework */,
+				507F5D801E8FA58B00FDD2CB /* CoreTelephony.framework */,
+				507F5D7E1E8FA58000FDD2CB /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		508B3E8C1E8E40C800C5CA2D = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +317,7 @@
 				508B3EB11E8E40C800C5CA2D /* milks_assistantTests */,
 				508B3EBC1E8E40C800C5CA2D /* milks_assistantUITests */,
 				508B3E961E8E40C800C5CA2D /* Products */,
+				507F5D7D1E8FA57F00FDD2CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +414,12 @@
 		508B3ECF1E8E417400C5CA2D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				503A600D1E8F9FC200D3AF51 /* Util.h */,
+				503A600E1E8F9FC200D3AF51 /* Util.m */,
+				503A60091E8F9EB200D3AF51 /* DBUtils */,
+				503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */,
+				503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */,
+				503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -202,6 +427,8 @@
 		508B3ED01E8E417400C5CA2D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				503A60101E8FA24400D3AF51 /* JSONModel */,
+				503A5FF91E8F9DA900D3AF51 /* FMDB */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -397,12 +624,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				508B3EA01E8E40C800C5CA2D /* ViewController.m in Sources */,
+				503A602D1E8FA24400D3AF51 /* JSONModelError.m in Sources */,
+				503A602A1E8FA24400D3AF51 /* JSONModel.m in Sources */,
 				508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */,
 				508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */,
+				503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */,
 				508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */,
+				503A600F1E8F9FC200D3AF51 /* Util.m in Sources */,
+				503A602B1E8FA24400D3AF51 /* JSONModelArray.m in Sources */,
+				503A60071E8F9DA900D3AF51 /* FMDatabaseQueue.m in Sources */,
+				503A60081E8F9DA900D3AF51 /* FMResultSet.m in Sources */,
+				503A60061E8F9DA900D3AF51 /* FMDatabasePool.m in Sources */,
+				503A602C1E8FA24400D3AF51 /* JSONModelClassProperty.m in Sources */,
+				503A60311E8FA24400D3AF51 /* JSONModel+networking.m in Sources */,
 				508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */,
+				503A602F1E8FA24400D3AF51 /* JSONAPI.m in Sources */,
 				508B3E9A1E8E40C800C5CA2D /* main.m in Sources */,
 				508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */,
+				503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */,
+				503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */,
+				503A602E1E8FA24400D3AF51 /* NSArray+JSONModel.m in Sources */,
+				503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */,
+				503A60361E8FA28400D3AF51 /* LizzieDiaryModel.m in Sources */,
+				503A600C1E8F9EB200D3AF51 /* DWTimingDataInfo.m in Sources */,
+				503A60301E8FA24400D3AF51 /* JSONHTTPClient.m in Sources */,
+				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

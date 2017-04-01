@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DBConnection.h"
+#import "Util.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self createTable];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];
@@ -52,6 +56,27 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//创建所有需要的表
+- (void)createTable
+{
+    DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
+    [dbConnection readyDatabse];
+    if (![[dbConnection DB] open]) {
+        NSLog(@"数据库没有打开");
+    }
+    NSLog(@"cache dbVersion:%li",(long)[Util readNSUserDefaultsInt:dbVersion]);
+    if ([Util readNSUserDefaultsInt:dbVersion] < dbVersionNew) {//版本低,删表
+        [Util saveNSUserDefaults:dbVersion value:dbVersionNew];
+        [dbConnection deleteTable:TABLE_NAME_DIARY];
+    }
+    
+    if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//消息表
+        [dbConnection createTable:TABLE_NAME_DIARY withArguments:@"seq text, mty text, acc text, f_ac text, m1 text, m2 text, m3 text, m4 text, m5 text, b1 text, b2 text, upt text, df text, pb text, pe text, time text"];
+    }
+    
+    [[dbConnection DB] close];
 }
 
 

@@ -5,7 +5,9 @@
 //  Created by TZ_JSKFZX_CAOQ on 14-9-22.
 //  Copyright (c) 2014年 China Unionpay Co.,Ltd. All rights reserved.
 //
-
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //iOS7以上的系统
 #define UP_iOSgt7 (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_7_0)
@@ -114,3 +116,11 @@
 
 #define DEVICE_IS_IPAD [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 
+
+#define DB_NAME                      @"Lizzielu.sqlite"
+
+#define dbVersion                    @"dbVersion"
+
+#define dbVersionNew                 6
+
+#define TABLE_NAME_DIARY            @"Lizziediary"
