@@ -54,6 +54,9 @@
 		508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F111E8E514300C5CA2D /* LMBaseViewController.m */; };
 		508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F171E8E535A00C5CA2D /* LMMainViewController.m */; };
 		508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */; };
+		5093D6851E9367CF006FDFEE /* LMDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6841E9367CF006FDFEE /* LMDairyViewController.m */; };
+		5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */; };
+		5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +159,12 @@
 		508B3F171E8E535A00C5CA2D /* LMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMainViewController.m; sourceTree = "<group>"; };
 		508B3F191E8E537000C5CA2D /* LMMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMineViewController.h; sourceTree = "<group>"; };
 		508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMineViewController.m; sourceTree = "<group>"; };
+		5093D6831E9367CF006FDFEE /* LMDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMDairyViewController.h; sourceTree = "<group>"; };
+		5093D6841E9367CF006FDFEE /* LMDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMDairyViewController.m; sourceTree = "<group>"; };
+		5093D6861E936ACA006FDFEE /* LMAddDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAddDairyViewController.h; sourceTree = "<group>"; };
+		5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAddDairyViewController.m; sourceTree = "<group>"; };
+		5093D6891E936AE9006FDFEE /* LMReadDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMReadDairyViewController.h; sourceTree = "<group>"; };
+		5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMReadDairyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +445,7 @@
 		508B3ED11E8E417400C5CA2D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5093D6821E936789006FDFEE /* LizDairy */,
 				508B3EEA1E8E468200C5CA2D /* WelcomeViewController.h */,
 				508B3EEB1E8E468200C5CA2D /* WelcomeViewController.mm */,
 				508B3ED41E8E463500C5CA2D /* Base */,
@@ -485,6 +495,19 @@
 				508B3F141E8E51E800C5CA2D /* LMMarco.h */,
 			);
 			path = Macros;
+			sourceTree = "<group>";
+		};
+		5093D6821E936789006FDFEE /* LizDairy */ = {
+			isa = PBXGroup;
+			children = (
+				5093D6831E9367CF006FDFEE /* LMDairyViewController.h */,
+				5093D6841E9367CF006FDFEE /* LMDairyViewController.m */,
+				5093D6861E936ACA006FDFEE /* LMAddDairyViewController.h */,
+				5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */,
+				5093D6891E936AE9006FDFEE /* LMReadDairyViewController.h */,
+				5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */,
+			);
+			path = LizDairy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +649,7 @@
 				508B3EA01E8E40C800C5CA2D /* ViewController.m in Sources */,
 				503A602D1E8FA24400D3AF51 /* JSONModelError.m in Sources */,
 				503A602A1E8FA24400D3AF51 /* JSONModel.m in Sources */,
+				5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */,
 				508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */,
 				508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */,
 				503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */,
@@ -639,6 +663,7 @@
 				503A60311E8FA24400D3AF51 /* JSONModel+networking.m in Sources */,
 				508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */,
 				503A602F1E8FA24400D3AF51 /* JSONAPI.m in Sources */,
+				5093D6851E9367CF006FDFEE /* LMDairyViewController.m in Sources */,
 				508B3E9A1E8E40C800C5CA2D /* main.m in Sources */,
 				508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */,
 				503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */,
@@ -649,6 +674,7 @@
 				503A600C1E8F9EB200D3AF51 /* DWTimingDataInfo.m in Sources */,
 				503A60301E8FA24400D3AF51 /* JSONHTTPClient.m in Sources */,
 				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
+				5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
