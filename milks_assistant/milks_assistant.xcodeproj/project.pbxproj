@@ -13,7 +13,7 @@
 		503A60061E8F9DA900D3AF51 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFF1E8F9DA900D3AF51 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		503A60071E8F9DA900D3AF51 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60011E8F9DA900D3AF51 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		503A60081E8F9DA900D3AF51 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60031E8F9DA900D3AF51 /* FMResultSet.m */; };
-		503A600C1E8F9EB200D3AF51 /* DWTimingDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A600B1E8F9EB200D3AF51 /* DWTimingDataInfo.m */; };
+		503A600C1E8F9EB200D3AF51 /* LizzieDairyDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A600B1E8F9EB200D3AF51 /* LizzieDairyDataInfo.m */; };
 		503A600F1E8F9FC200D3AF51 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A600E1E8F9FC200D3AF51 /* Util.m */; };
 		503A602A1E8FA24400D3AF51 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60131E8FA24400D3AF51 /* JSONModel.m */; };
 		503A602B1E8FA24400D3AF51 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60151E8FA24400D3AF51 /* JSONModelArray.m */; };
@@ -90,8 +90,8 @@
 		503A60011E8F9DA900D3AF51 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		503A60021E8F9DA900D3AF51 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		503A60031E8F9DA900D3AF51 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		503A600A1E8F9EB200D3AF51 /* DWTimingDataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTimingDataInfo.h; sourceTree = "<group>"; };
-		503A600B1E8F9EB200D3AF51 /* DWTimingDataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTimingDataInfo.m; sourceTree = "<group>"; };
+		503A600A1E8F9EB200D3AF51 /* LizzieDairyDataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LizzieDairyDataInfo.h; sourceTree = "<group>"; };
+		503A600B1E8F9EB200D3AF51 /* LizzieDairyDataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LizzieDairyDataInfo.m; sourceTree = "<group>"; };
 		503A600D1E8F9FC200D3AF51 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		503A600E1E8F9FC200D3AF51 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		503A60121E8FA24400D3AF51 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 			children = (
 				503A60341E8FA28400D3AF51 /* LizzieDiaryModel.h */,
 				503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */,
-				503A600A1E8F9EB200D3AF51 /* DWTimingDataInfo.h */,
-				503A600B1E8F9EB200D3AF51 /* DWTimingDataInfo.m */,
+				503A600A1E8F9EB200D3AF51 /* LizzieDairyDataInfo.h */,
+				503A600B1E8F9EB200D3AF51 /* LizzieDairyDataInfo.m */,
 			);
 			path = DBUtils;
 			sourceTree = "<group>";
@@ -671,7 +671,7 @@
 				503A602E1E8FA24400D3AF51 /* NSArray+JSONModel.m in Sources */,
 				503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */,
 				503A60361E8FA28400D3AF51 /* LizzieDiaryModel.m in Sources */,
-				503A600C1E8F9EB200D3AF51 /* DWTimingDataInfo.m in Sources */,
+				503A600C1E8F9EB200D3AF51 /* LizzieDairyDataInfo.m in Sources */,
 				503A60301E8FA24400D3AF51 /* JSONHTTPClient.m in Sources */,
 				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
 				5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */,
