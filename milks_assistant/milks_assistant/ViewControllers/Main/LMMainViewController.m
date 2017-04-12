@@ -8,7 +8,10 @@
 
 #import "LMMainViewController.h"
 
-@interface LMMainViewController ()
+@interface LMMainViewController () {
+    
+    
+}
 
 @end
 

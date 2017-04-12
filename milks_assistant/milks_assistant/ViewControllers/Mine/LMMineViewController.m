@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"我的";
     [self initView];
     // Do any additional setup after loading the view.
 }

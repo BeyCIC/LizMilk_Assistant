@@ -103,6 +103,66 @@
 
 #define DEVICE_IS_IPAD [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 
+#define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
+#define Main_Screen_Width       [[UIScreen mainScreen] bounds].size.width
+
+#define UPHEIGHT (IOS7)?64:44
+
+/**判断是否是ios7系统*/
+#define IOS7 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.f
+/**判断是否是ios8系统*/
+#define IOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.f
+/**判断是否是ios9系统*/
+#define IOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.f
+
+#define PNArc4randomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
+// 判断1X1的前后都不是1X1的情况
+#define TiaojianOne  ((!(modelqian.size_x == 1 && modelqian.size_y == 1)) && (!(modelhou.size_x == 1 && modelhou.size_y == 1)))
+// 判断1X1前面是1X1 后面不是1X1 并且前面的1X1数量的不是偶数的情况
+#define TiaojianTwo ((modelqian.size_x == 1 && modelqian.size_y == 1)&&(!(modelhou.size_x == 1 && modelhou.size_y == 1)) && ((i + 1) % 2 != 0))
+// 判断第一个指标是1x1 后面不是1X1的情况
+#define TiaojianThree ((xiabiao == 0)&& !(modelhou.size_x == 1 && modelhou.size_y == 1))
+
+#define iPhone6p ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+
+
+// 系统控件默认高度
+#define StatusBarHeight        (20.f)
+#define TopBarHeight           (44.f)
+#define NavgationHeight        (StatusBarHeight+TopBarHeight)
+#define BottomBarHeight        (49.f)
+#define CellDefaultHeight      (44.f)
+#define EnglishKeyboardHeight  (216.f)
+#define ChineseKeyboardHeight  (252.f)
+
+
+// 页面不含状态栏、导航栏、tabbar的View的高
+#define KViewHeight (Main_Screen_Height-NavgationHeight-BottomBarHeight)
+
+// 颜色(RGB)
+#define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+//APP默认背景色
+#define DEFAULT_BGCOLOR RGBCOLOR(238.0,238.0,238.0)
+//moreButtonColor
+#define MoreButtonColor RGBCOLOR(66.0,165.0,254.0)
+//导航栏颜色
+#define NavigationColor RGBCOLOR(38.0,38.0,39.0)
+//bashboardView边距
+#define KBianJu 6
+// 以iphone6为基本屏幕，当前尺寸与6屏幕宽的比例
+#define  KWidth6scale ([UIScreen mainScreen].bounds.size.width/375)
+// 以iphone6为基本屏幕，当前尺寸与6屏幕高的比例
+#define  KHeight6scale ([UIScreen mainScreen].bounds.size.height/667)
+
 
 #define DB_NAME                      @"Lizzielu.sqlite"
 

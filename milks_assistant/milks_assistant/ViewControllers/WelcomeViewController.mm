@@ -10,6 +10,7 @@
 #import "LMMainViewController.h"
 #import "LMMineViewController.h"
 #import "LMDairyListViewController.h"
+#import "DashBoardViewController.h"
 
 @interface WelcomeViewController()<UITabBarControllerDelegate>
 {
@@ -93,7 +94,7 @@
     NSArray* tabItems = @[@"首页",@"日志",@"我的"];
     
     // feature
-    LMMainViewController* mainVC = [[LMMainViewController alloc] init];
+    DashBoardViewController* mainVC = [[DashBoardViewController alloc] init];
     UINavigationController* firstNavi = [[UINavigationController alloc] initWithRootViewController:mainVC];
     firstNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[0] selectedImage:@"tab1_hl" unselectedImageName:@"tab1"];
     

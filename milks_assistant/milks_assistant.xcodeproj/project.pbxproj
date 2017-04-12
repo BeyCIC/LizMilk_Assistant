@@ -65,6 +65,12 @@
 		50EFFB951E9E01B6005330FA /* UPXToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB8E1E9E01B6005330FA /* UPXToast.m */; };
 		50EFFB961E9E01B6005330FA /* UPXWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB901E9E01B6005330FA /* UPXWaitingView.m */; };
 		50EFFB991E9E01F2005330FA /* UPWRotateAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB981E9E01F2005330FA /* UPWRotateAnimationView.m */; };
+		50EFFBA71E9E1429005330FA /* DashBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB9C1E9E1429005330FA /* DashBoardViewController.m */; };
+		50EFFBA81E9E1429005330FA /* DashCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB9E1E9E1429005330FA /* DashCollectionViewFlowLayout.m */; };
+		50EFFBA91E9E1429005330FA /* DashBoardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFBA11E9E1429005330FA /* DashBoardCollectionViewCell.m */; };
+		50EFFBAA1E9E1429005330FA /* DashBoardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFBA31E9E1429005330FA /* DashBoardModel.m */; };
+		50EFFBAB1E9E1429005330FA /* dateAll.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50EFFBA41E9E1429005330FA /* dateAll.txt */; };
+		50EFFBAC1E9E1429005330FA /* UIColor+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFBA61E9E1429005330FA /* UIColor+NSString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +195,17 @@
 		50EFFB901E9E01B6005330FA /* UPXWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPXWaitingView.m; sourceTree = "<group>"; };
 		50EFFB971E9E01F2005330FA /* UPWRotateAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWRotateAnimationView.h; sourceTree = "<group>"; };
 		50EFFB981E9E01F2005330FA /* UPWRotateAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWRotateAnimationView.m; sourceTree = "<group>"; };
+		50EFFB9B1E9E1429005330FA /* DashBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardViewController.h; sourceTree = "<group>"; };
+		50EFFB9C1E9E1429005330FA /* DashBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardViewController.m; sourceTree = "<group>"; };
+		50EFFB9D1E9E1429005330FA /* DashCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		50EFFB9E1E9E1429005330FA /* DashCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		50EFFBA01E9E1429005330FA /* DashBoardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCollectionViewCell.h; sourceTree = "<group>"; };
+		50EFFBA11E9E1429005330FA /* DashBoardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCollectionViewCell.m; sourceTree = "<group>"; };
+		50EFFBA21E9E1429005330FA /* DashBoardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardModel.h; sourceTree = "<group>"; };
+		50EFFBA31E9E1429005330FA /* DashBoardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardModel.m; sourceTree = "<group>"; };
+		50EFFBA41E9E1429005330FA /* dateAll.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dateAll.txt; sourceTree = "<group>"; };
+		50EFFBA51E9E1429005330FA /* UIColor+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NSString.h"; sourceTree = "<group>"; };
+		50EFFBA61E9E1429005330FA /* UIColor+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NSString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,9 +504,9 @@
 			children = (
 				508B3EEA1E8E468200C5CA2D /* WelcomeViewController.h */,
 				508B3EEB1E8E468200C5CA2D /* WelcomeViewController.mm */,
+				508B3ED21E8E440900C5CA2D /* Main */,
 				5093D6821E936789006FDFEE /* LizDairy */,
 				508B3ED41E8E463500C5CA2D /* Base */,
-				508B3ED21E8E440900C5CA2D /* Main */,
 				508B3ED31E8E440900C5CA2D /* Mine */,
 			);
 			path = ViewControllers;
@@ -498,6 +515,8 @@
 		508B3ED21E8E440900C5CA2D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				50EFFB9A1E9E1429005330FA /* Dashboard */,
+				50EFFB9F1E9E1429005330FA /* DashView */,
 				508B3F161E8E535A00C5CA2D /* LMMainViewController.h */,
 				508B3F171E8E535A00C5CA2D /* LMMainViewController.m */,
 			);
@@ -548,6 +567,31 @@
 				5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */,
 			);
 			path = LizDairy;
+			sourceTree = "<group>";
+		};
+		50EFFB9A1E9E1429005330FA /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				50EFFB9B1E9E1429005330FA /* DashBoardViewController.h */,
+				50EFFB9C1E9E1429005330FA /* DashBoardViewController.m */,
+				50EFFB9D1E9E1429005330FA /* DashCollectionViewFlowLayout.h */,
+				50EFFB9E1E9E1429005330FA /* DashCollectionViewFlowLayout.m */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		50EFFB9F1E9E1429005330FA /* DashView */ = {
+			isa = PBXGroup;
+			children = (
+				50EFFBA01E9E1429005330FA /* DashBoardCollectionViewCell.h */,
+				50EFFBA11E9E1429005330FA /* DashBoardCollectionViewCell.m */,
+				50EFFBA21E9E1429005330FA /* DashBoardModel.h */,
+				50EFFBA31E9E1429005330FA /* DashBoardModel.m */,
+				50EFFBA41E9E1429005330FA /* dateAll.txt */,
+				50EFFBA51E9E1429005330FA /* UIColor+NSString.h */,
+				50EFFBA61E9E1429005330FA /* UIColor+NSString.m */,
+			);
+			path = DashView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -659,6 +703,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EFFBAB1E9E1429005330FA /* dateAll.txt in Resources */,
 				508B3EA81E8E40C800C5CA2D /* LaunchScreen.storyboard in Resources */,
 				508B3EA51E8E40C800C5CA2D /* Assets.xcassets in Resources */,
 				508B3EA31E8E40C800C5CA2D /* Main.storyboard in Resources */,
@@ -693,10 +738,12 @@
 				508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */,
 				508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */,
 				503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */,
+				50EFFBA91E9E1429005330FA /* DashBoardCollectionViewCell.m in Sources */,
 				508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */,
 				503A600F1E8F9FC200D3AF51 /* Util.m in Sources */,
 				50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */,
 				503A602B1E8FA24400D3AF51 /* JSONModelArray.m in Sources */,
+				50EFFBA71E9E1429005330FA /* DashBoardViewController.m in Sources */,
 				503A60071E8F9DA900D3AF51 /* FMDatabaseQueue.m in Sources */,
 				50EFFB951E9E01B6005330FA /* UPXToast.m in Sources */,
 				503A60081E8F9DA900D3AF51 /* FMResultSet.m in Sources */,
@@ -709,9 +756,11 @@
 				5093D6851E9367CF006FDFEE /* LMDairyListViewController.m in Sources */,
 				508B3E9A1E8E40C800C5CA2D /* main.m in Sources */,
 				50EFFB991E9E01F2005330FA /* UPWRotateAnimationView.m in Sources */,
+				50EFFBA81E9E1429005330FA /* DashCollectionViewFlowLayout.m in Sources */,
 				50EFFB941E9E01B6005330FA /* UPXAlertView.m in Sources */,
 				508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */,
 				503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */,
+				50EFFBAC1E9E1429005330FA /* UIColor+NSString.m in Sources */,
 				503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */,
 				503A602E1E8FA24400D3AF51 /* NSArray+JSONModel.m in Sources */,
 				503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */,
@@ -723,6 +772,7 @@
 				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
 				50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */,
 				5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */,
+				50EFFBAA1E9E1429005330FA /* DashBoardModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
