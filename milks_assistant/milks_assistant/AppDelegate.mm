@@ -73,7 +73,7 @@
     }
     
     if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//消息表
-        [dbConnection createTable:TABLE_NAME_DIARY withArguments:@"seq text, mty text, acc text, f_ac text, m1 text, m2 text, m3 text, m4 text, m5 text, b1 text, b2 text, upt text, df text, pb text, pe text, time text"];
+        [dbConnection createTable:TABLE_NAME_DIARY withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
     }
     
     [[dbConnection DB] close];

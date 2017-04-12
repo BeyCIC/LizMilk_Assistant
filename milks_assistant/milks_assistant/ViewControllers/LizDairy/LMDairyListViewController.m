@@ -6,9 +6,11 @@
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
-#import "LMDairyViewController.h"
+#import "LMDairyListViewController.h"
+#import "LMAddDairyViewController.h"
+#import "LizzieDairyDataInfo.h"
 
-@interface LMDairyViewController ()<UITableViewDelegate,UITableViewDataSource> {
+@interface LMDairyListViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
     UITableView *_mainTable;
     NSMutableArray *_dataArr;
@@ -16,13 +18,20 @@
 
 @end
 
-@implementation LMDairyViewController
+@implementation LMDairyListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"磊璐的日记"];
     [self initView];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_dataArr removeAllObjects];
+    NSArray *dairyArr = LizzieDairyDataInfo.getDairyObjects;
+    [_dataArr addObjectsFromArray:dairyArr];
 }
 
 - (void)initView {
@@ -33,7 +42,16 @@
     _mainTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_mainTable];
     
+    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_add_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(addDairy)];
+    self.navigationItem.rightBarButtonItem = phoneButton;
+    
     _dataArr = [[NSMutableArray alloc] initWithCapacity:1];
+}
+
+- (void)addDairy {
+    
+    LMAddDairyViewController *nextCtl = [[LMAddDairyViewController alloc] init];
+    [self.navigationController pushViewController:nextCtl animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

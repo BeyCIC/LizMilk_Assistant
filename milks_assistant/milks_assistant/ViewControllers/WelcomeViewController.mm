@@ -9,7 +9,7 @@
 #import "WelcomeViewController.h"
 #import "LMMainViewController.h"
 #import "LMMineViewController.h"
-#import "LMDairyViewController.h"
+#import "LMDairyListViewController.h"
 
 @interface WelcomeViewController()<UITabBarControllerDelegate>
 {
@@ -98,7 +98,7 @@
     firstNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[0] selectedImage:@"tab1_hl" unselectedImageName:@"tab1"];
     
     // coupon
-    LMDairyViewController* dairyVC2 = [[LMDairyViewController alloc] init];
+    LMDairyListViewController* dairyVC2 = [[LMDairyListViewController alloc] init];
     UINavigationController* secondNavi = [[UINavigationController alloc] initWithRootViewController:dairyVC2];
     secondNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[1] selectedImage:@"tab2_hl" unselectedImageName:@"tab2"];
     

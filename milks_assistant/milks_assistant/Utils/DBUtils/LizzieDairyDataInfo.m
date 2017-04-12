@@ -10,12 +10,6 @@
  
 @implementation LizzieDairyDataInfo
 
-//@property (nonatomic, copy) NSString<Optional>* userId;
-//@property (nonatomic, copy) NSString<Optional>* userName;
-//@property (nonatomic, copy) NSString<Optional>* diaryContent;
-//@property (nonatomic, copy) NSString<Optional>* mood;
-//@property (nonatomic, copy) NSString<Optional>* time;
-//@property (nonatomic, copy) NSString<Optional>* location;
 
 //更新定时器－queryall
 -(void)updateTimingALL:(LizzieDiaryModel*)data
@@ -76,8 +70,16 @@
     
     [[dbConnection DB] close];
 }
+
+//@property (nonatomic, copy) NSString<Optional>* userId;
+//@property (nonatomic, copy) NSString<Optional>* userName;
+//@property (nonatomic, copy) NSString<Optional>* diaryContent;
+//@property (nonatomic, copy) NSString<Optional>* mood;
+//@property (nonatomic, copy) NSString<Optional>* time;
+//@property (nonatomic, copy) NSString<Optional>* location;
+
 //添加定时器
--(void)addTimingLoc:(LizzieDiaryModel *)timingData
+-(void)addDiary:(LizzieDiaryModel *)timingData
 {
     
     DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
@@ -87,7 +89,7 @@
     }
     
     if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {
-        [dbConnection createTable:@"DWTiming" withArguments:@"account text,daily text,enabled text,endTime text,f_account text,openTime text,periodName text,periodNo text,seq text,spaceTime text,timeCoder text,upTime text"];
+        [dbConnection createTable:@"Lizziediary" withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
     }
     
     NSString *userId = timingData.userId;
@@ -96,15 +98,17 @@
     NSString *mood = timingData.mood;
     NSString *time = timingData.time;
     NSString *location = timingData.location;
-    BOOL  insert =  [[dbConnection DB] executeUpdate:@"insert into DWTiming values(?,?,?,?,?,?)",userId,userName,diaryContent,mood,time,location];
+    BOOL  insert =  [[dbConnection DB] executeUpdate:@"insert into Lizziediary values(?,?,?,?,?,?)",userId,userName,diaryContent,mood,time,location];
     if (insert) {
         NSLog(@"插入数据库成功");
+    } else {
+        NSLog(@"插入数据库失败");
     }
     [[dbConnection DB] close];
 }
 
 //queryall
--(void)saveDairyData:(LizzieDiaryModel *)dairyData
+-(void)saveDiary:(LizzieDiaryModel *)dairyData
 {
     DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
     [dbConnection readyDatabse];
@@ -115,17 +119,19 @@
     
     if ([dbConnection isTableOK:TABLE_NAME_DIARY]) {
 
-            BOOL  insert =  [[dbConnection DB] executeUpdate:@"insert into DWTiming values(?,?,?,?,?,?,?,?,?,?,?,?)",dairyData.userId,dairyData.userName,dairyData.diaryContent,dairyData.mood,dairyData.time,dairyData.location];
+            BOOL  insert =  [[dbConnection DB] executeUpdate:@"insert into Lizziediary values(?,?,?,?,?,?)",dairyData.userId,dairyData.userName,dairyData.diaryContent,dairyData.mood,dairyData.time,dairyData.location];
             if (insert) {
                 NSLog(@"新增成功");
             }
     }else{
         
-        [dbConnection createTable:@"DWTiming" withArguments:@"account text,daily text,enabled text,endTime text,f_account text,openTime text,periodName text,periodNo text,seq text,spaceTime text,timeCoder text,upTime text"];
+        [dbConnection createTable:@"Lizziediary" withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
         
-            BOOL  insert =  [[dbConnection DB] executeUpdate:@"insert into DWTiming values(?,?,?,?,?,?,?,?,?,?,?,?)",dairyData.userId,dairyData.userName,dairyData.diaryContent,dairyData.mood,dairyData.time,dairyData.location];
+            BOOL  insert =  [[dbConnection DB] executeUpdate:@"insert into Lizziediary values(?,?,?,?,?,?)",dairyData.userId,dairyData.userName,dairyData.diaryContent,dairyData.mood,dairyData.time,dairyData.location];
             if (insert) {
                 NSLog(@"插入数据库成功");
+            } else {
+                NSLog(@"插入数据库失败");
             }
     }
     [[dbConnection DB] close];
@@ -139,7 +145,7 @@
         NSLog(@"数据库没有打开");
     }
     
-    FMResultSet *result = [[dbConnection DB] executeQuery:@"select count(*) from DWTiming where f_account = ? and spaceTime<>''",f_account1];
+    FMResultSet *result = [[dbConnection DB] executeQuery:@"select count(*) from Lizziediary where f_account = ? and spaceTime<>''",f_account1];
     int num = 0;
     if ([result next]) {
         num = [result intForColumnIndex:0];
@@ -158,7 +164,7 @@
         NSLog(@"数据库没有打开");
     }
     
-    FMResultSet *result = [[dbConnection DB] executeQuery:@"select * from DWTiming where f_account = ?",f_account1];
+    FMResultSet *result = [[dbConnection DB] executeQuery:@"select * from Lizziediary where f_account = ?",f_account1];
     while ([result next]) {
         LizzieDiaryModel  *dairyInfo = [[LizzieDiaryModel alloc]init];
         
@@ -188,7 +194,7 @@
         return;
     }
     
-    BOOL  delete=  [[dbConnection DB] executeUpdate:@"delete from DWTiming where seq = ?",seqName];
+    BOOL  delete=  [[dbConnection DB] executeUpdate:@"delete from Lizziediary where seq = ?",seqName];
     
     if (delete) {
         NSLog(@"本地数据库删除定时器成功");
@@ -207,7 +213,7 @@
         return;
     }
     
-    BOOL  update =  [[dbConnection DB] executeUpdate:@"update DWTiming set userId = ? ,userName = ? ,dairyContent = ?,mood = ? ,time = ? ,location = ? where time = ?",userId,userName,dairyContent,mood,time,location,time];
+    BOOL  update =  [[dbConnection DB] executeUpdate:@"update Lizziediary set userId = ? ,userName = ? ,dairyContent = ?,mood = ? ,time = ? ,location = ? where time = ?",userId,userName,dairyContent,mood,time,location,time];
     
     if (update) {
         NSLog(@"更新定时器成功");
@@ -216,32 +222,31 @@
 }
 
 
-+(NSArray *)getTimingObjects
++(NSArray *)getDairyObjects;
 {
-NSMutableArray *userArray = [[NSMutableArray alloc]initWithCapacity:1];
 
-DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
-[dbConnection readyDatabse];
-if (![[dbConnection DB] open]) {
-    NSLog(@"数据库没有打开");
-}
-
-FMResultSet *result = [[dbConnection DB] executeQuery:@"select * from DWTiming"];
-while ([result next]) {
+    NSMutableArray *userArray = [[NSMutableArray alloc]initWithCapacity:1];
     
-    LizzieDiaryModel  *dairyInfo = [[LizzieDiaryModel alloc]init];
-    dairyInfo.userId = [result stringForColumn:@"account"];
-    dairyInfo.userName = [result stringForColumn:@"daily"];
-    dairyInfo.diaryContent = [result stringForColumn:@"enabled"];
-    dairyInfo.mood = [result stringForColumn:@"endTime"];
-    dairyInfo.time = [result stringForColumn:@"f_account"];
-    dairyInfo.location = [result stringForColumn:@"openTime"];
-    [userArray addObject:dairyInfo];
-    
-}
-
-[[dbConnection DB] close];
-
-return userArray;
+    DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
+    [dbConnection readyDatabse];
+    if (![[dbConnection DB] open]) {
+        NSLog(@"数据库没有打开");
+    }
+    FMResultSet *result = [[dbConnection DB] executeQuery:@"select * from Lizziediary"];
+    while ([result next]) {
+        
+        LizzieDiaryModel  *dairyInfo = [[LizzieDiaryModel alloc]init];
+        dairyInfo.userId = [result stringForColumn:@"userId"];
+        dairyInfo.userName = [result stringForColumn:@"userName"];
+        dairyInfo.diaryContent = [result stringForColumn:@"diaryContent"];
+        dairyInfo.mood = [result stringForColumn:@"mood"];
+        dairyInfo.time = [result stringForColumn:@"time"];
+        dairyInfo.location = [result stringForColumn:@"location"];
+        [userArray addObject:dairyInfo];
+        
+        
+    }
+    [[dbConnection DB] close];
+    return userArray;
 }
 @end

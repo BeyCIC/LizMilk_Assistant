@@ -7,6 +7,7 @@
 //
 
 #import "LMBaseViewController.h"
+#import "UPWMUserInterfaceManager.h"
 
 @interface LMBaseViewController ()
 
@@ -19,10 +20,41 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)showAlertWithTitle:(NSString *)title msg:(NSString *)msg ok:(NSString *)ok cancel:(NSString *)cancel{
+    
+    NSString* cancelButtonTitle = nil;
+    if (!cancel) {
+        cancelButtonTitle = [NSString stringWithString:cancel];
+    }
+    
+    NSString* otherButtonTitle = nil;
+    if (ok) {
+        otherButtonTitle = [NSString stringWithString:ok];
+    }
+    
+    [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:title message:msg cancelButtonTitle:cancelButtonTitle otherButtonTitle:otherButtonTitle completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+        if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+            
+        }
+        else {
+            
+        }
+    }];
+}
+
+- (void)setRoundBtn:(UIButton*)button {
+    
+    button.layer.cornerRadius = 6;
+    button.layer.masksToBounds = YES;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

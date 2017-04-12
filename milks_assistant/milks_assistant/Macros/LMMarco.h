@@ -8,6 +8,7 @@
 #import <Availability.h>
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "UPWSizeUtil.h"
 
 //iOS7以上的系统
 #define UP_iOSgt7 (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_7_0)
@@ -64,26 +65,13 @@
 
 #define UP_COL_INT_RGB(r,g,b) [UIColor colorWithRed:((float)r)/255.0 green:((float)g)/255.0 blue:((float)b)/255.0 alpha:1.0]
 
-#define UP_COL_STR(X)  [UPWAppUtil colorWithHexString:X]
-
-#define UP_COL_STR_ALPHA_1(X)  [UPWAppUtil colorWithString:X]
-
 // 判断string是否为00, 00表示JSON数据正常；
 #define UP_RESPOK(X) ([X intValue] == kNetRespOkValue)
 
-#define UP_SHDAT    [UPWGlobalData sharedData]
-
-#define UP_GETIMG(X) [UPWAppUtil getImage:X]
-
-#define UP_IOS_VERSION [UPWAppUtil deviceOS]
-
-// 判断string是否为空 nil 或者 @"" 或者 @""；
-#define UP_IS_NIL(X)  [UPWAppUtil isEmpty:X]
 
 // 判断如果string为 nil 更改string 为 @""
 #define UP_NIL_STR(X)   X = X? X : @""
 
-#define UP_URL(X)  [UPWAppUtil urlWithString:X]
 
 #define UP_FILEEXIST(X) [[NSFileManager defaultManager] fileExistsAtPath:X]
 
@@ -100,7 +88,6 @@
 #define UP_OPENURL(appScheme) ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:appScheme]])
 
 //是否Retina屏幕
-#define UP_ISRETINA [UPWAppUtil isRetina]
 
 //屏幕size
 #define UP_IPHONESIZE [[UIScreen mainScreen]bounds].size

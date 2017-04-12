@@ -8,6 +8,6 @@
 
 #import "LMBaseViewController.h"
 
-@interface LMDairyViewController : LMBaseViewController
+@interface LMDairyListViewController : LMBaseViewController
 
 @end

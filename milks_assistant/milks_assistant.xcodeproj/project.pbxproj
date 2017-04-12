@@ -54,9 +54,17 @@
 		508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F111E8E514300C5CA2D /* LMBaseViewController.m */; };
 		508B3F181E8E535A00C5CA2D /* LMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F171E8E535A00C5CA2D /* LMMainViewController.m */; };
 		508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */; };
-		5093D6851E9367CF006FDFEE /* LMDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6841E9367CF006FDFEE /* LMDairyViewController.m */; };
+		5093D6851E9367CF006FDFEE /* LMDairyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6841E9367CF006FDFEE /* LMDairyListViewController.m */; };
 		5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */; };
 		5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */; };
+		50EFFB831E9E0193005330FA /* UPWMUserInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */; };
+		50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB821E9E0193005330FA /* UPWSizeUtil.m */; };
+		50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB861E9E01B6005330FA /* UIImage+Resize.m */; };
+		50EFFB921E9E01B6005330FA /* UPWLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB881E9E01B6005330FA /* UPWLoadingView.m */; };
+		50EFFB941E9E01B6005330FA /* UPXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB8C1E9E01B6005330FA /* UPXAlertView.m */; };
+		50EFFB951E9E01B6005330FA /* UPXToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB8E1E9E01B6005330FA /* UPXToast.m */; };
+		50EFFB961E9E01B6005330FA /* UPXWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB901E9E01B6005330FA /* UPXWaitingView.m */; };
+		50EFFB991E9E01F2005330FA /* UPWRotateAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB981E9E01F2005330FA /* UPWRotateAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,12 +167,28 @@
 		508B3F171E8E535A00C5CA2D /* LMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMainViewController.m; sourceTree = "<group>"; };
 		508B3F191E8E537000C5CA2D /* LMMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMineViewController.h; sourceTree = "<group>"; };
 		508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMineViewController.m; sourceTree = "<group>"; };
-		5093D6831E9367CF006FDFEE /* LMDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMDairyViewController.h; sourceTree = "<group>"; };
-		5093D6841E9367CF006FDFEE /* LMDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMDairyViewController.m; sourceTree = "<group>"; };
+		5093D6831E9367CF006FDFEE /* LMDairyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMDairyListViewController.h; sourceTree = "<group>"; };
+		5093D6841E9367CF006FDFEE /* LMDairyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMDairyListViewController.m; sourceTree = "<group>"; };
 		5093D6861E936ACA006FDFEE /* LMAddDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAddDairyViewController.h; sourceTree = "<group>"; };
 		5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAddDairyViewController.m; sourceTree = "<group>"; };
 		5093D6891E936AE9006FDFEE /* LMReadDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMReadDairyViewController.h; sourceTree = "<group>"; };
 		5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMReadDairyViewController.m; sourceTree = "<group>"; };
+		50EFFB7F1E9E0193005330FA /* UPWMUserInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWMUserInterfaceManager.h; sourceTree = "<group>"; };
+		50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWMUserInterfaceManager.m; sourceTree = "<group>"; };
+		50EFFB811E9E0193005330FA /* UPWSizeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWSizeUtil.h; sourceTree = "<group>"; };
+		50EFFB821E9E0193005330FA /* UPWSizeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWSizeUtil.m; sourceTree = "<group>"; };
+		50EFFB851E9E01B6005330FA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		50EFFB861E9E01B6005330FA /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		50EFFB871E9E01B6005330FA /* UPWLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWLoadingView.h; sourceTree = "<group>"; };
+		50EFFB881E9E01B6005330FA /* UPWLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWLoadingView.m; sourceTree = "<group>"; };
+		50EFFB8B1E9E01B6005330FA /* UPXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPXAlertView.h; sourceTree = "<group>"; };
+		50EFFB8C1E9E01B6005330FA /* UPXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPXAlertView.m; sourceTree = "<group>"; };
+		50EFFB8D1E9E01B6005330FA /* UPXToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPXToast.h; sourceTree = "<group>"; };
+		50EFFB8E1E9E01B6005330FA /* UPXToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPXToast.m; sourceTree = "<group>"; };
+		50EFFB8F1E9E01B6005330FA /* UPXWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPXWaitingView.h; sourceTree = "<group>"; };
+		50EFFB901E9E01B6005330FA /* UPXWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPXWaitingView.m; sourceTree = "<group>"; };
+		50EFFB971E9E01F2005330FA /* UPWRotateAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWRotateAnimationView.h; sourceTree = "<group>"; };
+		50EFFB981E9E01F2005330FA /* UPWRotateAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWRotateAnimationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +447,22 @@
 		508B3ECF1E8E417400C5CA2D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				50EFFB971E9E01F2005330FA /* UPWRotateAnimationView.h */,
+				50EFFB981E9E01F2005330FA /* UPWRotateAnimationView.m */,
+				50EFFB851E9E01B6005330FA /* UIImage+Resize.h */,
+				50EFFB861E9E01B6005330FA /* UIImage+Resize.m */,
+				50EFFB871E9E01B6005330FA /* UPWLoadingView.h */,
+				50EFFB881E9E01B6005330FA /* UPWLoadingView.m */,
+				50EFFB8B1E9E01B6005330FA /* UPXAlertView.h */,
+				50EFFB8C1E9E01B6005330FA /* UPXAlertView.m */,
+				50EFFB8D1E9E01B6005330FA /* UPXToast.h */,
+				50EFFB8E1E9E01B6005330FA /* UPXToast.m */,
+				50EFFB8F1E9E01B6005330FA /* UPXWaitingView.h */,
+				50EFFB901E9E01B6005330FA /* UPXWaitingView.m */,
+				50EFFB7F1E9E0193005330FA /* UPWMUserInterfaceManager.h */,
+				50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */,
+				50EFFB811E9E0193005330FA /* UPWSizeUtil.h */,
+				50EFFB821E9E0193005330FA /* UPWSizeUtil.m */,
 				503A600D1E8F9FC200D3AF51 /* Util.h */,
 				503A600E1E8F9FC200D3AF51 /* Util.m */,
 				503A60091E8F9EB200D3AF51 /* DBUtils */,
@@ -445,9 +485,9 @@
 		508B3ED11E8E417400C5CA2D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5093D6821E936789006FDFEE /* LizDairy */,
 				508B3EEA1E8E468200C5CA2D /* WelcomeViewController.h */,
 				508B3EEB1E8E468200C5CA2D /* WelcomeViewController.mm */,
+				5093D6821E936789006FDFEE /* LizDairy */,
 				508B3ED41E8E463500C5CA2D /* Base */,
 				508B3ED21E8E440900C5CA2D /* Main */,
 				508B3ED31E8E440900C5CA2D /* Mine */,
@@ -500,8 +540,8 @@
 		5093D6821E936789006FDFEE /* LizDairy */ = {
 			isa = PBXGroup;
 			children = (
-				5093D6831E9367CF006FDFEE /* LMDairyViewController.h */,
-				5093D6841E9367CF006FDFEE /* LMDairyViewController.m */,
+				5093D6831E9367CF006FDFEE /* LMDairyListViewController.h */,
+				5093D6841E9367CF006FDFEE /* LMDairyListViewController.m */,
 				5093D6861E936ACA006FDFEE /* LMAddDairyViewController.h */,
 				5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */,
 				5093D6891E936AE9006FDFEE /* LMReadDairyViewController.h */,
@@ -655,25 +695,33 @@
 				503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */,
 				508B3F1B1E8E537000C5CA2D /* LMMineViewController.m in Sources */,
 				503A600F1E8F9FC200D3AF51 /* Util.m in Sources */,
+				50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */,
 				503A602B1E8FA24400D3AF51 /* JSONModelArray.m in Sources */,
 				503A60071E8F9DA900D3AF51 /* FMDatabaseQueue.m in Sources */,
+				50EFFB951E9E01B6005330FA /* UPXToast.m in Sources */,
 				503A60081E8F9DA900D3AF51 /* FMResultSet.m in Sources */,
 				503A60061E8F9DA900D3AF51 /* FMDatabasePool.m in Sources */,
 				503A602C1E8FA24400D3AF51 /* JSONModelClassProperty.m in Sources */,
+				50EFFB961E9E01B6005330FA /* UPXWaitingView.m in Sources */,
 				503A60311E8FA24400D3AF51 /* JSONModel+networking.m in Sources */,
 				508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */,
 				503A602F1E8FA24400D3AF51 /* JSONAPI.m in Sources */,
-				5093D6851E9367CF006FDFEE /* LMDairyViewController.m in Sources */,
+				5093D6851E9367CF006FDFEE /* LMDairyListViewController.m in Sources */,
 				508B3E9A1E8E40C800C5CA2D /* main.m in Sources */,
+				50EFFB991E9E01F2005330FA /* UPWRotateAnimationView.m in Sources */,
+				50EFFB941E9E01B6005330FA /* UPXAlertView.m in Sources */,
 				508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */,
 				503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */,
 				503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */,
 				503A602E1E8FA24400D3AF51 /* NSArray+JSONModel.m in Sources */,
 				503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */,
 				503A60361E8FA28400D3AF51 /* LizzieDiaryModel.m in Sources */,
+				50EFFB831E9E0193005330FA /* UPWMUserInterfaceManager.m in Sources */,
 				503A600C1E8F9EB200D3AF51 /* LizzieDairyDataInfo.m in Sources */,
 				503A60301E8FA24400D3AF51 /* JSONHTTPClient.m in Sources */,
+				50EFFB921E9E01B6005330FA /* UPWLoadingView.m in Sources */,
 				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
+				50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */,
 				5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

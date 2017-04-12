@@ -10,4 +10,6 @@
 
 @interface LMBaseViewController : UIViewController
 
+- (void)setRoundBtn:(UIButton*)button;
+
 @end

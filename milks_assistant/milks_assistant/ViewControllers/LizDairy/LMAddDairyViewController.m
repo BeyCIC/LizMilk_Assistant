@@ -7,6 +7,7 @@
 //
 
 #import "LMAddDairyViewController.h"
+#import "LizzieDairyDataInfo.h"
 
 @interface LMAddDairyViewController () <UITextViewDelegate>{
     UITextView *_editView;
@@ -17,8 +18,20 @@
 
 @implementation LMAddDairyViewController
 
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initView];
     // Do any additional setup after loading the view.
 }
 
@@ -35,7 +48,7 @@
     
     [sureBtn addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    
+    self.view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_editView];
     [self.view addSubview:sureBtn];
 }
@@ -43,6 +56,15 @@
 - (void)sureAction:(UIButton*)sender {
     
     if ([self checkInput]) {
+        LizzieDairyDataInfo *info = [[LizzieDairyDataInfo alloc] init];
+        LizzieDiaryModel *dairy = [[LizzieDiaryModel alloc] init];
+        dairy.userId = @"18801755762";
+        dairy.userName = @"lizzie_liu";
+        dairy.diaryContent = _editView.text;
+        dairy.mood = @"忧郁";
+        dairy.time = @"20170412";
+        dairy.location = @"上海";
+        [info addDiary:dairy];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         
@@ -51,6 +73,11 @@
 
 - (BOOL)checkInput {
     
+//    @property (nonatomic, copy) NSString<Optional>* diaryContent;
+//    @property (nonatomic, copy) NSString<Optional>* mood;
+//    @property (nonatomic, copy) NSString<Optional>* time;
+//    @property (nonatomic, copy) NSString<Optional>* location;
+
     if ([_editView.text isEqualToString:@""]) {
         return NO;
     }
@@ -61,6 +88,19 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGFloat ly = [touch locationInView:_editView].y;
+    if (ly>=0 ) { //点标题栏也会消失，点其他地方捕捉不到了
+        [self.view endEditing:YES];
+    }
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    return YES;
+}
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     return YES;
 }
