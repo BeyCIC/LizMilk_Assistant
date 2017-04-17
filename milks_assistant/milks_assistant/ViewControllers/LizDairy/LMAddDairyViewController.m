@@ -73,12 +73,8 @@
 
 - (BOOL)checkInput {
     
-//    @property (nonatomic, copy) NSString<Optional>* diaryContent;
-//    @property (nonatomic, copy) NSString<Optional>* mood;
-//    @property (nonatomic, copy) NSString<Optional>* time;
-//    @property (nonatomic, copy) NSString<Optional>* location;
-
     if ([_editView.text isEqualToString:@""]) {
+        [self showAlertWithTitle:@"提示" msg:@"亲爱的，请输入！" ok:@"就是不输入" cancel:@"OK,听你的"];
         return NO;
     }
     return YES;

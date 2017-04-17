@@ -8,6 +8,7 @@
 
 #import "LMDairyListViewController.h"
 #import "LMAddDairyViewController.h"
+#import "LMReadDairyViewController.h"
 
 @interface LMDairyListViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
@@ -89,6 +90,15 @@
         [cell setInfo:_dataArr[indexPath.row]];
     }
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    LMReadDairyViewController *readCtl = [[LMReadDairyViewController alloc] init];
+    readCtl.dairyInfo = _dataArr[indexPath.row];
+    [self.navigationController pushViewController:readCtl animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

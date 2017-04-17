@@ -7,7 +7,10 @@
 //
 
 #import "LMBaseViewController.h"
+#import "LizzieDiaryModel.h"
 
 @interface LMReadDairyViewController : LMBaseViewController
+
+@property(nonatomic,strong)LizzieDiaryModel *dairyInfo;
 
 @end
