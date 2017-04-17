@@ -12,4 +12,6 @@
 
 - (void)setRoundBtn:(UIButton*)button;
 
+- (void)showAlertWithTitle:(NSString *)title msg:(NSString *)msg ok:(NSString *)ok cancel:(NSString *)cancel;
+
 @end

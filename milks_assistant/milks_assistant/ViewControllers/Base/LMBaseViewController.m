@@ -23,7 +23,7 @@
 - (void)showAlertWithTitle:(NSString *)title msg:(NSString *)msg ok:(NSString *)ok cancel:(NSString *)cancel{
     
     NSString* cancelButtonTitle = nil;
-    if (!cancel) {
+    if (cancel) {
         cancelButtonTitle = [NSString stringWithString:cancel];
     }
     

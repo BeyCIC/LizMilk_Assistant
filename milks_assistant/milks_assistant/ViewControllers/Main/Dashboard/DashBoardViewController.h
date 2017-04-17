@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "DashBoardModel.h"
+#import "LMBaseViewController.h"
 
 
-@interface DashBoardViewController : UIViewController
+@interface DashBoardViewController : LMBaseViewController
 // 指标model的数组
 @property (nonatomic , strong) NSMutableArray * DashModelArray;
 

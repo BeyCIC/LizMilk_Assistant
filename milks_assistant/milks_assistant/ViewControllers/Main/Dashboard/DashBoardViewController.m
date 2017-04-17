@@ -89,7 +89,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"移动";
+    self.navigationItem.title = @"牛奶璐";
     self.view.backgroundColor = [UIColor whiteColor];
     [self makeCollectionView];
 }
@@ -155,7 +155,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 // 选中cell
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self showAlertWithTitle:@"0_0" msg:@"使劲点我吧@" ok:@"亲亲😘" cancel:@"忍痛割爱"];
 }
 
 /**
