@@ -1,15 +1,19 @@
 //
 //  ViewController.h
-//  milks_assistant
+//  PhotoDIY
 //
-//  Created by JasonHuang on 17/3/31.
-//  Copyright © 2017年 JasonHuang. All rights reserved.
+//  Created by luowei on 16/7/4.
+//  Copyright © 2016年 wodedata. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+@class LWContentView;
+@class LWToolBar;
+
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic)  LWContentView *contentView;
+@property (strong, nonatomic)  LWToolBar *toolBar;
 
 @end
-

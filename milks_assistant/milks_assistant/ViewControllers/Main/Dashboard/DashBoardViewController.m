@@ -13,6 +13,8 @@
 #import "UIColor+NSString.h"
 #import "DashBoardModel.h"
 
+#import "PhotoDIYViewController.h"
+#import "ViewController.h"
 
 @interface DashBoardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 {
@@ -63,6 +65,16 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 
 @implementation DashBoardViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    return self;
+}
+
+
 - (NSMutableArray *)DashModelArray
 {
     if (_DashModelArray == nil) {
@@ -91,7 +103,17 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     self.navigationItem.title = @"牛奶璐";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_add_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(photoDIY:)];
+    self.navigationItem.rightBarButtonItem = phoneButton;
+    
     [self makeCollectionView];
+}
+
+- (void)photoDIY:(UIButton*)sender {
+    PhotoDIYViewController *nextCtl = [[PhotoDIYViewController alloc] init];
+    
+    [self.navigationController pushViewController:nextCtl animated:YES];
 }
 
 - (void)makeCollectionView

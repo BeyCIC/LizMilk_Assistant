@@ -1,0 +1,16 @@
+platform :ios, '7.0'
+
+def milks_assistant_pods
+
+pod 'GPUImage', '~> 0.1.7'
+pod 'MBProgressHUD'
+pod 'FXBlurView', '~> 1.6.4'
+pod 'FDStackView', "1.0"
+pod 'SDWebImage', '~> 3.8.1'
+
+end
+
+
+target 'milks_assistant' do
+  milks_assistant_pods
+end

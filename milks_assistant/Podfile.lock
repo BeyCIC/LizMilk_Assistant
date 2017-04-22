@@ -1,0 +1,26 @@
+PODS:
+  - FDStackView (1.0)
+  - FXBlurView (1.6.4)
+  - GPUImage (0.1.7)
+  - MBProgressHUD (1.0.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - FDStackView (= 1.0)
+  - FXBlurView (~> 1.6.4)
+  - GPUImage (~> 0.1.7)
+  - MBProgressHUD
+  - SDWebImage (~> 3.8.1)
+
+SPEC CHECKSUMS:
+  FDStackView: 3a4bbe0ce9c35e974246a585168b9da8c32213f1
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: 426d801c075c4e6c9f60aab1dd2d6f2f369bdba2
+
+COCOAPODS: 1.2.1
