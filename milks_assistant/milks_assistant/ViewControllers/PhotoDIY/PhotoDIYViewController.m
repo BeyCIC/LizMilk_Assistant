@@ -27,8 +27,13 @@
     _contentView = [[LWContentView alloc] initWithFrame:CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
     _toolBar = [[LWToolBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44 - 64, SCREEN_WIDTH, 44)];
     [self.view addSubview:_contentView];
-    _toolBar.backgroundColor  = [UIColor redColor];
+//    _toolBar.backgroundColor  = [UIColor redColor];
     [self.view addSubview:_toolBar];
+    
+    [_toolBar.photosBtn addTarget:self action:@selector(selPhotoAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_toolBar.filtersBtn addTarget:self action:@selector(filterAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_toolBar.cropBtn addTarget:self action:@selector(cropAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_toolBar.drawBtn addTarget:self action:@selector(drawAction:) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
 }
 
@@ -122,25 +127,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        UIStackView *stackView = [[UIStackView alloc] initWithFrame:frame];
-        stackView.axis = UILayoutConstraintAxisHorizontal;
-        stackView.distribution = UIStackViewDistributionFillEqually;
-        stackView.spacing = 20;
-        stackView.alignment = UIStackViewAlignmentFill;
-        UIButton *photos = [[UIButton alloc] init];
-        photos.backgroundColor = [UIColor grayColor];
-        UIButton *filters = [[UIButton alloc] init];
-        filters.backgroundColor = [UIColor purpleColor];
-        UIButton *crop = [[UIButton alloc] init];
-        crop.backgroundColor = [UIColor blueColor];
-        UIButton *draw = [[UIButton alloc] init];
-        draw.backgroundColor = [UIColor redColor];
-        
-        [stackView addArrangedSubview:photos];
-        [stackView addArrangedSubview:filters];
-        [stackView addArrangedSubview:crop];
-        [stackView addArrangedSubview:draw];
-        [self addSubview:stackView];
+        CGFloat pwidth = (frame.size.width - 35*4 - 30)/3.0+35;
+        _photosBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, (frame.size.height-35)/2.0, 35, 35)];
+        [_photosBtn setTitle:@"相册" forState:UIControlStateNormal];
+        _photosBtn.backgroundColor = [UIColor grayColor];
+        _filtersBtn = [[UIButton alloc] initWithFrame:CGRectMake(15+pwidth, (frame.size.height-35)/2.0, 35, 35)];
+        _filtersBtn.backgroundColor = [UIColor purpleColor];
+        [_filtersBtn setTitle:@"过滤" forState:UIControlStateNormal];
+        _cropBtn = [[UIButton alloc] initWithFrame:CGRectMake(15+pwidth*2, (frame.size.height-35)/2.0, 35, 35)];
+        _cropBtn.backgroundColor = [UIColor blueColor];
+        [_cropBtn setTitle:@"修剪" forState:UIControlStateNormal];
+        _drawBtn = [[UIButton alloc] initWithFrame:CGRectMake(15+pwidth*3, (frame.size.height-35)/2.0, 35, 35)];
+        _drawBtn.backgroundColor = [UIColor redColor];
+        [_drawBtn setTitle:@"绘图" forState:UIControlStateNormal];
+        [self addSubview:_photosBtn];
+        [self addSubview:_filtersBtn];
+        [self addSubview:_cropBtn];
+        [self addSubview:_drawBtn];
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     }
     return self;
 }

@@ -21,5 +21,8 @@
 
 @interface LWToolBar:UIView
 
-
+@property(nonatomic,strong)UIButton *photosBtn;
+@property(nonatomic,strong)UIButton *filtersBtn;
+@property(nonatomic,strong)UIButton *cropBtn;
+@property(nonatomic,strong)UIButton *drawBtn;
 @end

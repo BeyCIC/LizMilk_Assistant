@@ -33,6 +33,21 @@
         _photosBar = [[LWPhotosBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 144, frame.size.width, 144)];
         _filterBar = [[LWFilterBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 150, frame.size.width, 150)];
         
+        
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        //设置collectionView滚动方向
+        //    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        //设置headerView的尺寸大小
+        layout.headerReferenceSize = CGSizeMake(frame.size.width, 1);
+        //该方法也可以设置itemSize
+        layout.itemSize =CGSizeMake(110, 150);
+
+        
+        _filterCollectionView = [[LWFilterCollectionView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 120) collectionViewLayout:layout];
+        [_filterCollectionView registerClass:[LWFilterCollectionCell class] forCellWithReuseIdentifier:@"LWFilterCollectionCell"];
+        [_filterCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"reusableView"];
+
+        [_filterBar addSubview:_filterCollectionView];
         [self addSubview:_zoomView];
         [self addSubview:_filterView];
         [self addSubview:_cropView];
@@ -341,6 +356,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        
         //这个功能暂时不需要;
     }
     return self;
@@ -370,6 +386,23 @@
 
 
 @implementation LWFilterBar
+
+- (id)initWithFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        
+        _slider = [[UISlider alloc] initWithFrame:CGRectMake(23, 0, frame.size.width-46, 31)];
+        _topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 30, frame.size.width, 0.5)];
+        _topLine.backgroundColor = [UIColor whiteColor];
+//        self.backgroundColor = [UIColor whiteColor];
+        [self addSubview:_slider];
+        [self addSubview:_topLine];
+        [self awakeFromNib];
+    }
+    return self;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

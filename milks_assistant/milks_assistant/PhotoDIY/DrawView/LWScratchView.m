@@ -10,6 +10,14 @@
 
 @implementation LWScratchView
 
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self awakeFromNib];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
 

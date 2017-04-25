@@ -84,16 +84,16 @@
 }
 
 -(NSDictionary *)filterImageName{
-    return @{NSLocalizedString(@"contrast",nil):@"对比度调节",NSLocalizedString(@"levels",nil):@"色阶调节",
-            NSLocalizedString(@"rgb",nil):@"RGB调节",NSLocalizedString(@"hue",nil):@"HUE调节",
-            NSLocalizedString(@"whiteBalance",nil):@"白平衡",NSLocalizedString(@"sharpen",nil):@"锐化",
-            NSLocalizedString(@"gamma",nil):@"Gamma",NSLocalizedString(@"toneCurve",nil):@"色调美化",
-            NSLocalizedString(@"sepiaTone",nil):@"褐色调",NSLocalizedString(@"colorInvert",nil):@"反转",
-            NSLocalizedString(@"grayScale",nil):@"灰度",NSLocalizedString(@"sobelEdge",nil):@"边缘勾勒",
-            NSLocalizedString(@"sketch",nil):@"素描",NSLocalizedString(@"emboss",nil):@"浮雕",
-            NSLocalizedString(@"vignette",nil):@"晕映",NSLocalizedString(@"gaussianBlur",nil):@"高斯模糊",
-            NSLocalizedString(@"gaussianSelectiveBlur",nil):@"虚化背影",NSLocalizedString(@"boxBlur",nil):@"盒状模糊",
-            NSLocalizedString(@"motionBlur",nil):@"运动模糊",NSLocalizedString(@"zoomBlur",nil):@"变焦模糊"};
+    return @{NSLocalizedString(@"对比度调节",nil):@"对比度调节",NSLocalizedString(@"色阶调节",nil):@"色阶调节",
+            NSLocalizedString(@"RGB调节",nil):@"RGB调节",NSLocalizedString(@"HUE调节",nil):@"HUE调节",
+            NSLocalizedString(@"白平衡",nil):@"白平衡",NSLocalizedString(@"锐化",nil):@"锐化",
+            NSLocalizedString(@"伽玛",nil):@"伽玛",NSLocalizedString(@"色调美化",nil):@"色调美化",
+            NSLocalizedString(@"褐色调",nil):@"褐色调",NSLocalizedString(@"反转",nil):@"反转",
+            NSLocalizedString(@"灰度",nil):@"灰度",NSLocalizedString(@"sobelEdge",nil):@"边缘勾勒",
+            NSLocalizedString(@"素描",nil):@"素描",NSLocalizedString(@"浮雕",nil):@"浮雕",
+            NSLocalizedString(@"晕映",nil):@"晕映",NSLocalizedString(@"gaussianBlur",nil):@"高斯模糊",
+            NSLocalizedString(@"虚化背影",nil):@"虚化背影",NSLocalizedString(@"盒状模糊",nil):@"盒状模糊",
+            NSLocalizedString(@"运动模糊",nil):@"运动模糊",NSLocalizedString(@"变焦模糊",nil):@"变焦模糊"};
 }
 
 

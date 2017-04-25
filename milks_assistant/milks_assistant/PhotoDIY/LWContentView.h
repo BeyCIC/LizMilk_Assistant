@@ -82,6 +82,8 @@
 
 @interface LWFilterBar:UIView
 
+@property(nonatomic,strong) UIView *topLine;
+
 @property(nonatomic,strong) UISlider *slider;
 
 @end

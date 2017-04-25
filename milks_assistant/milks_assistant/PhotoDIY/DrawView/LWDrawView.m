@@ -22,14 +22,41 @@
     self = [super initWithFrame:frame];
     if (self) {
         _mosaicImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        [_mosaicImageView setContentMode:UIViewContentModeScaleAspectFit];
+        [_mosaicImageView setBackgroundColor:[UIColor clearColor]];
+        _mosaicImageView.opaque = YES;
+        _mosaicImageView.clearsContextBeforeDrawing = YES;
+        _mosaicImageView.autoresizesSubviews = YES;
+        [_mosaicImageView setContentStretch:CGRectMake(0, 0, 1, 1)];
+        _mosaicImageView.semanticContentAttribute = UISemanticContentAttributeUnspecified;
+        
         _scratchView = [[LWScratchView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        
+        _scratchView.userInteractionEnabled = YES;
+        _scratchView.opaque = YES;
+        _scratchView.clearsContextBeforeDrawing = YES;
+        _scratchView.autoresizesSubviews = YES;
+        [_scratchView setContentStretch:CGRectMake(0, 0, 1, 1)];
+        _scratchView.contentMode = UIViewContentModeScaleToFill;
+        
         _scrawlView = [[LWScrawlView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 50, 10, 40, 40)];
-        _deleteBtn.backgroundColor = [UIColor redColor];
-        _mosaicBtn = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 50, 60, 40, 40)];
-        _mosaicBtn.backgroundColor = [UIColor blueColor];
+        _scrawlView.userInteractionEnabled = YES;
+        _scrawlView.userInteractionEnabled = YES;
+        _scrawlView.opaque = YES;
+        _scrawlView.clearsContextBeforeDrawing = YES;
+        _scrawlView.autoresizesSubviews = YES;
+        [_scrawlView setContentStretch:CGRectMake(0, 0, 1, 1)];
+        _scrawlView.contentMode = UIViewContentModeScaleToFill;
+        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 50, 70, 40, 40)];
+//        _deleteBtn.backgroundColor = [UIColor redColor];
+        [_deleteBtn setImage:[UIImage imageNamed:@"draw_clear"] forState:UIControlStateNormal];
+        
+        _mosaicBtn = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 50, 125, 40, 40)];
+//        _mosaicBtn.backgroundColor = [UIColor blueColor];
         
         [_mosaicBtn addTarget:self action:@selector(openOrCloseMosaic:) forControlEvents:UIControlEventTouchUpInside];
+        [_mosaicBtn setImage:[UIImage imageNamed:@"macaic"] forState:UIControlStateNormal];
+        _mosaicBtn.userInteractionEnabled = YES;
         _drawBar = [[LWDrawBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 140, frame.size.width, 140)];
         
         [self addSubview:_mosaicImageView];

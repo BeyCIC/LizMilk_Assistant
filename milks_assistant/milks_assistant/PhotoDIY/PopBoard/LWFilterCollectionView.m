@@ -19,6 +19,7 @@
     self = [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
 
+        [self awakeFromNib];
     }
 
     return self;
@@ -96,6 +97,37 @@
 
 
 @implementation LWFilterCollectionCell
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        _titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 80, 18)];
+        _titleLbl.font = [UIFont systemFontOfSize:14];
+        _titleLbl.lineBreakMode = NSLineBreakByTruncatingTail;
+        _titleLbl.tag = 102;
+        _titleLbl.contentMode = UIViewContentModeLeft;
+        [self addSubview:_titleLbl];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 2, 80, 98)];
+        _imageView.tag = 101;
+        [_imageView setImage:[UIImage imageNamed:@"虚化背影"]];
+        _imageView.contentMode = UIViewContentModeScaleToFill;
+        _imageView.opaque = YES;
+        _imageView.clipsToBounds = YES;
+        
+        _selectIcon = [[UIImageView alloc] initWithFrame:CGRectMake(30, 50, 20, 20)];
+        [_selectIcon setImage:[UIImage imageNamed:@"iconSelect"]];
+        [_selectIcon setHighlightedImage:[UIImage imageNamed:@"iconSelect"]];
+        [_selectIcon setContentMode:UIViewContentModeScaleToFill];
+        _selectIcon.opaque = YES;
+        _selectIcon.hidden = YES;
+        
+        [self addSubview:_imageView];
+        
+        [self addSubview:_selectIcon];
+        [self awakeFromNib];
+    }
+    return self;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
