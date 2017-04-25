@@ -129,22 +129,27 @@
         
         CGFloat pwidth = (frame.size.width - 35*4 - 30)/3.0+35;
         _photosBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, (frame.size.height-35)/2.0, 35, 35)];
-        [_photosBtn setTitle:@"相册" forState:UIControlStateNormal];
-        _photosBtn.backgroundColor = [UIColor grayColor];
+//        [_photosBtn setTitle:@"相册" forState:UIControlStateNormal];
+//        _photosBtn.backgroundColor = [UIColor grayColor];
+        [_photosBtn setImage:[UIImage imageNamed:@"albumButton"] forState:UIControlStateNormal];
+        [_photosBtn setImage:[UIImage imageNamed:@"albumButton"] forState:UIControlStateSelected];
         _filtersBtn = [[UIButton alloc] initWithFrame:CGRectMake(15+pwidth, (frame.size.height-35)/2.0, 35, 35)];
-        _filtersBtn.backgroundColor = [UIColor purpleColor];
-        [_filtersBtn setTitle:@"过滤" forState:UIControlStateNormal];
+//        _filtersBtn.backgroundColor = [UIColor purpleColor];
+        [_filtersBtn setImage:[UIImage imageNamed:@"filter"] forState:UIControlStateNormal];
+//        [_filtersBtn setTitle:@"过滤" forState:UIControlStateNormal];
         _cropBtn = [[UIButton alloc] initWithFrame:CGRectMake(15+pwidth*2, (frame.size.height-35)/2.0, 35, 35)];
-        _cropBtn.backgroundColor = [UIColor blueColor];
-        [_cropBtn setTitle:@"修剪" forState:UIControlStateNormal];
+//        _cropBtn.backgroundColor = [UIColor blueColor];
+//        [_cropBtn setTitle:@"修剪" forState:UIControlStateNormal];
+        [_cropBtn setImage:[UIImage imageNamed:@"cropButton"] forState:UIControlStateNormal];
         _drawBtn = [[UIButton alloc] initWithFrame:CGRectMake(15+pwidth*3, (frame.size.height-35)/2.0, 35, 35)];
-        _drawBtn.backgroundColor = [UIColor redColor];
-        [_drawBtn setTitle:@"绘图" forState:UIControlStateNormal];
+//        _drawBtn.backgroundColor = [UIColor redColor];
+//        [_drawBtn setTitle:@"绘图" forState:UIControlStateNormal];
+        [_drawBtn setBackgroundImage:[UIImage imageNamed:@"doodleButton"] forState:UIControlStateNormal];
         [self addSubview:_photosBtn];
         [self addSubview:_filtersBtn];
         [self addSubview:_cropBtn];
         [self addSubview:_drawBtn];
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }
