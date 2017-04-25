@@ -36,9 +36,9 @@
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         //设置collectionView滚动方向
-        //    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
         //设置headerView的尺寸大小
-        layout.headerReferenceSize = CGSizeMake(frame.size.width, 1);
+        layout.headerReferenceSize = CGSizeMake(1, 1);
         //该方法也可以设置itemSize
         layout.itemSize =CGSizeMake(110, 150);
 

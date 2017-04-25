@@ -103,6 +103,7 @@
     if (self) {
         _titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 80, 18)];
         _titleLbl.font = [UIFont systemFontOfSize:14];
+        _titleLbl.textColor = [UIColor whiteColor];
         _titleLbl.lineBreakMode = NSLineBreakByTruncatingTail;
         _titleLbl.tag = 102;
         _titleLbl.contentMode = UIViewContentModeLeft;

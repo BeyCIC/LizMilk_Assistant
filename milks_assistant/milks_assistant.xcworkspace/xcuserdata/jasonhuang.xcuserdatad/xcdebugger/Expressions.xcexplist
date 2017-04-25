@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[LWFilterCollectionView collectionView:cellForItemAtIndexPath:]:LWFilterCollectionView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filterDict.allKeys">
+            </PersistentString>
+            <PersistentString
+               value = "self.filterImageNameDict.allKeys">
+            </PersistentString>
+            <PersistentString
+               value = "cell.titleLbl.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[LWFilterCollectionView reloadFilters]:LWFilterCollectionView.m">
          <PersistentStrings>
             <PersistentString
