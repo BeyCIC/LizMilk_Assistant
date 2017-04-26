@@ -74,6 +74,8 @@
 		5093D6851E9367CF006FDFEE /* LMDairyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6841E9367CF006FDFEE /* LMDairyListViewController.m */; };
 		5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */; };
 		5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */; };
+		50CA8AE01EB041D000662476 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA8ADF1EB041D000662476 /* AssetsLibrary.framework */; };
+		50CA8AE21EB041EC00662476 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA8AE11EB041EC00662476 /* CoreMedia.framework */; };
 		50EFFB831E9E0193005330FA /* UPWMUserInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */; };
 		50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB821E9E0193005330FA /* UPWSizeUtil.m */; };
 		50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB861E9E01B6005330FA /* UIImage+Resize.m */; };
@@ -233,6 +235,8 @@
 		5093D6871E936ACA006FDFEE /* LMAddDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAddDairyViewController.m; sourceTree = "<group>"; };
 		5093D6891E936AE9006FDFEE /* LMReadDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMReadDairyViewController.h; sourceTree = "<group>"; };
 		5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMReadDairyViewController.m; sourceTree = "<group>"; };
+		50CA8ADF1EB041D000662476 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		50CA8AE11EB041EC00662476 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		50EFFB7F1E9E0193005330FA /* UPWMUserInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWMUserInterfaceManager.h; sourceTree = "<group>"; };
 		50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWMUserInterfaceManager.m; sourceTree = "<group>"; };
 		50EFFB811E9E0193005330FA /* UPWSizeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWSizeUtil.h; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CA8AE21EB041EC00662476 /* CoreMedia.framework in Frameworks */,
+				50CA8AE01EB041D000662476 /* AssetsLibrary.framework in Frameworks */,
 				507F5D9D1E8FA5F500FDD2CB /* CoreGraphics.framework in Frameworks */,
 				507F5D9B1E8FA5EC00FDD2CB /* AVFoundation.framework in Frameworks */,
 				507F5D991E8FA5E700FDD2CB /* CFNetwork.framework in Frameworks */,
@@ -531,6 +537,8 @@
 		507F5D7D1E8FA57F00FDD2CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50CA8AE11EB041EC00662476 /* CoreMedia.framework */,
+				50CA8ADF1EB041D000662476 /* AssetsLibrary.framework */,
 				507F5D9C1E8FA5F500FDD2CB /* CoreGraphics.framework */,
 				507F5D9A1E8FA5EC00FDD2CB /* AVFoundation.framework */,
 				507F5D981E8FA5E700FDD2CB /* CFNetwork.framework */,

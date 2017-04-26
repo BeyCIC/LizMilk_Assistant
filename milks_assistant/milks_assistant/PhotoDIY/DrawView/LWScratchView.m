@@ -39,6 +39,7 @@
     CGContextAddLineToPoint(contextMask, endPoint.x * scale, (self.frame.size.height - endPoint.y) * scale);
     CGContextStrokePath(contextMask);
     [self setNeedsDisplay];
+    [self layoutSubviews];
 
 }
 

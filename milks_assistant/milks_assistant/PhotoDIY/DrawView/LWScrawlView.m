@@ -30,9 +30,22 @@ CGSize fitPageToScreen(CGSize page, CGSize screen) {
     return CGSizeMake(hscale, vscale);
 }
 
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self awakeFromNib];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
 
+    self.backgroundColor = [UIColor clearColor];
+    self.opaque = YES;
+    self.userInteractionEnabled = YES;
+    self.contentMode = UIViewContentModeScaleToFill;
+    
     curves = [NSMutableArray array];
 
     _rec = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onDrag:)];

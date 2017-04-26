@@ -25,27 +25,26 @@
         [_mosaicImageView setContentMode:UIViewContentModeScaleAspectFit];
         [_mosaicImageView setBackgroundColor:[UIColor clearColor]];
         _mosaicImageView.opaque = YES;
-        _mosaicImageView.clearsContextBeforeDrawing = YES;
-        _mosaicImageView.autoresizesSubviews = YES;
-        [_mosaicImageView setContentStretch:CGRectMake(0, 0, 1, 1)];
+//        _mosaicImageView.clearsContextBeforeDrawing = YES;
+//        _mosaicImageView.autoresizesSubviews = YES;
+//        [_mosaicImageView setContentStretch:CGRectMake(0, 0, 1, 1)];
         _mosaicImageView.semanticContentAttribute = UISemanticContentAttributeUnspecified;
         
         _scratchView = [[LWScratchView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         
         _scratchView.userInteractionEnabled = YES;
-        _scratchView.opaque = YES;
-        _scratchView.clearsContextBeforeDrawing = YES;
-        _scratchView.autoresizesSubviews = YES;
-        [_scratchView setContentStretch:CGRectMake(0, 0, 1, 1)];
+//        _scratchView.opaque = YES;
+//        _scratchView.clearsContextBeforeDrawing = YES;
+//        _scratchView.autoresizesSubviews = YES;
+//        [_scratchView setContentStretch:CGRectMake(0, 0, 1, 1)];
         _scratchView.contentMode = UIViewContentModeScaleToFill;
-        
         _scrawlView = [[LWScrawlView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _scrawlView.userInteractionEnabled = YES;
         _scrawlView.userInteractionEnabled = YES;
         _scrawlView.opaque = YES;
-        _scrawlView.clearsContextBeforeDrawing = YES;
-        _scrawlView.autoresizesSubviews = YES;
-        [_scrawlView setContentStretch:CGRectMake(0, 0, 1, 1)];
+//        _scrawlView.clearsContextBeforeDrawing = YES;
+//        _scrawlView.autoresizesSubviews = YES;
+//        [_scrawlView setContentStretch:CGRectMake(0, 0, 1, 1)];
         _scrawlView.contentMode = UIViewContentModeScaleToFill;
         _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 50, 70, 40, 40)];
 //        _deleteBtn.backgroundColor = [UIColor redColor];
@@ -56,6 +55,7 @@
         
         [_mosaicBtn addTarget:self action:@selector(openOrCloseMosaic:) forControlEvents:UIControlEventTouchUpInside];
         [_mosaicBtn setImage:[UIImage imageNamed:@"macaic"] forState:UIControlStateNormal];
+        [_mosaicBtn setImage:[UIImage imageNamed:@"macaic_selected"] forState:UIControlStateSelected];
         _mosaicBtn.userInteractionEnabled = YES;
         _drawBar = [[LWDrawBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 140, frame.size.width, 140)];
         
@@ -73,6 +73,7 @@
 
 //开启关闭马赛克按钮
 - (void)openOrCloseMosaic:(UIButton *)mosaicButton{
+//    mosaicButton.selected = YES;
     if (!mosaicButton.selected) { //close
         //改变层级关系,并隐藏画笔视图
         self.scrawlView.hidden = YES;
