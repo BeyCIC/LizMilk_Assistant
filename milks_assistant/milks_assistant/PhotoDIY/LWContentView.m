@@ -83,7 +83,7 @@
 
 //初次启动,加载默认图片
 - (void)loadDefaultImage {
-    UIImage *inputImage = [UIImage imageNamed:@"Lambeau.jpg"];
+    UIImage *inputImage = [UIImage imageNamed:@"panda"];
     [self loadPhoto:inputImage];
 }
 

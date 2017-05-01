@@ -78,7 +78,7 @@
     if (indexPath.section == 0) {
         LuHeaderCell* cell = [[LuHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"header"];
         cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 180);
-        [cell setUserHeader:@"icon_header"];
+        [cell setUserHeader:@"lizhead"];
         [cell setUserName:@"刘磊璐"];
         return cell;
     }
@@ -164,6 +164,9 @@
         
         _headerIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
         _name = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
+        _headerIcon.layer.cornerRadius = 30;
+    
+        _headerIcon.layer.masksToBounds = YES;
         _name.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_headerIcon];
         [self.contentView addSubview:_name];
