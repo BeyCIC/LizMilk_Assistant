@@ -197,6 +197,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 {
     return YES;
 }
+
 /**
  *  监听手势的改变
  */
