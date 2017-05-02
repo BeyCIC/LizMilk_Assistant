@@ -16,6 +16,9 @@
 #import "PhotoDIYViewController.h"
 #import "ViewController.h"
 
+#import "SetpasswordViewController.h"
+#import "KeychainData.h"
+
 @interface DashBoardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 {
     DashCollectionViewFlowLayout * layout;
@@ -108,6 +111,19 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     self.navigationItem.rightBarButtonItem = phoneButton;
     
     [self makeCollectionView];
+    BOOL isSave = [KeychainData isSave]; //是否有保存
+    if (isSave) {
+        
+        SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+        setpass.string = @"验证密码";
+        [self presentViewController:setpass animated:YES completion:nil];
+    }
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
 }
 
 - (void)photoDIY:(UIButton*)sender {

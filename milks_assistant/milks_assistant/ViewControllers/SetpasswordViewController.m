@@ -23,15 +23,23 @@
     
     /************************* start **********************************/
     
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(0, 0, 64, 64);
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     
     AliPayViews *alipay = [[AliPayViews alloc] initWithFrame:self.view.bounds];
     
     if ([self.string isEqualToString:@"验证密码"]) {
         alipay.gestureModel = ValidatePwdModel;
     } else if ([self.string isEqualToString:@"修改密码"]) {
+        [self.view addSubview:backBtn];
         alipay.gestureModel = AlertPwdModel;
     } else if ([self.string isEqualToString:@"重置密码"]) {
         alipay.gestureModel = SetPwdModel;
+        [self.view addSubview:backBtn];
     } else {
         alipay.gestureModel = NoneModel;
     }
@@ -41,26 +49,7 @@
     };
     
     [self.view addSubview:alipay];
-    
-    
     /************************* end **********************************/
-
-    
-    
-    
-    
-    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backBtn.frame = CGRectMake(0, 0, 64, 64);
-    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
-    [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:backBtn];
-    
-    
-    
-    
-    
-    
-    
 }
 
 - (void)back  {
