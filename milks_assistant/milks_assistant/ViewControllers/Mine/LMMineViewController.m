@@ -7,6 +7,10 @@
 //
 
 #import "LMMineViewController.h"
+#import "AliPayViews.h"
+#import "KeychainData.h"
+#import "SetpasswordViewController.h"
+#import "MBProgressHUD.h"
 
 @interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource>{
     
@@ -50,7 +54,7 @@
     [_tableView reloadData];
     [self.view addSubview:_tableView];
     
-    _tableSource = @[@"Lizzie",@"关于我们",@"客服热线",@"帮助中心",@"意见反馈",@"牛奶生活助手"];
+    _tableSource = @[@"Lizzie",@"关于我们",@"客服热线",@"帮助中心",@"意见反馈",@"牛奶生活助手",@"手势密码"];
     
 }
 
@@ -65,7 +69,7 @@
     if (section == 0) {
         return 1;
     }
-    return 6;
+    return _tableSource.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -132,9 +136,63 @@
             
         }
             break;
+        case 6:
+        {
+            
+            [self forgotPassword];
+            SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+            setpass.string = @"重置密码";
+            [self presentViewController:setpass animated:YES completion:nil];
+        }
+            break;
             
         default:
             break;
+    }
+}
+/**
+ *  忘记密码
+ */
+- (void)forgotPassword
+{
+    [KeychainData forgotPsw];
+    [self hudAction:@"忘记密码"];
+}
+
+- (void)hudAction:(NSString *)contextStr
+{
+    MBProgressHUD *hud = [[MBProgressHUD alloc] init];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = contextStr;
+    hud.animationType = MBProgressHUDAnimationZoom;
+    [hud showAnimated:YES];
+    [self.view addSubview:hud];
+    [self performSelector:@selector(removeHUB:) withObject:hud afterDelay:1];
+    
+}
+- (void)removeHUB:(MBProgressHUD *)hud
+{
+    if (hud) {
+        [hud  hideAnimated:YES];
+        [hud removeFromSuperview];
+        hud = nil;
+    }
+}
+
+/**
+ *  验证密码
+ */
+- (void)validatePassword
+{
+    BOOL isSave = [KeychainData isSave]; //是否有保存
+    if (isSave) {
+        
+        SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+        setpass.string = @"验证密码";
+        [self presentViewController:setpass animated:YES completion:nil];
+        
+    } else {
+        [self hudAction:@"还没有设置密码，不能直接登录"];
     }
 }
 

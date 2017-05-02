@@ -11,6 +11,8 @@
 #import "LMMineViewController.h"
 #import "LMDairyListViewController.h"
 #import "DashBoardViewController.h"
+#import "SetpasswordViewController.h"
+#import "KeychainData.h"
 
 
 @interface WelcomeViewController()<UITabBarControllerDelegate>
@@ -110,6 +112,15 @@
     thirdNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[2] selectedImage:@"tab4_hl" unselectedImageName:@"tab4"];
 
     _tabBarController.viewControllers = @[firstNavi,secondNavi,thirdNavi];
+    
+    BOOL isSave = [KeychainData isSave]; //是否有保存
+    if (isSave) {
+        
+        SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+        setpass.string = @"验证密码";
+        [_tabBarController presentViewController:setpass animated:YES completion:nil];
+        
+    }
     //标示我的消息中有推送信息
     /* “卡包”替换“我的”，取消“红点”功能
     self.dotImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"push_info@2x.png"]];
