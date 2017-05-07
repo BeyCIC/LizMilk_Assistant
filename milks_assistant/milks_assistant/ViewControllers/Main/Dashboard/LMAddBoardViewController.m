@@ -24,14 +24,16 @@
     _editView.delegate = self;
     _editView.textColor = [UIColor blackColor];
     
-    sureBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 250, SCREEN_WIDTH-60, 35)];
-    [sureBtn setTitle:@"嗯，我写好了" forState:UIControlStateNormal];
+//    sureBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 250, SCREEN_WIDTH-60, 35)];
+    sureBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-35)/2.0, 450,35, 35)];
+    [sureBtn setBackgroundImage:[UIImage imageNamed:@"sure_btn"] forState:UIControlStateNormal];
+//    [sureBtn setTitle:@"嗯，我写好了" forState:UIControlStateNormal];
     sureBtn.layer.cornerRadius = 6;
     sureBtn.layer.masksToBounds = YES;
     
     [sureBtn addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:_editView];
     [self.view addSubview:sureBtn];
     // Do any additional setup after loading the view.

@@ -116,7 +116,7 @@
     // life
     LMMineViewController* lifeVC = [[LMMineViewController alloc] init];
     UINavigationController* thirdNavi = [[UINavigationController alloc] initWithRootViewController:lifeVC];
-    thirdNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[3] selectedImage:@"tab4_hl" unselectedImageName:@"tab4"];
+    thirdNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[3] selectedImage:@"tab6_hl" unselectedImageName:@"tab6"];
 
 
     
