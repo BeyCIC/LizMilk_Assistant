@@ -13,6 +13,7 @@
 #import "DashBoardViewController.h"
 #import "SetpasswordViewController.h"
 #import "KeychainData.h"
+#import "PhotoDIYViewController.h"
 
 
 @interface WelcomeViewController()<UITabBarControllerDelegate>
@@ -94,24 +95,32 @@
 - (void)fillTheTabViewControllersContent
 {
     // 获取tab标题数组
-    NSArray* tabItems = @[@"首页",@"日志",@"我的"];
+    NSArray* tabItems = @[@"便签",@"美图",@"日记",@"我的"];
     
     // feature
     DashBoardViewController* mainVC = [[DashBoardViewController alloc] init];
     UINavigationController* firstNavi = [[UINavigationController alloc] initWithRootViewController:mainVC];
     firstNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[0] selectedImage:@"tab1_hl" unselectedImageName:@"tab1"];
     
+    PhotoDIYViewController* photoVC = [[PhotoDIYViewController alloc] init];
+    UINavigationController* photoNavi = [[UINavigationController alloc] initWithRootViewController:photoVC];
+    photoNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[1] selectedImage:@"tab5_hl" unselectedImageName:@"tab5"];
+
+    
     // coupon
     LMDairyListViewController* dairyVC2 = [[LMDairyListViewController alloc] init];
     UINavigationController* secondNavi = [[UINavigationController alloc] initWithRootViewController:dairyVC2];
-    secondNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[1] selectedImage:@"tab2_hl" unselectedImageName:@"tab2"];
+    secondNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[2] selectedImage:@"tab2_hl" unselectedImageName:@"tab2"];
+    
     
     // life
     LMMineViewController* lifeVC = [[LMMineViewController alloc] init];
     UINavigationController* thirdNavi = [[UINavigationController alloc] initWithRootViewController:lifeVC];
-    thirdNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[2] selectedImage:@"tab4_hl" unselectedImageName:@"tab4"];
+    thirdNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[3] selectedImage:@"tab4_hl" unselectedImageName:@"tab4"];
 
-    _tabBarController.viewControllers = @[firstNavi,secondNavi,thirdNavi];
+
+    
+    _tabBarController.viewControllers = @[firstNavi,photoNavi,secondNavi,thirdNavi];
     
 
     //标示我的消息中有推送信息

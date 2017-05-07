@@ -9,6 +9,7 @@
 #import "LMDairyListViewController.h"
 #import "LMAddDairyViewController.h"
 #import "LMReadDairyViewController.h"
+#import "Util.h"
 
 @interface LMDairyListViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
@@ -87,7 +88,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 50;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,7 +96,7 @@
     lizzieDairyCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[lizzieDairyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
+        cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
         [cell setInfo:_dataArr[indexPath.row]];
     }
     return cell;
@@ -135,9 +136,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.dairyContent = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-30, 50)];
+        self.note_icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 53, 114)];
+        self.note_icon.image = [UIImage imageNamed:@"note_icon"];
+        
+        self.dairyContent = [[UILabel alloc] initWithFrame:CGRectMake(40, 20, SCREEN_WIDTH-30, 50)];
         self.dairyContent.textAlignment = NSTextAlignmentLeft;
-        self.dairyContent.font = [UIFont systemFontOfSize:16];
+        self.dairyContent.font = [UIFont systemFontOfSize:15];
         self.dairyContent.textColor = [UIColor blackColor];
         
         
@@ -149,27 +153,31 @@
         self.dairyDate = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 25)];
         self.dairyDate.textAlignment = NSTextAlignmentRight;
         self.dairyDate.font = [UIFont systemFontOfSize:15];
-        self.dairyDate.textColor = [UIColor greenColor];
+//        self.dairyDate.textColor = [UIColor greenColor];
         
+        [self.contentView addSubview:self.note_icon];
         [self.contentView addSubview:_dairyContent];
-        [self.contentView addSubview:_dairyMood];
+//        [self.contentView addSubview:_dairyMood];
         [self.contentView addSubview:_dairyDate];
     }
     return self;
 }
 
 - (void)setFrame:(CGRect)frame {
-    
-    self.dairyContent.frame = CGRectMake(5, 5, SCREEN_WIDTH-30, frame.size.height-25-10);
+    self.note_icon.frame = CGRectMake(0, 0, 27, 50);
+    self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-65, frame.size.height-25-10);
     self.dairyMood.frame = CGRectMake(5, frame.size.height-25-10, SCREEN_WIDTH-30, 50);
     self.dairyDate.frame = CGRectMake(frame.size.width-150, frame.size.height-25-10, 140, 25);
 }
 
 - (void)setInfo:(LizzieDiaryModel *)info {
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [dateFormatter dateFromString:info.time];
     self.dairyContent.text = info.diaryContent;
     self.dairyMood.text = info.mood;
-    self.dairyDate.text = [NSString stringWithFormat:@"日期: %@",info.time];
+    self.dairyDate.text = [NSString stringWithFormat:@"%@",[Util calculateDateWith:date]];
 }
 
 @end

@@ -238,4 +238,33 @@
     [userDefaults synchronize];
 }
 
++ (NSString*)calculateDateWith:(NSDate*)date {
+    
+    if (date) {
+        // 1.获得年月日
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSUInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay |NSCalendarUnitHour |NSCalendarUnitMinute;
+        NSDateComponents *cmp1 = [calendar components:unitFlags fromDate:date];
+        NSDateComponents *cmp2 = [calendar components:unitFlags fromDate:[NSDate date]];
+        
+        // 2.格式化日期
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        BOOL isToday = NO;
+        if ([cmp1 day] == [cmp2 day]) { // 今天
+            formatter.dateFormat = @" HH:mm";
+            isToday = YES;
+        } else if ([cmp1 year] == [cmp2 year]) { // 今年
+            formatter.dateFormat = @"MM-dd HH:mm";
+        } else {
+            formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+        }
+        NSString *time = [formatter stringFromDate:date];
+        
+        return time;
+        
+    } else {
+        return @"";
+    }
+}
+
 @end

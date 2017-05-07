@@ -58,11 +58,16 @@
     if ([self checkInput]) {
         LizzieDairyDataInfo *info = [[LizzieDairyDataInfo alloc] init];
         LizzieDiaryModel *dairy = [[LizzieDiaryModel alloc] init];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+
         dairy.userId = @"18801755762";
         dairy.userName = @"lizzie_liu";
         dairy.diaryContent = _editView.text;
         dairy.mood = @"忧郁";
-        dairy.time = @"20170412";
+        dairy.time = strDate;
         dairy.location = @"上海";
         [info addDiary:dairy];
         [self.navigationController popViewControllerAnimated:YES];

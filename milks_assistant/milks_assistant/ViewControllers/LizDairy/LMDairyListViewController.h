@@ -16,6 +16,7 @@
 
 @interface lizzieDairyCell : UITableViewCell
 
+@property(nonatomic,strong)UIImageView *note_icon;
 @property(nonatomic,strong)UILabel *dairyContent;
 @property(nonatomic,strong)UILabel *dairyDate;
 @property(nonatomic,strong)UILabel *dairyMood;

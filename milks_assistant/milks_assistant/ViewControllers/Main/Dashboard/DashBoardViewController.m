@@ -184,8 +184,8 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     DashBoardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     DashBoardModel * m = nil;
     m = _DashModelArray[indexPath.row];
-    cell.backgroundColor = [UIColor colorWithString:m.color];
-    [cell setTextColor:[UIColor whiteColor]];
+    cell.backgroundColor = UP_COL_INT_RGB(254, 243, 161);
+    [cell setTextColor:[UIColor colorWithWhite:0.2 alpha:0.85]];
     cell.labelTitle.text = m.title;
      return cell;
     

@@ -58,4 +58,7 @@
 + (NSInteger)readNSUserDefaultsInt:(NSString*)key;
 
 + (void)saveNSUserDefaults:(NSString*)key value:(NSInteger)value;
+
++ (NSString*)calculateDateWith:(NSDate*)date;
+
 @end

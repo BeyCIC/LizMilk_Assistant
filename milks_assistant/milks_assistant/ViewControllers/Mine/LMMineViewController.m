@@ -54,7 +54,7 @@
     [_tableView reloadData];
     [self.view addSubview:_tableView];
     
-    _tableSource = @[@"Lizzie",@"关于我们",@"客服热线",@"帮助中心",@"意见反馈",@"牛奶生活助手",@"手势密码"];
+    _tableSource = @[@"关于我们",@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
     
 }
 

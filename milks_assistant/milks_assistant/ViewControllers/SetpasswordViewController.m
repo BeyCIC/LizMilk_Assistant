@@ -35,11 +35,9 @@
     if ([self.string isEqualToString:@"验证密码"]) {
         alipay.gestureModel = ValidatePwdModel;
     } else if ([self.string isEqualToString:@"修改密码"]) {
-        [self.view addSubview:backBtn];
         alipay.gestureModel = AlertPwdModel;
     } else if ([self.string isEqualToString:@"重置密码"]) {
         alipay.gestureModel = SetPwdModel;
-        [self.view addSubview:backBtn];
     } else {
         alipay.gestureModel = NoneModel;
     }
@@ -49,6 +47,15 @@
     };
     
     [self.view addSubview:alipay];
+    if ([self.string isEqualToString:@"验证密码"]) {
+        alipay.gestureModel = ValidatePwdModel;
+    } else if ([self.string isEqualToString:@"修改密码"]) {
+        [self.view addSubview:backBtn];
+    } else if ([self.string isEqualToString:@"重置密码"]) {
+        [self.view addSubview:backBtn];
+    } else {
+        [self.view addSubview:backBtn];
+    }
     /************************* end **********************************/
 }
 
