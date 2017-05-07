@@ -61,4 +61,5 @@
 
 + (NSString*)calculateDateWith:(NSDate*)date;
 
++ (NSString *)bundleSeedID;
 @end

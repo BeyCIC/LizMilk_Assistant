@@ -33,6 +33,7 @@
 		50209FDE1EBF1F8E00D60E0C /* LMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FDD1EBF1F8E00D60E0C /* LMRegisterViewController.m */; };
 		50209FE11EBF294100D60E0C /* LMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE01EBF294100D60E0C /* LMLoginViewController.m */; };
 		50209FE41EBF2D3000D60E0C /* LMFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */; };
+		50209FE71EBF586E00D60E0C /* UPXTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE61EBF586E00D60E0C /* UPXTouchIDManager.m */; };
 		503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */; };
 		503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */; };
 		503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */; };
@@ -178,6 +179,8 @@
 		50209FE01EBF294100D60E0C /* LMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLoginViewController.m; sourceTree = "<group>"; };
 		50209FE21EBF2D3000D60E0C /* LMFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFeedBackViewController.h; sourceTree = "<group>"; };
 		50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFeedBackViewController.m; sourceTree = "<group>"; };
+		50209FE51EBF586E00D60E0C /* UPXTouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPXTouchIDManager.h; sourceTree = "<group>"; };
+		50209FE61EBF586E00D60E0C /* UPXTouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPXTouchIDManager.m; sourceTree = "<group>"; };
 		503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbConfig.h; sourceTree = "<group>"; };
 		503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
@@ -793,6 +796,8 @@
 		508B3ED31E8E440900C5CA2D /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				50209FE51EBF586E00D60E0C /* UPXTouchIDManager.h */,
+				50209FE61EBF586E00D60E0C /* UPXTouchIDManager.m */,
 				508B3F191E8E537000C5CA2D /* LMMineViewController.h */,
 				508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */,
 				509364AF1EB86E6700EEBBEB /* LMSecuritySettingViewController.h */,
@@ -1150,6 +1155,7 @@
 				501658811EAAE6EC0023DE54 /* LWFilterImageView.m in Sources */,
 				5016587A1EAAE6EC0023DE54 /* LWImageCropView.m in Sources */,
 				50EFFBAA1E9E1429005330FA /* DashBoardModel.m in Sources */,
+				50209FE71EBF586E00D60E0C /* UPXTouchIDManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
