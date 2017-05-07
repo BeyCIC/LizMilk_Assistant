@@ -21,6 +21,12 @@
     // Override point for customization after application launch.
     
     [self createTable];
+    BOOL isLoad = [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLoad"];
+    if (!isLoad) {
+         [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:@"isDoubleLine"];
+    } else {
+         [[NSUserDefaults standardUserDefaults] setInteger:YES forKey:@"firstLoad"];
+    }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];
@@ -70,10 +76,15 @@
     if ([Util readNSUserDefaultsInt:dbVersion] < dbVersionNew) {//版本低,删表
         [Util saveNSUserDefaults:dbVersion value:dbVersionNew];
         [dbConnection deleteTable:TABLE_NAME_DIARY];
+        [dbConnection deleteTable:TABLE_NAME_BOARD];
     }
+    
     
     if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//消息表
         [dbConnection createTable:TABLE_NAME_DIARY withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
+    }
+    if (![dbConnection isTableOK:TABLE_NAME_BOARD]) {//消息表
+        [dbConnection createTable:TABLE_NAME_BOARD withArguments:@"Did text,title text,color text,size_x text,size_y text"];
     }
     
     [[dbConnection DB] close];

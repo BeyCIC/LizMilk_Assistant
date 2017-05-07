@@ -18,6 +18,9 @@
 
 #import "SetpasswordViewController.h"
 #import "KeychainData.h"
+#import "LizzieBoardDataInfo.h"
+#import "LMAddBoardViewController.h"
+#import "LMModBoardViewController.h"
 
 @interface DashBoardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 {
@@ -88,7 +91,12 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    [self makeDate];
+ 
+    if(_collectionView) {
+         [_collectionView reloadData];
+    }
+   
 }
 - (void)viewDidLoad {
 
@@ -104,7 +112,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"牛奶璐";
+    self.navigationItem.title = @"便签";
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_add_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(photoDIY:)];
@@ -127,7 +135,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)photoDIY:(UIButton*)sender {
-    PhotoDIYViewController *nextCtl = [[PhotoDIYViewController alloc] init];
+    LMAddBoardViewController *nextCtl = [[LMAddBoardViewController alloc] init];
     
     [self.navigationController pushViewController:nextCtl animated:YES];
 }
@@ -148,20 +156,26 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 - (void)makeDate
 {
-    NSString * filePath = [[NSBundle mainBundle]pathForResource:@"dateAll" ofType:@"txt"];
-    
-    NSData * data = [NSData dataWithContentsOfFile:filePath];
+//    NSString * filePath = [[NSBundle mainBundle]pathForResource:@"dateAll" ofType:@"txt"];
+//    
+//    NSData * data = [NSData dataWithContentsOfFile:filePath];
     
     //  NSMutableDictionary * dictqq = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSMutableArray * array =   [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//    NSMutableArray * array =   [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     _DashModelArray = [NSMutableArray array];
-    for ( NSMutableDictionary * dict in array) {
-      
-        DashBoardModel * m = [[DashBoardModel alloc] init];
-        [m setValuesForKeysWithDictionary:dict];
-        [_DashModelArray addObject:m];
-        
+    NSArray * arr = [LizzieBoardDataInfo getBoardObjects];
+    if (arr) {
+        _DashModelArray = [NSMutableArray arrayWithArray: arr];
     }
+    _DashModelArray = (NSMutableArray *)[[_DashModelArray reverseObjectEnumerator] allObjects];
+     layout.DashModelArray = [_DashModelArray mutableCopy];
+//    for ( NSMutableDictionary * dict in array) {
+//      
+//        DashBoardModel * m = [[DashBoardModel alloc] init];
+//        [m setValuesForKeysWithDictionary:dict];
+//        [_DashModelArray addObject:m];
+//        
+//    }
 }
 
 #pragma collectionView代理方法
@@ -184,7 +198,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     DashBoardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     DashBoardModel * m = nil;
     m = _DashModelArray[indexPath.row];
-    cell.backgroundColor = UP_COL_INT_RGB(254, 243, 161);
+    cell.backgroundColor = UP_COL_INT_RGB(175, 244, 254);
     [cell setTextColor:[UIColor colorWithWhite:0.2 alpha:0.85]];
     cell.labelTitle.text = m.title;
      return cell;
@@ -193,7 +207,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 // 选中cell
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self showAlertWithTitle:@"0_0" msg:@"使劲点我吧@" ok:@"亲亲😘" cancel:@"忍痛割爱"];
+    LMModBoardViewController *nextCtl = [[LMModBoardViewController alloc] init];
+    nextCtl.dashInfo = _DashModelArray[indexPath.row];
+    [self.navigationController pushViewController:nextCtl animated:YES];
 }
 
 /**

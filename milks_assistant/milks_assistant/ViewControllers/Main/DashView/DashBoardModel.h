@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface DashBoardModel : NSObject<NSCoding>
+@interface DashBoardModel : JSONModel
 
 @property (nonatomic,copy) NSString * Did;
 
 @property (nonatomic,copy) NSString * title;
 
 @property (nonatomic,copy) NSString * color;
-@property (nonatomic,assign) NSInteger size_x;
+@property (nonatomic,copy) NSString *size_x;
 
-@property (nonatomic,assign) NSInteger  size_y;
+@property (nonatomic,copy) NSString  *size_y;
 
 @end

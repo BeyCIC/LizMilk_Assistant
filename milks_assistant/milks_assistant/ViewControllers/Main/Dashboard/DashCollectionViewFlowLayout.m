@@ -84,15 +84,15 @@
                 
                 model = _DashModelArray[i];
                 
-                if ((model.size_x == 1 )&& (model.size_y == 1) ) {
+                if (([model.size_x integerValue] == 1 )&& ([model.size_y integerValue] == 1) ) {
                     
                     tempi.size = SizeOneDash;
                     
-                }else if((model.size_x == 2 )&& (model.size_y == 1) ){
+                }else if(([model.size_x integerValue] == 2 )&& ([model.size_y integerValue] == 1) ){
                     
                     tempi.size = SizeTwoDash;
                     
-                }else if((model.size_x == 2 )&& (model.size_y == 2) ){
+                }else if(([model.size_x integerValue] == 2 )&& ([model.size_y integerValue] == 2) ){
                     
                     tempi.size = SizeThreeDash;
                     
@@ -102,13 +102,13 @@
                 // 第二个及后面的指标视图的大小和位置
                 model = _DashModelArray[i];
 
-                if ((model.size_x == 1 )&& (model.size_y == 1)) {
+                if (([model.size_x integerValue] == 1 )&& ([model.size_y integerValue] == 1)) {
 
                     tempi.size = SizeOneDash;
 
                     modeltwo = _DashModelArray[i-1];
 
-                    if ((modeltwo.size_x == 1 )&& (modeltwo.size_y == 1)) {
+                    if (([modeltwo.size_x integerValue] == 1 )&& ([modeltwo.size_y integerValue] == 1)) {
                         
                         if (tempj.origin.x > (Main_Screen_Width-3*KBianJu)/2.0 && tempj.origin.x < Main_Screen_Width*2/3) {
                             
@@ -124,13 +124,13 @@
                         tempi.origin = CGPointMake(KBianJu, CGRectGetMaxY(tempj) + KBianJu);
                     }
 
-                }else if((model.size_x == 2 )&& (model.size_y == 1)){
+                }else if(([model.size_x integerValue] == 2 )&& ([model.size_y integerValue] == 1)){
                     
                     tempi.size = SizeTwoDash;
                                         
                     tempi.origin = CGPointMake(KBianJu, CGRectGetMaxY(tempj) + KBianJu);
                     
-                }else if((model.size_x == 2 )&& (model.size_y == 2) ){
+                }else if(([model.size_x integerValue] == 2 )&& ([model.size_y integerValue] == 2) ){
                     
                     tempi.size = SizeThreeDash;
                     

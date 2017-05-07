@@ -55,7 +55,7 @@
 
 - (void)sureAction:(UIButton*)sender {
     
-    if ([self checkInput]) {
+    if (![_editView.text isEqualToString:@""]) {
         LizzieDairyDataInfo *info = [[LizzieDairyDataInfo alloc] init];
         LizzieDiaryModel *dairy = [[LizzieDiaryModel alloc] init];
         
@@ -73,6 +73,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         
+        [self showAlertWithTitle:@"提示" msg:@"请输入内容" ok:@"" cancel:@""];
     }
 }
 

@@ -171,3 +171,4 @@
 #define dbVersionNew                 6
 
 #define TABLE_NAME_DIARY            @"Lizziediary"
+#define TABLE_NAME_BOARD        @"DashBoard"

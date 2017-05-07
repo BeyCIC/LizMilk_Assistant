@@ -26,6 +26,9 @@
 		501658941EAAE7400023DE54 /* PDPhotoLibPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 501658921EAAE7400023DE54 /* PDPhotoLibPicker.m */; };
 		501658991EAAE7C80023DE54 /* Categorys.m in Sources */ = {isa = PBXBuildFile; fileRef = 501658981EAAE7C80023DE54 /* Categorys.m */; };
 		5016589B1EAAE8CC0023DE54 /* Lambeau.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5016589A1EAAE8CC0023DE54 /* Lambeau.jpg */; };
+		50209FD11EBEE08000D60E0C /* LMModBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD01EBEE08000D60E0C /* LMModBoardViewController.m */; };
+		50209FD41EBEE59E00D60E0C /* LizzieBoardDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD31EBEE59E00D60E0C /* LizzieBoardDataInfo.m */; };
+		50209FD71EBEEF5900D60E0C /* LMAddBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */; };
 		503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */; };
 		503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */; };
 		503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */; };
@@ -157,6 +160,12 @@
 		501658971EAAE7C80023DE54 /* Categorys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categorys.h; sourceTree = "<group>"; };
 		501658981EAAE7C80023DE54 /* Categorys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categorys.m; sourceTree = "<group>"; };
 		5016589A1EAAE8CC0023DE54 /* Lambeau.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lambeau.jpg; sourceTree = "<group>"; };
+		50209FCF1EBEE08000D60E0C /* LMModBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMModBoardViewController.h; sourceTree = "<group>"; };
+		50209FD01EBEE08000D60E0C /* LMModBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMModBoardViewController.m; sourceTree = "<group>"; };
+		50209FD21EBEE59E00D60E0C /* LizzieBoardDataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LizzieBoardDataInfo.h; sourceTree = "<group>"; };
+		50209FD31EBEE59E00D60E0C /* LizzieBoardDataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LizzieBoardDataInfo.m; sourceTree = "<group>"; };
+		50209FD51EBEEF5900D60E0C /* LMAddBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAddBoardViewController.h; sourceTree = "<group>"; };
+		50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAddBoardViewController.m; sourceTree = "<group>"; };
 		503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbConfig.h; sourceTree = "<group>"; };
 		503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
@@ -281,8 +290,8 @@
 		50EFFB9E1E9E1429005330FA /* DashCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		50EFFBA01E9E1429005330FA /* DashBoardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCollectionViewCell.h; sourceTree = "<group>"; };
 		50EFFBA11E9E1429005330FA /* DashBoardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCollectionViewCell.m; sourceTree = "<group>"; };
-		50EFFBA21E9E1429005330FA /* DashBoardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardModel.h; sourceTree = "<group>"; };
-		50EFFBA31E9E1429005330FA /* DashBoardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardModel.m; sourceTree = "<group>"; };
+		50EFFBA21E9E1429005330FA /* DashBoardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DashBoardModel.h; path = ../../ViewControllers/Main/DashView/DashBoardModel.h; sourceTree = "<group>"; };
+		50EFFBA31E9E1429005330FA /* DashBoardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DashBoardModel.m; path = ../../ViewControllers/Main/DashView/DashBoardModel.m; sourceTree = "<group>"; };
 		50EFFBA41E9E1429005330FA /* dateAll.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dateAll.txt; sourceTree = "<group>"; };
 		50EFFBA51E9E1429005330FA /* UIColor+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NSString.h"; sourceTree = "<group>"; };
 		50EFFBA61E9E1429005330FA /* UIColor+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NSString.m"; sourceTree = "<group>"; };
@@ -488,6 +497,10 @@
 		503A60091E8F9EB200D3AF51 /* DBUtils */ = {
 			isa = PBXGroup;
 			children = (
+				50EFFBA21E9E1429005330FA /* DashBoardModel.h */,
+				50EFFBA31E9E1429005330FA /* DashBoardModel.m */,
+				50209FD21EBEE59E00D60E0C /* LizzieBoardDataInfo.h */,
+				50209FD31EBEE59E00D60E0C /* LizzieBoardDataInfo.m */,
 				503A60341E8FA28400D3AF51 /* LizzieDiaryModel.h */,
 				503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */,
 				503A600A1E8F9EB200D3AF51 /* LizzieDairyDataInfo.h */,
@@ -822,10 +835,14 @@
 		50EFFB9A1E9E1429005330FA /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				50209FD51EBEEF5900D60E0C /* LMAddBoardViewController.h */,
+				50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */,
 				50EFFB9B1E9E1429005330FA /* DashBoardViewController.h */,
 				50EFFB9C1E9E1429005330FA /* DashBoardViewController.m */,
 				50EFFB9D1E9E1429005330FA /* DashCollectionViewFlowLayout.h */,
 				50EFFB9E1E9E1429005330FA /* DashCollectionViewFlowLayout.m */,
+				50209FCF1EBEE08000D60E0C /* LMModBoardViewController.h */,
+				50209FD01EBEE08000D60E0C /* LMModBoardViewController.m */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -835,8 +852,6 @@
 			children = (
 				50EFFBA01E9E1429005330FA /* DashBoardCollectionViewCell.h */,
 				50EFFBA11E9E1429005330FA /* DashBoardCollectionViewCell.m */,
-				50EFFBA21E9E1429005330FA /* DashBoardModel.h */,
-				50EFFBA31E9E1429005330FA /* DashBoardModel.m */,
 				50EFFBA41E9E1429005330FA /* dateAll.txt */,
 				50EFFBA51E9E1429005330FA /* UIColor+NSString.h */,
 				50EFFBA61E9E1429005330FA /* UIColor+NSString.m */,
@@ -1034,6 +1049,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503A602D1E8FA24400D3AF51 /* JSONModelError.m in Sources */,
+				50209FD11EBEE08000D60E0C /* LMModBoardViewController.m in Sources */,
 				503A602A1E8FA24400D3AF51 /* JSONModel.m in Sources */,
 				501658991EAAE7C80023DE54 /* Categorys.m in Sources */,
 				5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */,
@@ -1056,6 +1072,7 @@
 				503A60081E8F9DA900D3AF51 /* FMResultSet.m in Sources */,
 				503A60061E8F9DA900D3AF51 /* FMDatabasePool.m in Sources */,
 				503A602C1E8FA24400D3AF51 /* JSONModelClassProperty.m in Sources */,
+				50209FD71EBEEF5900D60E0C /* LMAddBoardViewController.m in Sources */,
 				50FA36491EAB40DE001A04AD /* ViewController.m in Sources */,
 				509364A81EB86CA000EEBBEB /* AlipaySubItem.m in Sources */,
 				509364B11EB86E6700EEBBEB /* LMSecuritySettingViewController.m in Sources */,
@@ -1064,6 +1081,7 @@
 				508B3F121E8E514300C5CA2D /* LMBaseViewController.m in Sources */,
 				503A602F1E8FA24400D3AF51 /* JSONAPI.m in Sources */,
 				5093D6851E9367CF006FDFEE /* LMDairyListViewController.m in Sources */,
+				50209FD41EBEE59E00D60E0C /* LizzieBoardDataInfo.m in Sources */,
 				501658821EAAE6EC0023DE54 /* LWImageZoomView.m in Sources */,
 				508B3E9A1E8E40C800C5CA2D /* main.m in Sources */,
 				50EFFB991E9E01F2005330FA /* UPWRotateAnimationView.m in Sources */,

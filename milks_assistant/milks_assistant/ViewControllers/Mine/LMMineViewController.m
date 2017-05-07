@@ -54,7 +54,7 @@
     [_tableView reloadData];
     [self.view addSubview:_tableView];
     
-    _tableSource = @[@"关于我们",@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
+    _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
     
 }
 
@@ -123,6 +123,10 @@
             break;
         case 3:
         {
+            [self forgotPassword];
+            SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+            setpass.string = @"重置密码";
+            [self presentViewController:setpass animated:YES completion:nil];
             
         }
             break;
