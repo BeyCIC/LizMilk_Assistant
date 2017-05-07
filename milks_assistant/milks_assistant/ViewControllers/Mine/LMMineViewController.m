@@ -12,6 +12,7 @@
 #import "SetpasswordViewController.h"
 #import "MBProgressHUD.h"
 #import "LMFeedBackViewController.h"
+#import "LMSecuritySettingViewController.h"
 
 @interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource>{
     
@@ -125,10 +126,13 @@
             break;
         case 3:
         {
-            [self forgotPassword];
-            SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
-            setpass.string = @"重置密码";
-            [self presentViewController:setpass animated:YES completion:nil];
+            LMSecuritySettingViewController *nextCtl = [[LMSecuritySettingViewController alloc] init];
+            [self.navigationController pushViewController:nextCtl animated:YES];
+            
+//            [self forgotPassword];
+//            SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+//            setpass.string = @"重置密码";
+//            [self presentViewController:setpass animated:YES completion:nil];
             
         }
             break;

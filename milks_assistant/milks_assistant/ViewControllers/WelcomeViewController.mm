@@ -78,6 +78,7 @@
     _tabBarController = [[UITabBarController alloc] init];
     _tabBarController.delegate = self;
     _tabBarController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    _tabBarController.tabBar.frame  = CGRectMake(0, _tabBarController.tabBar.frame.origin.y-10, SCREEN_WIDTH, 44);
     [UIView animateWithDuration:1 animations:^{
         _welcomeImageView.layer.opacity = 0.0f;
     } completion:^(BOOL finished) {
@@ -150,7 +151,7 @@
     UIImage* unselectedImage = [[UIImage imageNamed:unselectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:unselectedImage selectedImage:selectedImage];
-    tabBarItem.imageInsets = UIEdgeInsetsMake(-3, 0, 3, 0);
+//    tabBarItem.imageInsets = UIEdgeInsetsMake(-3, 0, 3, 0);
     return tabBarItem;
 }
 
