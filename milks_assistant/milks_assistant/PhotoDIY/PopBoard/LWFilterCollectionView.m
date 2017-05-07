@@ -55,7 +55,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LWFilterCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"LWFilterCollectionCell" forIndexPath:indexPath];
-    cell.titleLbl.text = self.filterDict.allKeys[indexPath.item];
+//    cell.titleLbl.text = self.filterDict.allKeys[indexPath.item];
+    cell.titleLbl.text = self.filterImageNameDict.allKeys[indexPath.item];
+    if ([cell.titleLbl.text isEqualToString:@"Gamma"]) {
+        cell.titleLbl.text = @"伽玛射线";
+    }
     NSString *imageName = self.filterImageNameDict.allKeys[indexPath.item];
     cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
