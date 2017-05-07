@@ -11,7 +11,9 @@
 #import "Categorys.h"
 #import "LWImageZoomView.h"
 
-@interface PhotoDIYViewController ()
+@interface PhotoDIYViewController ()<UIAlertViewDelegate,UIImagePickerControllerDelegate> {
+    UIAlertController *actionSheet;
+}
 
 @end
 
@@ -44,6 +46,7 @@
     [_toolBar.filtersBtn addTarget:self action:@selector(filterAction:) forControlEvents:UIControlEventTouchUpInside];
     [_toolBar.cropBtn addTarget:self action:@selector(cropAction:) forControlEvents:UIControlEventTouchUpInside];
     [_toolBar.drawBtn addTarget:self action:@selector(drawAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView loadDefaultImage];
     // Do any additional setup after loading the view.
 }
 
@@ -51,7 +54,7 @@
     [super viewDidAppear:animated];
     
     //绘图板添加默认图片
-    [self.contentView loadDefaultImage];
+//
 }
 
 
@@ -68,7 +71,44 @@
 
 
 - (IBAction)selPhotoAction:(id)sender {
-    [self.contentView showPhotos];
+    
+    actionSheet  = [UIAlertController alertControllerWithTitle:@"选择" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIImagePickerController *imagepicker = [[UIImagePickerController alloc] init];
+        imagepicker.delegate = self;
+        imagepicker.allowsEditing = NO;
+        
+        UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagepicker animated:YES completion:nil];
+        }];
+        
+        UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:imagepicker animated:YES completion:nil];
+        }];
+        UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [actionSheet addAction:libActon];
+        [actionSheet addAction:takeActon];
+        [actionSheet addAction:cancelActon];
+        [self presentViewController:actionSheet animated:YES completion:nil];
+    } else{
+        [self showAlertWithTitle:@"提示" msg:@"请设置访问权限" ok:@"确定" cancel:nil];
+    }
+
+//    [self.contentView showPhotos];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage *selImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (!selImage) {
+        return;
+    }
+    [self.contentView loadPhoto:selImage];
 }
 
 - (IBAction)filterAction:(id)sender {
