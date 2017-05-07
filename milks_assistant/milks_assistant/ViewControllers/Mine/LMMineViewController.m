@@ -107,7 +107,8 @@
     switch (indexPath.row) {
         case 0:
         {
-            
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18207485176"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
             break;
         case 1:
@@ -117,8 +118,7 @@
             break;
         case 2:
         {
-            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18801755762"];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+            
         }
             break;
         case 3:
