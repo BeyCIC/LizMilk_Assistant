@@ -83,9 +83,10 @@
     cell.selectIcon.hidden = NO;
     self.selectedIndexPath = indexPath;
 
+    NSString *nowkey = self.filterDict.allKeys[indexPath.item];
     LWContentView *drawView = [self superViewWithClass:[LWContentView class]];
-    NSString *key = cell.titleLbl.text;
-    [drawView.filterView renderWithFilterKey:key];
+//    NSString *key = cell.titleLbl.text;
+    [drawView.filterView renderWithFilterKey:nowkey];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
