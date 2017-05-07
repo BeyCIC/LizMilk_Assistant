@@ -107,6 +107,53 @@
     [[dbConnection DB] close];
 }
 
+//添加定时器
+-(void)updateDiary:(LizzieDiaryModel *)timingData
+{
+    
+    DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
+    [dbConnection readyDatabse];
+    if (![[dbConnection DB] open]) {
+        NSLog(@"数据库没有打开");
+    }
+    
+    if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {
+        [dbConnection createTable:@"Lizziediary" withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
+    }
+    
+    NSString *userId = timingData.userId;
+    NSString *userName = timingData.userName;
+    NSString *diaryContent = timingData.diaryContent;
+    NSString *mood = timingData.mood;
+    NSString *time = timingData.time;
+    NSString *location = timingData.location;
+    
+    BOOL  update =  [[dbConnection DB] executeUpdate:@"update Lizziediary set userName = ? ,diaryContent = ?,mood = ?,location = ?where time = ?",userName,diaryContent,mood,location,time];
+    if (update) {
+        NSLog(@"更新数据库成功");
+    } else {
+        NSLog(@"更新数据库失败");
+    }
+    [[dbConnection DB] close];
+    
+    
+//    NSString *did = timingData.Did;
+//    NSString *title = timingData.title;
+//    NSString *color = timingData.color;
+//    NSString *size_x = timingData.size_x;
+//    NSString *size_y = timingData.size_y;
+//    //    NSString *location = timingData.location;
+//    BOOL  update =  [[dbConnection DB] executeUpdate:@"update DashBoard set title = ? ,color = ? ,size_x = ?,size_y = ? where Did = ?",title,color,size_x,size_y,did];
+//    if (update) {
+//        NSLog(@"更新数据库成功");
+//    } else {
+//        NSLog(@"更新数据库失败");
+//    }
+    [[dbConnection DB] close];
+}
+
+
+
 //queryall
 -(void)saveDiary:(LizzieDiaryModel *)dairyData
 {

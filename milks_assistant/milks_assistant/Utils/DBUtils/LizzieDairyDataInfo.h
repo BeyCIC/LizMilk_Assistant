@@ -17,6 +17,9 @@
 }
 
 -(void)saveDiary:(LizzieDiaryModel *)DiaryData;
+
+-(void)updateDiary:(LizzieDiaryModel *)timingData;
+
 +(NSArray *)getDairyObjects;
 -(NSMutableArray *)getDairyObjectsbByDate:(NSString *)date;
 -(int)getTimingObjectsNum:(NSString *)f_account;

@@ -6,17 +6,17 @@
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
-#import "LMAddDairyViewController.h"
+#import "LMModDairyViewController.h"
 #import "LizzieDairyDataInfo.h"
 
-@interface LMAddDairyViewController () <UITextViewDelegate>{
+@interface LMModDairyViewController () <UITextViewDelegate>{
     UITextView *_editView;
     UIButton *sureBtn;
 }
 
 @end
 
-@implementation LMAddDairyViewController
+@implementation LMModDairyViewController
 
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,7 +40,7 @@
     _editView = [[UITextView alloc] initWithFrame:CGRectMake(15, 80, SCREEN_WIDTH-30, 350)];
     _editView.delegate = self;
     _editView.textColor = [UIColor blackColor];
-    
+    _editView.text = _dataInfo.diaryContent;
     sureBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-35)/2.0, 450,35, 35)];
     [sureBtn setBackgroundImage:[UIImage imageNamed:@"sure_btn"] forState:UIControlStateNormal];
     sureBtn.layer.cornerRadius = 6;
@@ -51,28 +51,23 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:_editView];
     [self.view addSubview:sureBtn];
-    self.navigationItem.title = @"日记";
-//    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_sure_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(sureAction:)];
-//    self.navigationItem.rightBarButtonItem = phoneButton;
 }
 
 - (void)sureAction:(UIButton*)sender {
     
     if (![_editView.text isEqualToString:@""]) {
         LizzieDairyDataInfo *info = [[LizzieDairyDataInfo alloc] init];
-        LizzieDiaryModel *dairy = [[LizzieDiaryModel alloc] init];
-        
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
-        NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
 
-        dairy.userId = @"18801755762";
-        dairy.userName = @"lizzie_liu";
-        dairy.diaryContent = _editView.text;
-        dairy.mood = @"忧郁";
-        dairy.time = strDate;
-        dairy.location = @"上海";
-        [info addDiary:dairy];
+        _dataInfo.userId = @"18801755762";
+        _dataInfo.userName = @"lizzie_liu";
+        _dataInfo.diaryContent = _editView.text;
+        _dataInfo.mood = @"忧郁";
+        _dataInfo.location = @"上海";
+        [info updateDiary:_dataInfo];
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(modeFinished:)]) {
+            [self.delegate modeFinished:_dataInfo];
+        }
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

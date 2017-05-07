@@ -7,8 +7,9 @@
 //
 
 #import "LMReadDairyViewController.h"
+#import "LMModDairyViewController.h"
 
-@interface LMReadDairyViewController () {
+@interface LMReadDairyViewController ()<modefinishedDelegate> {
     UILabel *_dairyContent;
     
     NSString *_contentStr;
@@ -30,8 +31,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
+    self.navigationItem.rightBarButtonItem = phoneButton;
     [self initView];
     // Do any additional setup after loading the view.
+}
+
+- (void)modDairy {
+    LMModDairyViewController *nextCtl = [[LMModDairyViewController alloc] init];
+    nextCtl.dataInfo = self.dairyInfo;
+    nextCtl.delegate = self;
+    [self.navigationController pushViewController:nextCtl animated:YES];
+}
+
+- (void)modeFinished:(LizzieDiaryModel *)info {
+    self.dairyInfo = info;
+    _dairyContent.text = info.diaryContent;
+    _dairyContent.numberOfLines = 0;
+    _dairyContent.lineBreakMode = NSLineBreakByCharWrapping;
 }
 
 - (void)initView {

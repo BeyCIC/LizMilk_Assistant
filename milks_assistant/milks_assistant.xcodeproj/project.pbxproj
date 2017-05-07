@@ -29,6 +29,7 @@
 		50209FD11EBEE08000D60E0C /* LMModBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD01EBEE08000D60E0C /* LMModBoardViewController.m */; };
 		50209FD41EBEE59E00D60E0C /* LizzieBoardDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD31EBEE59E00D60E0C /* LizzieBoardDataInfo.m */; };
 		50209FD71EBEEF5900D60E0C /* LMAddBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */; };
+		50209FDA1EBEF78600D60E0C /* LMModDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD91EBEF78600D60E0C /* LMModDairyViewController.m */; };
 		503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */; };
 		503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */; };
 		503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */; };
@@ -166,6 +167,8 @@
 		50209FD31EBEE59E00D60E0C /* LizzieBoardDataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LizzieBoardDataInfo.m; sourceTree = "<group>"; };
 		50209FD51EBEEF5900D60E0C /* LMAddBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAddBoardViewController.h; sourceTree = "<group>"; };
 		50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAddBoardViewController.m; sourceTree = "<group>"; };
+		50209FD81EBEF78600D60E0C /* LMModDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMModDairyViewController.h; sourceTree = "<group>"; };
+		50209FD91EBEF78600D60E0C /* LMModDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMModDairyViewController.m; sourceTree = "<group>"; };
 		503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbConfig.h; sourceTree = "<group>"; };
 		503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
@@ -822,6 +825,8 @@
 		5093D6821E936789006FDFEE /* LizDairy */ = {
 			isa = PBXGroup;
 			children = (
+				50209FD81EBEF78600D60E0C /* LMModDairyViewController.h */,
+				50209FD91EBEF78600D60E0C /* LMModDairyViewController.m */,
 				5093D6831E9367CF006FDFEE /* LMDairyListViewController.h */,
 				5093D6841E9367CF006FDFEE /* LMDairyListViewController.m */,
 				5093D6861E936ACA006FDFEE /* LMAddDairyViewController.h */,
@@ -1107,6 +1112,7 @@
 				501658851EAAE6EC0023DE54 /* LWPhotoCollectionView.m in Sources */,
 				509364AB1EB86CA000EEBBEB /* KeychainItemWrapper.m in Sources */,
 				509364A91EB86CA000EEBBEB /* AliPayViews.m in Sources */,
+				50209FDA1EBEF78600D60E0C /* LMModDairyViewController.m in Sources */,
 				50EFFB921E9E01B6005330FA /* UPWLoadingView.m in Sources */,
 				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
 				509364A71EB86CA000EEBBEB /* AliPayItem.m in Sources */,

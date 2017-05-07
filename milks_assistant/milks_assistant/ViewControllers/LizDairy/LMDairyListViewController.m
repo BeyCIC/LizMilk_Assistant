@@ -38,13 +38,13 @@
     NSDictionary * dict = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
     // 设置导航栏的颜色
-    self.navigationController.navigationBar.barTintColor =NavigationColor;
+    self.navigationController.navigationBar.barTintColor = NavigationColor;
     // 设置半透明状态（yes） 不透明状态 （no）
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"磊璐的日记";
+    self.navigationItem.title = @"日记";
     self.view.backgroundColor = [UIColor whiteColor];
     [self initView];
     // Do any additional setup after loading the view.
@@ -97,8 +97,9 @@
     if (!cell) {
         cell = [[lizzieDairyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
-        [cell setInfo:_dataArr[indexPath.row]];
+        
     }
+    [cell setInfo:_dataArr[indexPath.row]];
     return cell;
 }
 
@@ -173,7 +174,7 @@
 - (void)setInfo:(LizzieDiaryModel *)info {
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
     NSDate *date = [dateFormatter dateFromString:info.time];
     self.dairyContent.text = info.diaryContent;
     self.dairyMood.text = info.mood;
