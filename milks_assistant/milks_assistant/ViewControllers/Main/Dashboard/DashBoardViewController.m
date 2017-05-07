@@ -21,14 +21,19 @@
 #import "LizzieBoardDataInfo.h"
 #import "LMAddBoardViewController.h"
 #import "LMModBoardViewController.h"
+#import "LMRegisterViewController.h"
+#import "LMLoginViewController.h"
 
-@interface DashBoardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface DashBoardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,registerSuccessDelegate,loginVCdelegate>
 {
     DashCollectionViewFlowLayout * layout;
     UIView *tempMoveCell;
     UICollectionViewCell * originalIndexPathCell;
     // 提示没有指标的label
     UILabel * label;
+    
+    LMRegisterViewController *nextCtl;
+    LMLoginViewController *loginVC;
 }
 
 //分享按钮
@@ -119,14 +124,63 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     self.navigationItem.rightBarButtonItem = phoneButton;
     
     [self makeCollectionView];
-    BOOL isSave = [KeychainData isSave]; //是否有保存
-    if (isSave) {
+    
+    NSString *isLogin = [[NSUserDefaults standardUserDefaults] valueForKey:@"userId"];
+    
+    if (!isLogin || [isLogin isEqualToString:@""]) {
         
-        SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
-        setpass.string = @"验证密码";
-        [self presentViewController:setpass animated:YES completion:nil];
+        nextCtl = [[LMRegisterViewController alloc] init];
+        nextCtl.delegate = self;
+        [self presentViewController:nextCtl animated:YES completion:nil];
+    } else {
+        BOOL isSave = [KeychainData isSave]; //是否有保存
+        if (isSave) {
+            
+            SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
+            setpass.string = @"验证密码";
+            [self presentViewController:setpass animated:YES completion:nil];
+        }
     }
+    
+}
 
+- (void)registerSuc {
+    [nextCtl dismissViewControllerAnimated:YES completion:nil];
+    [loginVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)loginBtnaction {
+    if (nextCtl) {
+        [nextCtl dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    if (!loginVC) {
+        loginVC = [[LMLoginViewController alloc] init];
+        loginVC.delegate = self;
+    }
+    
+    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    
+}
+
+- (void)loginFailed {
+    
+}
+
+- (void)loginSuccess {
+    [nextCtl dismissViewControllerAnimated:YES completion:nil];
+    [loginVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)gotoRegister{
+    if (loginVC) {
+            [loginVC dismissViewControllerAnimated:YES completion:nil];
+    }
+    if (!nextCtl) {
+        nextCtl = [[LMRegisterViewController alloc] init];
+        nextCtl.delegate = self;
+    }
+    [self presentViewController:nextCtl animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

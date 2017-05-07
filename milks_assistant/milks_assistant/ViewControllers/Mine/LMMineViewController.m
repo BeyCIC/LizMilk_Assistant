@@ -11,6 +11,7 @@
 #import "KeychainData.h"
 #import "SetpasswordViewController.h"
 #import "MBProgressHUD.h"
+#import "LMFeedBackViewController.h"
 
 @interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource>{
     
@@ -118,7 +119,8 @@
             break;
         case 2:
         {
-            
+            LMFeedBackViewController *nextCtl = [[LMFeedBackViewController alloc] init];
+            [self.navigationController pushViewController:nextCtl animated:YES];
         }
             break;
         case 3:

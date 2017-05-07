@@ -30,6 +30,9 @@
 		50209FD41EBEE59E00D60E0C /* LizzieBoardDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD31EBEE59E00D60E0C /* LizzieBoardDataInfo.m */; };
 		50209FD71EBEEF5900D60E0C /* LMAddBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */; };
 		50209FDA1EBEF78600D60E0C /* LMModDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FD91EBEF78600D60E0C /* LMModDairyViewController.m */; };
+		50209FDE1EBF1F8E00D60E0C /* LMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FDD1EBF1F8E00D60E0C /* LMRegisterViewController.m */; };
+		50209FE11EBF294100D60E0C /* LMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE01EBF294100D60E0C /* LMLoginViewController.m */; };
+		50209FE41EBF2D3000D60E0C /* LMFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */; };
 		503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */; };
 		503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */; };
 		503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */; };
@@ -169,6 +172,12 @@
 		50209FD61EBEEF5900D60E0C /* LMAddBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAddBoardViewController.m; sourceTree = "<group>"; };
 		50209FD81EBEF78600D60E0C /* LMModDairyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMModDairyViewController.h; sourceTree = "<group>"; };
 		50209FD91EBEF78600D60E0C /* LMModDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMModDairyViewController.m; sourceTree = "<group>"; };
+		50209FDC1EBF1F8E00D60E0C /* LMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRegisterViewController.h; sourceTree = "<group>"; };
+		50209FDD1EBF1F8E00D60E0C /* LMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRegisterViewController.m; sourceTree = "<group>"; };
+		50209FDF1EBF294100D60E0C /* LMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMLoginViewController.h; sourceTree = "<group>"; };
+		50209FE01EBF294100D60E0C /* LMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLoginViewController.m; sourceTree = "<group>"; };
+		50209FE21EBF2D3000D60E0C /* LMFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFeedBackViewController.h; sourceTree = "<group>"; };
+		50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFeedBackViewController.m; sourceTree = "<group>"; };
 		503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbConfig.h; sourceTree = "<group>"; };
 		503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
@@ -480,6 +489,17 @@
 			path = PhotoTools;
 			sourceTree = "<group>";
 		};
+		50209FDB1EBF1F7100D60E0C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				50209FDC1EBF1F8E00D60E0C /* LMRegisterViewController.h */,
+				50209FDD1EBF1F8E00D60E0C /* LMRegisterViewController.m */,
+				50209FDF1EBF294100D60E0C /* LMLoginViewController.h */,
+				50209FE01EBF294100D60E0C /* LMLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		503A5FF91E8F9DA900D3AF51 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +764,7 @@
 		508B3ED11E8E417400C5CA2D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				50209FDB1EBF1F7100D60E0C /* Login */,
 				5093649B1EB86CA000EEBBEB /* AliSDK */,
 				501658521EAAE3530023DE54 /* PhotoDIY */,
 				508B3EEA1E8E468200C5CA2D /* WelcomeViewController.h */,
@@ -776,6 +797,8 @@
 				508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */,
 				509364AF1EB86E6700EEBBEB /* LMSecuritySettingViewController.h */,
 				509364B01EB86E6700EEBBEB /* LMSecuritySettingViewController.m */,
+				50209FE21EBF2D3000D60E0C /* LMFeedBackViewController.h */,
+				50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1057,6 +1080,7 @@
 				50209FD11EBEE08000D60E0C /* LMModBoardViewController.m in Sources */,
 				503A602A1E8FA24400D3AF51 /* JSONModel.m in Sources */,
 				501658991EAAE7C80023DE54 /* Categorys.m in Sources */,
+				50209FE41EBF2D3000D60E0C /* LMFeedBackViewController.m in Sources */,
 				5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */,
 				508B3E9D1E8E40C800C5CA2D /* AppDelegate.mm in Sources */,
 				5016588C1EAAE7120023DE54 /* StoreObserver.m in Sources */,
@@ -1069,6 +1093,7 @@
 				5016587F1EAAE6EC0023DE54 /* LWConfigManager.m in Sources */,
 				5016587E1EAAE6EC0023DE54 /* LWScrawlView.m in Sources */,
 				50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */,
+				50209FE11EBF294100D60E0C /* LMLoginViewController.m in Sources */,
 				509364AA1EB86CA000EEBBEB /* KeychainData.m in Sources */,
 				503A602B1E8FA24400D3AF51 /* JSONModelArray.m in Sources */,
 				50EFFBA71E9E1429005330FA /* DashBoardViewController.m in Sources */,
@@ -1095,6 +1120,7 @@
 				501658941EAAE7400023DE54 /* PDPhotoLibPicker.m in Sources */,
 				508B3EEC1E8E468200C5CA2D /* WelcomeViewController.mm in Sources */,
 				503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */,
+				50209FDE1EBF1F8E00D60E0C /* LMRegisterViewController.m in Sources */,
 				5016587C1EAAE6EC0023DE54 /* LWDrawView.m in Sources */,
 				50EFFBAC1E9E1429005330FA /* UIColor+NSString.m in Sources */,
 				501658841EAAE6EC0023DE54 /* LWFilterCollectionView.m in Sources */,
