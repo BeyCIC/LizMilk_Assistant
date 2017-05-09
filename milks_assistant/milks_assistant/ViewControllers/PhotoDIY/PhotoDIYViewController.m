@@ -47,7 +47,22 @@
     [_toolBar.cropBtn addTarget:self action:@selector(cropAction:) forControlEvents:UIControlEventTouchUpInside];
     [_toolBar.drawBtn addTarget:self action:@selector(drawAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView loadDefaultImage];
+    
+//    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
+//    self.navigationItem.rightBarButtonItem = phoneButton;
+    
+    UIButton *rightSaveBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 80, 15, 60, 40)];
+    [rightSaveBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [rightSaveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightSaveBtn addTarget:self action:@selector(savaContentImage:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:rightSaveBtn];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)savaContentImage:(UIButton*)sender {
+    [self.contentView saveImage];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -287,11 +287,11 @@
                                           }
                                           dispatch_async(dispatch_get_main_queue(), ^{
                                               self.hud.mode = MBProgressHUDModeText;
-                                              self.hud.labelText = NSLocalizedString(@"Save Success", nil);
-                                              [self.hud hide:YES afterDelay:0];
+                                              self.hud.label.text = @"Save Success";
+                                              [self.hud hideAnimated:YES afterDelay:0];
                                           });
                                       }];
-    //[self.hud hide:YES afterDelay:3.0];
+    [self.hud hideAnimated:YES afterDelay:3.0];
 }
 
 
