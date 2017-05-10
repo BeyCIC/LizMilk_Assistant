@@ -78,6 +78,12 @@
 
 - (void)register:(UIButton*)sender {
     
+    if ([userText.text isEqualToString:@""] || [pwdText.text isEqualToString:@""]) {
+        [self showAlertWithTitle:@"提示" msg:@"请输入" ok:nil cancel:@"确定"];
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setValue:userText.text forKey:LoginUserName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     if(self.delegate && [self.delegate respondsToSelector:@selector(registerSuc)]) {
         [self.delegate registerSuc];
     }

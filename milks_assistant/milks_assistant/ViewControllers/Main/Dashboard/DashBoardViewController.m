@@ -125,7 +125,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     
     [self makeCollectionView];
     
-    NSString *isLogin = [[NSUserDefaults standardUserDefaults] valueForKey:@"userId"];
+    NSString *isLogin = [[NSUserDefaults standardUserDefaults] valueForKey:LoginUserName];
     
     if (!isLogin || [isLogin isEqualToString:@""]) {
         
@@ -141,6 +141,20 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
             [self presentViewController:setpass animated:YES completion:nil];
         }
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:LogoutPostnotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:LogInPostnotificationName object:nil];
+    
+    
+}
+
+- (void)logout:(NSNotification*)notification {
+    nextCtl = [[LMRegisterViewController alloc] init];
+    nextCtl.delegate = self;
+    [self presentViewController:nextCtl animated:YES completion:nil];
+}
+
+- (void)login:(NSNotification*)notification {
     
 }
 

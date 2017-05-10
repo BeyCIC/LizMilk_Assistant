@@ -48,7 +48,7 @@
 
 - (void)initView {
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
 //    _tableView.backgroundColor = [UIColor redColor];
@@ -56,8 +56,13 @@
     [_tableView reloadData];
     [self.view addSubview:_tableView];
     
-    _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
+//    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:LoginUserName];
     
+//    if (username && ![username isEqualToString:@""]) {
+//        _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁",@"退出登录"];
+//    } else {
+        _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
+//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,14 +97,69 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
-        cell.textLabel.text = _tableSource[indexPath.row];
-        cell.textLabel.textColor = [UIColor blackColor];
+        if (indexPath.row != 4) {
+            
+            cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+            cell.textLabel.text = _tableSource[indexPath.row];
+            cell.textLabel.textColor = [UIColor blackColor];
+        } else {
+            UIButton *loginOutBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 4.5, SCREEN_WIDTH - 50, 35)];
+            [self setRoundBtn:loginOutBtn];
+            [loginOutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
+            [loginOutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+            [loginOutBtn setBackgroundColor:RGBCOLOR(57, 139, 251)];
+            [cell.contentView addSubview:loginOutBtn];
+            
+        }
+        
     }
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1 && indexPath.row != 4) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    
+    
+    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0.000001;
+    } else {
+        NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:LoginUserName];
+
+        if (username && ![username isEqualToString:@""]) {
+            return 200;
+        }
+        return 0.000001;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.0001;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        return [[UIView alloc] initWithFrame:CGRectZero];
+    } else {
+        
+        NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:LoginUserName];
+        if (username && ![username isEqualToString:@""]) {
+            UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
+            UIButton *loginOutBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 4.5 + 100, SCREEN_WIDTH - 60, 35)];
+            [self setRoundBtn:loginOutBtn];
+            [loginOutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
+            [loginOutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+            [loginOutBtn setBackgroundColor:RGBCOLOR(57, 139, 251)];
+            [footer addSubview:loginOutBtn];
+            return footer;
+        } else {
+            return [[UIView alloc] initWithFrame:CGRectZero];
+        }
+        
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -160,6 +220,11 @@
             break;
     }
 }
+
+- (void)logout:(UIButton*)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:LogoutPostnotificationName object:nil];
+}
+
 /**
  *  忘记密码
  */

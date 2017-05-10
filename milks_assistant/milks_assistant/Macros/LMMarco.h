@@ -172,3 +172,9 @@
 
 #define TABLE_NAME_DIARY            @"Lizziediary"
 #define TABLE_NAME_BOARD        @"DashBoard"
+
+#define LoginUserName           @"loginUserName"
+
+#define LogInPostnotificationName @"LogInPostnotificationName"
+
+#define LogoutPostnotificationName @"LogoutPostnotificationName"
