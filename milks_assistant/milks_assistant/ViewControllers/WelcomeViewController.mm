@@ -96,7 +96,7 @@
 - (void)fillTheTabViewControllersContent
 {
     // 获取tab标题数组
-    NSArray* tabItems = @[@"便签",@"美图",@"日记",@"我的"];
+    NSArray* tabItems = @[@"Note",@"Retouch",@"Diary",@"Mine"];
     
     // feature
     DashBoardViewController* mainVC = [[DashBoardViewController alloc] init];
