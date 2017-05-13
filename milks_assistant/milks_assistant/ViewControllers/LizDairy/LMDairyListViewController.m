@@ -166,8 +166,8 @@
 
 - (void)setFrame:(CGRect)frame {
     self.note_icon.frame = CGRectMake(0, 0, 27, 50);
-    self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-65, frame.size.height-25-10);
-    self.dairyMood.frame = CGRectMake(5, frame.size.height-25-10, SCREEN_WIDTH-30, 50);
+    self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-100, frame.size.height-25-10);
+    self.dairyMood.frame = CGRectMake(5, frame.size.height-25-10, SCREEN_WIDTH-120, 50);
     self.dairyDate.frame = CGRectMake(frame.size.width-150, frame.size.height-25-10, 140, 25);
 }
 

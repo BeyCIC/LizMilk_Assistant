@@ -51,18 +51,10 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-//    _tableView.backgroundColor = [UIColor redColor];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [_tableView reloadData];
     [self.view addSubview:_tableView];
-    
-//    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:LoginUserName];
-    
-//    if (username && ![username isEqualToString:@""]) {
-//        _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁",@"退出登录"];
-//    } else {
-        _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
-//    }
+    _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

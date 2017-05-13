@@ -90,14 +90,11 @@
     
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    CGFloat ly = [touch locationInView:_editView].y;
-    if (ly>=0 ) { //点标题栏也会消失，点其他地方捕捉不到了
-        [self.view endEditing:YES];
-    }
-}
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     

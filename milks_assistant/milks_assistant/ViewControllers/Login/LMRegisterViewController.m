@@ -40,7 +40,6 @@
     UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(30, offsetY + 80, SCREEN_WIDTH-60, 0.7)];
     line2.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
     
-    
     UIButton *registerBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-140)/2, offsetY + 110, 140, 40)];
     [registerBtn setTitle:@"立即注册" forState:UIControlStateNormal];
     [registerBtn setBackgroundColor:RGBCOLOR(29, 195, 38)];
@@ -72,8 +71,6 @@
     [self.view addSubview:switchLab];
     [self.view addSubview:loginBtn];
     [self.view addSubview:shareBtn];
-    
-    
 }
 
 - (void)register:(UIButton*)sender {
