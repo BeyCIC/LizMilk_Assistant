@@ -14,11 +14,14 @@
 #import "LMFeedBackViewController.h"
 #import "LMSecuritySettingViewController.h"
 
-@interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource>{
+@interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
     UITableView *_tableView;
     
     NSArray *_tableSource;
+    
+    UIImage *userHeaderImg;
+    
 }
 
 @end
@@ -38,6 +41,11 @@
     [super viewDidLoad];
     self.navigationItem.title = @"我的";
     [self initView];
+    
+    userHeaderImg = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserHeader];
+    if (!userHeaderImg) {
+        userHeaderImg = [UIImage imageNamed:@"lizhead"];
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -81,7 +89,9 @@
     if (indexPath.section == 0) {
         LuHeaderCell* cell = [[LuHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"header"];
         cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 180);
-        [cell setUserHeader:@"lizhead"];
+        [cell.headerIcon addTarget:self action:@selector(changeHeader:) forControlEvents:UIControlEventTouchUpInside];
+//        [cell setUserHeader:@"lizhead"];
+        [cell.headerIcon setBackgroundImage:userHeaderImg forState:UIControlStateNormal];
         [cell setUserName:@"刘磊璐"];
         return cell;
     }
@@ -213,6 +223,52 @@
     }
 }
 
+
+- (void)changeHeader:(UIButton*)sender {
+    
+  UIAlertController *actionSheet  = [UIAlertController alertControllerWithTitle:@"选择" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIImagePickerController *imagepicker = [[UIImagePickerController alloc] init];
+        imagepicker.delegate = self;
+        imagepicker.allowsEditing = NO;
+        
+        UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagepicker animated:YES completion:nil];
+        }];
+        
+        UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:imagepicker animated:YES completion:nil];
+        }];
+        UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [actionSheet addAction:libActon];
+        [actionSheet addAction:takeActon];
+        [actionSheet addAction:cancelActon];
+        [self presentViewController:actionSheet animated:YES completion:nil];
+    } else{
+        [self showAlertWithTitle:@"提示" msg:@"请设置访问权限" ok:@"确定" cancel:nil];
+    }
+
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage *selImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (!selImage) {
+        return;
+    }
+
+    userHeaderImg = selImage;
+//    [[NSUserDefaults standardUserDefaults] setObject:userHeaderImg forKey:LoginUserHeader];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    LuHeaderCell* cell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell.headerIcon setBackgroundImage:selImage forState:UIControlStateNormal];
+}
+
 - (void)logout:(UIButton*)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:LogoutPostnotificationName object:nil];
 }
@@ -287,7 +343,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        _headerIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+        _headerIcon = [UIButton buttonWithType:UIButtonTypeCustom];
+        _headerIcon.frame = CGRectMake(0, 0, 60, 60);
         _name = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
         _headerIcon.layer.cornerRadius = 30;
     
@@ -308,8 +365,7 @@
 }
 
 - (void)setUserHeader:(NSString*)header{
-    _headerIcon.image = [UIImage imageNamed:header];
-    
+    [_headerIcon setBackgroundImage:[UIImage imageNamed:header] forState:UIControlStateNormal];
 }
 
 - (void)setUserName:(NSString*)name{

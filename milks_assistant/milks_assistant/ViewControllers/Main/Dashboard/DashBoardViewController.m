@@ -203,9 +203,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)photoDIY:(UIButton*)sender {
-    LMAddBoardViewController *nextCtl = [[LMAddBoardViewController alloc] init];
     
-    [self.navigationController pushViewController:nextCtl animated:YES];
+    LMAddBoardViewController *addBoardtCtl = [[LMAddBoardViewController alloc] init];
+    [self.navigationController pushViewController:addBoardtCtl animated:YES];
 }
 
 - (void)makeCollectionView
@@ -275,9 +275,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 // 选中cell
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    LMModBoardViewController *nextCtl = [[LMModBoardViewController alloc] init];
-    nextCtl.dashInfo = _DashModelArray[indexPath.row];
-    [self.navigationController pushViewController:nextCtl animated:YES];
+    LMModBoardViewController *ModBoardCtl = [[LMModBoardViewController alloc] init];
+    ModBoardCtl.dashInfo = _DashModelArray[indexPath.row];
+    [self.navigationController pushViewController:ModBoardCtl animated:YES];
 }
 
 /**

@@ -11,7 +11,7 @@
 #import "Categorys.h"
 #import "LWImageZoomView.h"
 
-@interface PhotoDIYViewController ()<UIAlertViewDelegate,UIImagePickerControllerDelegate> {
+@interface PhotoDIYViewController ()<UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     UIAlertController *actionSheet;
 }
 

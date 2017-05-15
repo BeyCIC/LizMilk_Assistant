@@ -174,6 +174,7 @@
 #define TABLE_NAME_BOARD        @"DashBoard"
 
 #define LoginUserName           @"loginUserName"
+#define LoginUserHeader           @"loginUserHeader"
 
 #define LogInPostnotificationName @"LogInPostnotificationName"
 
