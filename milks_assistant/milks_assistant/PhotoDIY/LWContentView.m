@@ -17,6 +17,7 @@
 #import "LWImageZoomView.h"
 #import "LWDrawView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "UPWMUserInterfaceManager.h"
 
 @implementation LWContentView
 
@@ -290,8 +291,18 @@
                                               self.hud.label.text = @"Save Success";
                                               [self.hud hideAnimated:YES afterDelay:0];
                                           });
+                                          
+                                         
                                       }];
     [self.hud hideAnimated:YES afterDelay:3.0];
+    [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+        if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+            
+        }
+        else {
+            
+        }
+    }];
 }
 
 

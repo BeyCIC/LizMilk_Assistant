@@ -111,7 +111,7 @@
     // coupon
     LMDairyListViewController* dairyVC2 = [[LMDairyListViewController alloc] init];
     UINavigationController* secondNavi = [[UINavigationController alloc] initWithRootViewController:dairyVC2];
-    secondNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[2] selectedImage:@"dairy_icon" unselectedImageName:@"dairy_icon"];
+    secondNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[2] selectedImage:@"tab2_hl" unselectedImageName:@"tab2_hl"];
     
     
     // life
