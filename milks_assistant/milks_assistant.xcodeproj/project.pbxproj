@@ -91,6 +91,7 @@
 		5093D68B1E936AE9006FDFEE /* LMReadDairyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */; };
 		50CA8AE01EB041D000662476 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA8ADF1EB041D000662476 /* AssetsLibrary.framework */; };
 		50CA8AE21EB041EC00662476 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA8AE11EB041EC00662476 /* CoreMedia.framework */; };
+		50CF34A71ECB2006004CEE47 /* HYSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF34A61ECB2006004CEE47 /* HYSTabBarViewController.m */; };
 		50EFFB831E9E0193005330FA /* UPWMUserInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */; };
 		50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB821E9E0193005330FA /* UPWSizeUtil.m */; };
 		50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB861E9E01B6005330FA /* UIImage+Resize.m */; };
@@ -283,6 +284,8 @@
 		5093D68A1E936AE9006FDFEE /* LMReadDairyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMReadDairyViewController.m; sourceTree = "<group>"; };
 		50CA8ADF1EB041D000662476 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		50CA8AE11EB041EC00662476 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		50CF34A51ECB2006004CEE47 /* HYSTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSTabBarViewController.h; sourceTree = "<group>"; };
+		50CF34A61ECB2006004CEE47 /* HYSTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSTabBarViewController.m; sourceTree = "<group>"; };
 		50EFFB7F1E9E0193005330FA /* UPWMUserInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWMUserInterfaceManager.h; sourceTree = "<group>"; };
 		50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWMUserInterfaceManager.m; sourceTree = "<group>"; };
 		50EFFB811E9E0193005330FA /* UPWSizeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWSizeUtil.h; sourceTree = "<group>"; };
@@ -667,6 +670,8 @@
 				508B3EA91E8E40C800C5CA2D /* Info.plist */,
 				508B3E981E8E40C800C5CA2D /* Supporting Files */,
 				508B3F151E8E521D00C5CA2D /* milks.pch */,
+				50CF34A51ECB2006004CEE47 /* HYSTabBarViewController.h */,
+				50CF34A61ECB2006004CEE47 /* HYSTabBarViewController.m */,
 			);
 			path = milks_assistant;
 			sourceTree = "<group>";
@@ -1108,6 +1113,7 @@
 				503A60061E8F9DA900D3AF51 /* FMDatabasePool.m in Sources */,
 				503A602C1E8FA24400D3AF51 /* JSONModelClassProperty.m in Sources */,
 				50209FD71EBEEF5900D60E0C /* LMAddBoardViewController.m in Sources */,
+				50CF34A71ECB2006004CEE47 /* HYSTabBarViewController.m in Sources */,
 				50FA36491EAB40DE001A04AD /* ViewController.m in Sources */,
 				509364A81EB86CA000EEBBEB /* AlipaySubItem.m in Sources */,
 				509364B11EB86E6700EEBBEB /* LMSecuritySettingViewController.m in Sources */,
