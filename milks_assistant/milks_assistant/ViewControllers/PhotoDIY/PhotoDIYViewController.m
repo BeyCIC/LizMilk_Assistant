@@ -51,9 +51,11 @@
 //    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
 //    self.navigationItem.rightBarButtonItem = phoneButton;
     
-    UIButton *rightSaveBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 80, 15, 60, 40)];
+    UIButton *rightSaveBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 60, 40)];
     [rightSaveBtn setTitle:@"保存" forState:UIControlStateNormal];
-    [rightSaveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    rightSaveBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    [rightSaveBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [rightSaveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [rightSaveBtn addTarget:self action:@selector(savaContentImage:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:rightSaveBtn];

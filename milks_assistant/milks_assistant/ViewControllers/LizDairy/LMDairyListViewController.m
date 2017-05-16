@@ -166,7 +166,13 @@
 
 - (void)setFrame:(CGRect)frame {
     self.note_icon.frame = CGRectMake(0, 0, 27, 50);
-    self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-100, frame.size.height-25-10);
+    if (self.dairyDate.text.length > 6) {
+        self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-140, frame.size.height-25-10);
+
+    } else {
+        self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-100, frame.size.height-25-10);
+    }
+//    self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-100, frame.size.height-25-10);
     self.dairyMood.frame = CGRectMake(5, frame.size.height-25-10, SCREEN_WIDTH-120, 50);
     self.dairyDate.frame = CGRectMake(frame.size.width-150, frame.size.height-25-10, 140, 25);
 }
@@ -176,9 +182,17 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
     NSDate *date = [dateFormatter dateFromString:info.time];
-    self.dairyContent.text = info.diaryContent;
+    
     self.dairyMood.text = info.mood;
     self.dairyDate.text = [NSString stringWithFormat:@"%@",[Util calculateDateWith:date]];
+    if (self.dairyDate.text.length > 6) {
+        self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-140, self.frame.size.height-25-10);
+        self.dairyContent.text = info.diaryContent;
+    } else {
+        self.dairyContent.frame = CGRectMake(40, 20, SCREEN_WIDTH-100, self.frame.size.height-25-10);
+        self.dairyContent.text = info.diaryContent;
+    }
+    
 }
 
 @end

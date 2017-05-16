@@ -7,9 +7,10 @@
 //
 
 #import "LMBaseViewController.h"
+#import "HYSTabBarViewController.h"
 
 @interface WelcomeViewController : LMBaseViewController
 
-@property (nonatomic, strong) UITabBarController* tabBarController;
+@property (nonatomic, strong) HYSTabBarViewController* tabBarController;
 
 @end
