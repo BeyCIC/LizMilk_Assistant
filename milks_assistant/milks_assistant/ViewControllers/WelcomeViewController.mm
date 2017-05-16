@@ -16,9 +16,9 @@
 #import "PhotoDIYViewController.h"
 
 
-@interface WelcomeViewController()<UITabBarControllerDelegate>
+@interface WelcomeViewController()<UITabBarControllerDelegate>//协议：事件传递机制
 {
-    UIImageView* _welcomeImageView;
+    UIImageView* _welcomeImageView;//创建全局变量
 }
 
 @property (nonatomic, strong) UIImageView *dotImage;
@@ -63,8 +63,8 @@
     [[UITabBar appearance] setSelectionIndicatorImage:[[UIImage alloc] init]];
     [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
     
-    NSDictionary * attributesForNormal = nil;
-    NSDictionary * attributesForSelected = nil;
+    NSDictionary * attributesForNormal = nil;//正常状态下
+    NSDictionary * attributesForSelected = nil;//选中状态下
     // only iOS7
     attributesForNormal = @{NSForegroundColorAttributeName:UP_COL_RGB(0xb9b9b9), NSFontAttributeName:[UIFont systemFontOfSize:11]};
     
@@ -80,7 +80,7 @@
     _tabBarController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 //    _tabBarController.tabBar.frame  = CGRectMake(0, _tabBarController.tabBar.frame.origin.y-10, SCREEN_WIDTH, 44);
     [UIView animateWithDuration:1 animations:^{
-        _welcomeImageView.layer.opacity = 0.0f;
+        _welcomeImageView.layer.opacity = 0.0f;//画布设为透明
     } completion:^(BOOL finished) {
         if (finished)
         {
@@ -100,7 +100,7 @@
     
     // feature
     DashBoardViewController* mainVC = [[DashBoardViewController alloc] init];
-    UINavigationController* firstNavi = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    UINavigationController* firstNavi = [[UINavigationController alloc] initWithRootViewController:mainVC];//便签页设置导航控制器
     firstNavi.tabBarItem = [self tabBarItemWithTitle:tabItems[0] selectedImage:@"tab1_hl" unselectedImageName:@"tab1"];
     
     PhotoDIYViewController* photoVC = [[PhotoDIYViewController alloc] init];
@@ -144,7 +144,7 @@
 //    [myDelegate handlePushMessageInfo];
 }
 
-- (UITabBarItem*)tabBarItemWithTitle:(NSString*)title selectedImage:(NSString*)selectedImageName unselectedImageName:(NSString*)unselectedImageName
+- (UITabBarItem*)tabBarItemWithTitle:(NSString*)title selectedImage:(NSString*)selectedImageName unselectedImageName:(NSString*)unselectedImageName//函数封装，便于调用
 {
     // only iOS7
     UIImage* selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

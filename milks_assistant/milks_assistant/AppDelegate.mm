@@ -20,19 +20,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self createTable];
+    [self createTable];//创建数据库
     BOOL isLoad = [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLoad"];
     if (!isLoad) {
          [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:@"isDoubleLine"];
     } else {
          [[NSUserDefaults standardUserDefaults] setInteger:YES forKey:@"firstLoad"];
     }
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];
-    _rootViewController = [[WelcomeViewController alloc] init];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//手机上端的状态栏
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];//获取当前手机屏幕的边界大小
+    UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];//创建视窗，设置大小
+    _rootViewController = [[WelcomeViewController alloc] init];//根视图管理器
     [window setRootViewController:_rootViewController];
-    [window makeKeyAndVisible];
+    [window makeKeyAndVisible];//系统函数：让这个界面显示
     [self setWindow:window];
     return YES;
 }
@@ -67,8 +67,8 @@
 //创建所有需要的表
 - (void)createTable
 {
-    DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];
-    [dbConnection readyDatabse];
+    DBConnection *dbConnection = [[DBConnection alloc]initWithDBName:DB_NAME];//第三方库，用来存储数据；创建数据库
+    [dbConnection readyDatabse];//
     if (![[dbConnection DB] open]) {
         NSLog(@"数据库没有打开");
     }
