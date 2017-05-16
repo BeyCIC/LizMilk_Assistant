@@ -78,7 +78,7 @@
     _tabBarController = [[HYSTabBarViewController alloc] init];
     _tabBarController.delegate = self;
     _tabBarController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-10);
-    _tabBarController.view.backgroundColor = [UIColor redColor];
+//    _tabBarController.view.backgroundColor = [UIColor redColor];
 //    _tabBarController.tabBar.frame  = CGRectMake(0, _tabBarController.tabBar.frame.origin.y-10, SCREEN_WIDTH, 44);
     [UIView animateWithDuration:1 animations:^{
         _welcomeImageView.layer.opacity = 0.0f;
