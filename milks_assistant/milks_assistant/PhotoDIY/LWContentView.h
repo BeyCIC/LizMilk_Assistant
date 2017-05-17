@@ -2,8 +2,8 @@
 //  LWContentView.h
 //  PhotoDIY
 //
-//  Created by luowei on 16/7/4.
-//  Copyright © 2016年 wodedata. All rights reserved.
+//  Created by JasonHuang on 16/7/4.
+//  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,8 +2,8 @@
 //  SetpasswordViewController.m
 //  AliPayDemo
 //
-//  Created by pg on 15/7/15.
-//  Copyright (c) 2015年 pg. All rights reserved.
+//  Created by JasonHuang on 15/7/15.
+//  Copyright (c) 2015年 JasonHuang. All rights reserved.
 //
 
 #import "SetpasswordViewController.h"

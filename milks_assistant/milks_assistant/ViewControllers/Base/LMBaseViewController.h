@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SetpasswordViewController.h"
+
+@class SetpasswordViewController;
 
 @interface LMBaseViewController : UIViewController
 
