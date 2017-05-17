@@ -42,7 +42,10 @@
     self.navigationItem.title = @"我的";
     [self initView];
     
-    userHeaderImg = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserHeader];
+    NSData *imageData = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserHeader];
+    if (imageData) {
+        userHeaderImg = [UIImage imageWithData:imageData];
+    }
     if (!userHeaderImg) {
         userHeaderImg = [UIImage imageNamed:@"lizhead"];
     }
@@ -225,6 +228,9 @@
     }
 }
 
+- (void)Back:(UIButton*)sender {
+    
+}
 
 - (void)changeHeader:(UIButton*)sender {
     
@@ -233,7 +239,16 @@
         
         UIImagePickerController *imagepicker = [[UIImagePickerController alloc] init];
         imagepicker.delegate = self;
-        imagepicker.allowsEditing = NO;
+        imagepicker.allowsEditing = YES;
+        
+//        UIImage* image = [UP_GETIMG(@"bg_naviBar44") stretchableImageWithLeftCapWidth:0 topCapHeight:22];
+//        [imagepicker.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+//        
+        [imagepicker.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
+        [imagepicker.navigationBar setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
+        imagepicker.navigationBar.tintColor = [UIColor blackColor];
+        UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(Back:)];
+        imagepicker.navigationController.navigationItem.leftBarButtonItem = phoneButton;
         
         UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -242,7 +257,7 @@
         
         UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            [self presentViewController:imagepicker animated:YES completion:nil];
+            [self.navigationController presentViewController:imagepicker animated:YES completion:nil];
         }];
         UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
@@ -263,12 +278,37 @@
     if (!selImage) {
         return;
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LuHeaderCell* cell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [cell.headerIcon setBackgroundImage:selImage forState:UIControlStateNormal];
+        
+    });
+    
+    
+    UIAlertController *alertSheet  = [UIAlertController alertControllerWithTitle:@"确定要更改吗？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *sureActon = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        userHeaderImg = selImage;
+        NSData *imageData = UIImagePNGRepresentation(userHeaderImg);
+        [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:LoginUserHeader];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        
+    }];
+    UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            LuHeaderCell* cell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            [cell.headerIcon setBackgroundImage:userHeaderImg forState:UIControlStateNormal];
+        });
+        
+    }];
+    [alertSheet addAction:sureActon];
+    [alertSheet addAction:cancelActon];
+    [self presentViewController:alertSheet animated:YES completion:nil];
 
-    userHeaderImg = selImage;
-//    [[NSUserDefaults standardUserDefaults] setObject:userHeaderImg forKey:LoginUserHeader];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-    LuHeaderCell* cell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    [cell.headerIcon setBackgroundImage:selImage forState:UIControlStateNormal];
 }
 
 - (void)logout:(UIButton*)sender {

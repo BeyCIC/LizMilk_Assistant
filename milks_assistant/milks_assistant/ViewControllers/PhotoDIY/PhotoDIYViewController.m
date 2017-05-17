@@ -112,6 +112,7 @@
         [actionSheet addAction:takeActon];
         [actionSheet addAction:cancelActon];
         [self presentViewController:actionSheet animated:YES completion:nil];
+        
     } else{
         [self showAlertWithTitle:@"提示" msg:@"请设置访问权限" ok:@"确定" cancel:nil];
     }

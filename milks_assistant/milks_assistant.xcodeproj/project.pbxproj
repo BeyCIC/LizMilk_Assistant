@@ -92,6 +92,7 @@
 		50CA8AE01EB041D000662476 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA8ADF1EB041D000662476 /* AssetsLibrary.framework */; };
 		50CA8AE21EB041EC00662476 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA8AE11EB041EC00662476 /* CoreMedia.framework */; };
 		50CF34A71ECB2006004CEE47 /* HYSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF34A61ECB2006004CEE47 /* HYSTabBarViewController.m */; };
+		50CF34AE1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF34AD1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.m */; };
 		50EFFB831E9E0193005330FA /* UPWMUserInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */; };
 		50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB821E9E0193005330FA /* UPWSizeUtil.m */; };
 		50EFFB911E9E01B6005330FA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EFFB861E9E01B6005330FA /* UIImage+Resize.m */; };
@@ -286,6 +287,8 @@
 		50CA8AE11EB041EC00662476 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		50CF34A51ECB2006004CEE47 /* HYSTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSTabBarViewController.h; sourceTree = "<group>"; };
 		50CF34A61ECB2006004CEE47 /* HYSTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSTabBarViewController.m; sourceTree = "<group>"; };
+		50CF34AC1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHYSLizzieHelpViewController.h; sourceTree = "<group>"; };
+		50CF34AD1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHYSLizzieHelpViewController.m; sourceTree = "<group>"; };
 		50EFFB7F1E9E0193005330FA /* UPWMUserInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWMUserInterfaceManager.h; sourceTree = "<group>"; };
 		50EFFB801E9E0193005330FA /* UPWMUserInterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPWMUserInterfaceManager.m; sourceTree = "<group>"; };
 		50EFFB811E9E0193005330FA /* UPWSizeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPWSizeUtil.h; sourceTree = "<group>"; };
@@ -809,6 +812,8 @@
 				509364B01EB86E6700EEBBEB /* LMSecuritySettingViewController.m */,
 				50209FE21EBF2D3000D60E0C /* LMFeedBackViewController.h */,
 				50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */,
+				50CF34AC1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.h */,
+				50CF34AD1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1159,6 +1164,7 @@
 				501658831EAAE6EC0023DE54 /* LWContentView.m in Sources */,
 				5093D6881E936ACA006FDFEE /* LMAddDairyViewController.m in Sources */,
 				501658811EAAE6EC0023DE54 /* LWFilterImageView.m in Sources */,
+				50CF34AE1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.m in Sources */,
 				5016587A1EAAE6EC0023DE54 /* LWImageCropView.m in Sources */,
 				50EFFBAA1E9E1429005330FA /* DashBoardModel.m in Sources */,
 				50209FE71EBF586E00D60E0C /* UPXTouchIDManager.m in Sources */,
@@ -1306,7 +1312,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1323,7 +1329,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
