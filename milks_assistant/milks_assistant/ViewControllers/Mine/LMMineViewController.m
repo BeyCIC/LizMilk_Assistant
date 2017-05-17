@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "LMFeedBackViewController.h"
 #import "LMSecuritySettingViewController.h"
+#import "LMHYSLizzieHelpViewController.h"
 
 @interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
@@ -40,8 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我的";
+    self.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self initView];
-    
     NSData *imageData = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserHeader];
     if (imageData) {
         userHeaderImg = [UIImage imageWithData:imageData];
@@ -54,6 +55,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [_tableView reloadData];
 }
 
@@ -114,9 +116,7 @@
             [loginOutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
             [loginOutBtn setBackgroundColor:RGBCOLOR(57, 139, 251)];
             [cell.contentView addSubview:loginOutBtn];
-            
         }
-        
     }
     if (indexPath.section == 1 && indexPath.row != 4) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -182,7 +182,8 @@
             break;
         case 1:
         {
-            
+            LMHYSLizzieHelpViewController *loveLizzie = [[LMHYSLizzieHelpViewController alloc] init];
+            [self.navigationController pushViewController:loveLizzie animated:YES];
         }
             break;
         case 2:

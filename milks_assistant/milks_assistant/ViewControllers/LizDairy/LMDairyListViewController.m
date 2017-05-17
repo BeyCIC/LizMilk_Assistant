@@ -52,6 +52,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [_dataArr removeAllObjects];
     NSArray *dairyArr = LizzieDairyDataInfo.getDairyObjects;
     [_dataArr addObjectsFromArray:dairyArr];

@@ -41,6 +41,11 @@
     [self setupMainViewControllers];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+}
+
 
 #pragma mark - 微信唤醒
 
@@ -77,9 +82,7 @@
     
     _tabBarController = [[HYSTabBarViewController alloc] init];
     _tabBarController.delegate = self;
-    _tabBarController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-10);
-//    _tabBarController.view.backgroundColor = [UIColor redColor];
-//    _tabBarController.tabBar.frame  = CGRectMake(0, _tabBarController.tabBar.frame.origin.y-10, SCREEN_WIDTH, 44);
+    _tabBarController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [UIView animateWithDuration:1 animations:^{
         _welcomeImageView.layer.opacity = 0.0f;//画布设为透明
     } completion:^(BOOL finished) {

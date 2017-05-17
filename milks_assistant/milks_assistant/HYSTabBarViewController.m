@@ -27,7 +27,7 @@
     
     frame.size.height = 60;
     
-    frame.origin.y = self.view.frame.size.height - frame.size.height+10;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
     
     self.tabBar.frame = frame;
     
