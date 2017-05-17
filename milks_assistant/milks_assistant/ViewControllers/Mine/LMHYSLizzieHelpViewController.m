@@ -19,6 +19,7 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = item;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationItem.title = @"Lizzie Liu";
     [self initView];
     // Do any additional setup after loading the view.
 }
@@ -28,10 +29,24 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT+20)];
     backgroundView.image = [UIImage imageNamed:@"seaSkyAndYou"];
     
-    UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-200)/2.0, 100, 200, 200)];
+    UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, (SCREEN_WIDTH - 100), 200)];
     [backgroundView addSubview:contentLab];
-    contentLab.text = @"\"对于我来讲，你永远都不是一个简洁的选项，而是一个麻烦但生动的人。他们忙着嘉奖你的乖巧，许诺一个更敞亮的未来给你。这些我都没有。但我宽众你成为自己。\"";
-    contentLab.textColor = [UIColor blackColor];
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paraStyle.alignment = NSTextAlignmentLeft;
+    paraStyle.lineSpacing = 10; //设置行间距
+    paraStyle.hyphenationFactor = 1.0;
+    paraStyle.firstLineHeadIndent = 2.0;
+    paraStyle.paragraphSpacingBefore = 0.0;
+    paraStyle.headIndent = 0;
+    paraStyle.tailIndent = 0;
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor colorWithWhite:0.5 alpha:1], NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.5f
+                          };
+    
+    NSString *heartSay =  @"“对我来讲，你永远都不是一个简洁的选项，而是一个麻烦但生动的人。他们忙着嘉奖你的乖巧，许诺一个更敞亮的未来给你。这些我都没有。但我宽纵你成为自己。”";
+    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:heartSay attributes:dic];
+    contentLab.attributedText = attributeStr;
+
     contentLab.textAlignment = NSTextAlignmentLeft;
     contentLab.numberOfLines =  0;
     [self.view addSubview:backgroundView];
