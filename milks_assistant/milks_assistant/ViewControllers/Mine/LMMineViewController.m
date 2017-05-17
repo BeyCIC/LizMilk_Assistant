@@ -167,17 +167,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (indexPath.section == 0) {
+        return;
+    }
     switch (indexPath.row) {
         case 0:
         {
-           
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18207485176"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
             break;
         case 1:
         {
-            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18207485176"];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+            
         }
             break;
         case 2:
