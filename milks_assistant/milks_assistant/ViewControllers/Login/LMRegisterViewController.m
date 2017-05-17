@@ -37,6 +37,7 @@
     
     pwdText = [[UITextField alloc] initWithFrame:CGRectMake(30, offsetY + 50, SCREEN_WIDTH-60, 30)];
     pwdText.placeholder = @"请输入密码";
+    pwdText.secureTextEntry = YES;
     UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(30, offsetY + 80, SCREEN_WIDTH-60, 0.7)];
     line2.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
     

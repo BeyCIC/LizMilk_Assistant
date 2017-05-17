@@ -171,13 +171,13 @@
     switch (indexPath.row) {
         case 0:
         {
-            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18207485176"];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+           
         }
             break;
         case 1:
         {
-            
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18207485176"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
             break;
         case 2:
@@ -344,12 +344,16 @@
     if (self) {
         
         _headerIcon = [UIButton buttonWithType:UIButtonTypeCustom];
-        _headerIcon.frame = CGRectMake(0, 0, 60, 60);
+        _headerIcon.frame = CGRectMake((SCREEN_WIDTH-60)/2, 0, 60, 60);
         _name = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
         _headerIcon.layer.cornerRadius = 30;
     
         _headerIcon.layer.masksToBounds = YES;
         _name.textAlignment = NSTextAlignmentCenter;
+        _headerIcon.frame = CGRectMake((SCREEN_WIDTH-60)/2.0, (120)/2.0, 60, 60);
+        _name.frame = CGRectMake(0, (120)/2.0+70, SCREEN_WIDTH, 30);
+        _name.textAlignment = NSTextAlignmentCenter;
+        _name.textColor = [UIColor purpleColor];
         [self.contentView addSubview:_headerIcon];
         [self.contentView addSubview:_name];
     };
@@ -358,10 +362,13 @@
 
 - (void)setFrame:(CGRect)frame {
     
-    _headerIcon.frame = CGRectMake((frame.size.width-60)/2.0, (frame.size.height-60)/2.0, 60, 60);
-    _name.frame = CGRectMake(0, (frame.size.height-60)/2.0+70, SCREEN_WIDTH, 30);
+    [super setFrame:frame];
+    _headerIcon.frame = CGRectMake((SCREEN_WIDTH-60)/2.0, (120)/2.0, 60, 60);
+    _name.frame = CGRectMake(0, (120)/2.0+70, SCREEN_WIDTH, 30);
     _name.textAlignment = NSTextAlignmentCenter;
     _name.textColor = [UIColor purpleColor];
+    [self.contentView addSubview:_headerIcon];
+    [self.contentView addSubview:_name];
 }
 
 - (void)setUserHeader:(NSString*)header{
