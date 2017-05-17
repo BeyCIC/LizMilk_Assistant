@@ -24,8 +24,9 @@
     /************************* start **********************************/
     
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backBtn.frame = CGRectMake(0, 0, 64, 64);
-    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    backBtn.frame = CGRectMake(SCREEN_WIDTH - 80, 10, 64, 64);
+    backBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    [backBtn setTitle:@"取消" forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     

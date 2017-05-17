@@ -16,7 +16,7 @@
 @interface LuHeaderCell : UITableViewCell
 
 @property(nonatomic,strong)UIButton *headerIcon;
-@property(nonatomic,strong)UILabel *name;
+@property(nonatomic,strong)UITextField *name;
 
 - (void)setUserHeader:(NSString*)header;
 

@@ -15,7 +15,7 @@
 #import "LMSecuritySettingViewController.h"
 #import "LMHYSLizzieHelpViewController.h"
 
-@interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface LMMineViewController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>{
     
     UITableView *_tableView;
     
@@ -97,7 +97,8 @@
         [cell.headerIcon addTarget:self action:@selector(changeHeader:) forControlEvents:UIControlEventTouchUpInside];
 //        [cell setUserHeader:@"lizhead"];
         [cell.headerIcon setBackgroundImage:userHeaderImg forState:UIControlStateNormal];
-        [cell setUserName:@"刘磊璐"];
+        [cell setUserName:@"Lizzie Liu"];
+        cell.name.delegate = self;
         return cell;
     }
     static NSString* identifier = @"tableCell";
@@ -169,6 +170,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [self.view endEditing:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         return;
@@ -229,8 +231,9 @@
     }
 }
 
-- (void)Back:(UIButton*)sender {
-    
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.view endEditing:YES];
+    return YES;
 }
 
 - (void)changeHeader:(UIButton*)sender {
@@ -312,6 +315,10 @@
 
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
+
 - (void)logout:(UIButton*)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:LogoutPostnotificationName object:nil];
 }
@@ -388,15 +395,12 @@
         
         _headerIcon = [UIButton buttonWithType:UIButtonTypeCustom];
         _headerIcon.frame = CGRectMake((SCREEN_WIDTH-60)/2, 0, 60, 60);
-        _name = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
+        _name = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
         _headerIcon.layer.cornerRadius = 30;
     
         _headerIcon.layer.masksToBounds = YES;
         _name.textAlignment = NSTextAlignmentCenter;
-        _headerIcon.frame = CGRectMake((SCREEN_WIDTH-60)/2.0, (120)/2.0, 60, 60);
-        _name.frame = CGRectMake(0, (120)/2.0+70, SCREEN_WIDTH, 30);
-        _name.textAlignment = NSTextAlignmentCenter;
-        _name.textColor = [UIColor purpleColor];
+        _name.placeholder = @"昵称";
         [self.contentView addSubview:_headerIcon];
         [self.contentView addSubview:_name];
     };
@@ -410,8 +414,6 @@
     _name.frame = CGRectMake(0, (120)/2.0+70, SCREEN_WIDTH, 30);
     _name.textAlignment = NSTextAlignmentCenter;
     _name.textColor = [UIColor purpleColor];
-    [self.contentView addSubview:_headerIcon];
-    [self.contentView addSubview:_name];
 }
 
 - (void)setUserHeader:(NSString*)header{

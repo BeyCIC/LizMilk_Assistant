@@ -55,7 +55,7 @@
     UIButton *rightSaveBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 60, 40)];
     [rightSaveBtn setTitle:@"保存" forState:UIControlStateNormal];
     rightSaveBtn.titleLabel.font = [UIFont systemFontOfSize:20];
-    [rightSaveBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [rightSaveBtn setTitleColor:RGBCOLOR(59, 196, 250) forState:UIControlStateNormal];
 //    [rightSaveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [rightSaveBtn addTarget:self action:@selector(savaContentImage:) forControlEvents:UIControlEventTouchUpInside];
     
