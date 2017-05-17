@@ -3,7 +3,7 @@
 //  wallet
 //
 //  Created by mac on 16/6/22.
-//  Copyright © 2016年 China Unionpay Co.,Ltd. All rights reserved.
+//  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

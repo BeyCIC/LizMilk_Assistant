@@ -3,7 +3,7 @@
 //  wallet
 //
 //  Created by qcao on 14/12/6.
-//  Copyright (c) 2014年 China Unionpay Co.,Ltd. All rights reserved.
+//  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
