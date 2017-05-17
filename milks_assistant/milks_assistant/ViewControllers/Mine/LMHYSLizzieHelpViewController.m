@@ -42,13 +42,13 @@
     paraStyle.paragraphSpacingBefore = 0.0;
     paraStyle.headIndent = 0;
     paraStyle.tailIndent = 0;
+    
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor colorWithWhite:0.5 alpha:1], NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.5f
                           };
-    
     NSString *heartSay =  @"“对我来讲，你永远都不是一个简洁的选项，而是一个麻烦但生动的人。他们忙着嘉奖你的乖巧，许诺一个更敞亮的未来给你。这些我都没有。但我宽纵你成为自己。”";
     NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:heartSay attributes:dic];
+    
     contentLab.attributedText = attributeStr;
-
     contentLab.textAlignment = NSTextAlignmentLeft;
     contentLab.numberOfLines =  0;
     [contentLab sizeToFit];
