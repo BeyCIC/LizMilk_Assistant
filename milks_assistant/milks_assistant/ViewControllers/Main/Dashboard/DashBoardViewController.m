@@ -2,8 +2,8 @@
 //  DashBoardViewController.m
 //  MoveDemo
 //
-//  Created by lulu on 16/8/15.
-//  Copyright © 2016年 lulu. All rights reserved.
+//  Created by JasonHuang on 16/8/15.
+//  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
 #import "DashBoardViewController.h"
@@ -32,7 +32,8 @@
     // 提示没有指标的label
     UILabel * label;
     
-    LMRegisterViewController *nextCtl;
+    LMRegisterViewController* registerVC;
+    
     LMLoginViewController *loginVC;
 }
 
@@ -96,9 +97,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self makeDate];
- 
     if(_collectionView) {
          [_collectionView reloadData];
     }
@@ -135,16 +136,16 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     
     if (!isLogin || [isLogin isEqualToString:@""]) {
         
-        nextCtl = [[LMRegisterViewController alloc] init];
-        nextCtl.delegate = self;
-        [self presentViewController:nextCtl animated:YES completion:nil];
+       registerVC = [[LMRegisterViewController alloc] init];
+        registerVC.delegate = self;
+        [self presentViewController:registerVC animated:YES completion:nil];
     } else {
         BOOL isSave = [KeychainData isSave]; //是否有保存
         if (isSave) {
             
-            SetpasswordViewController *setpass = [[SetpasswordViewController alloc] init];
-            setpass.string = @"验证密码";
-            [self presentViewController:setpass animated:YES completion:nil];
+            self.gestureCtl = [[SetpasswordViewController alloc] init];
+            self.gestureCtl.string = @"验证密码";
+            [self presentViewController:self.gestureCtl animated:YES completion:nil];
         }
     }
     
@@ -155,9 +156,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)logout:(NSNotification*)notification {
-    nextCtl = [[LMRegisterViewController alloc] init];
-    nextCtl.delegate = self;
-    [self presentViewController:nextCtl animated:YES completion:nil];
+    registerVC = [[LMRegisterViewController alloc] init];
+    registerVC.delegate = self;
+    [self presentViewController:registerVC animated:YES completion:nil];
 }
 
 - (void)login:(NSNotification*)notification {
@@ -165,13 +166,13 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)registerSuc {
-    [nextCtl dismissViewControllerAnimated:YES completion:nil];
+    [registerVC dismissViewControllerAnimated:YES completion:nil];
     [loginVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)loginBtnaction {
-    if (nextCtl) {
-        [nextCtl dismissViewControllerAnimated:YES completion:nil];
+    if (registerVC) {
+        [registerVC dismissViewControllerAnimated:YES completion:nil];
     }
     
     if (!loginVC) {
@@ -188,7 +189,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)loginSuccess {
-    [nextCtl dismissViewControllerAnimated:YES completion:nil];
+    [registerVC dismissViewControllerAnimated:YES completion:nil];
     [loginVC dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -196,11 +197,11 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     if (loginVC) {
             [loginVC dismissViewControllerAnimated:YES completion:nil];
     }
-    if (!nextCtl) {
-        nextCtl = [[LMRegisterViewController alloc] init];
-        nextCtl.delegate = self;
+    if (!registerVC) {
+        registerVC = [[LMRegisterViewController alloc] init];
+        registerVC.delegate = self;
     }
-    [self presentViewController:nextCtl animated:YES completion:nil];
+    [self presentViewController:registerVC animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

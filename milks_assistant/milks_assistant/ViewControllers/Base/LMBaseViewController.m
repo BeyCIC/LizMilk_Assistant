@@ -8,6 +8,7 @@
 
 #import "LMBaseViewController.h"
 #import "UPWMUserInterfaceManager.h"
+#import "KeychainData.h"
 
 @interface LMBaseViewController ()
 
@@ -26,7 +27,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showGestureValide:) name:@"sholdShowGestValide" object:nil];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+}
+
+- (void)showGestureValide:(NSNotification*)notification {
+ 
+    BOOL isBackground = [[NSUserDefaults standardUserDefaults] boolForKey:@"isEnterBackground"];
+    if (isBackground) {
+        BOOL isSave = [KeychainData isSave]; //是否有保存
+        if (isSave) {
+            
+            self.gestureCtl = [[SetpasswordViewController alloc] init];
+            self.gestureCtl.string = @"验证密码";
+            [self presentViewController:self.gestureCtl animated:YES completion:nil];
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isEnterBackground"];
+    }
 }
 
 - (void)showAlertWithTitle:(NSString *)title msg:(NSString *)msg ok:(NSString *)ok cancel:(NSString *)cancel{

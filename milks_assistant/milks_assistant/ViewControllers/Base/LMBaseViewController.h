@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SetpasswordViewController.h"
 
 @interface LMBaseViewController : UIViewController
 
 - (void)setRoundBtn:(UIButton*)button;
+
+@property (nonatomic,strong)SetpasswordViewController *gestureCtl;
 
 - (void)showAlertWithTitle:(NSString *)title msg:(NSString *)msg ok:(NSString *)ok cancel:(NSString *)cancel;
 
