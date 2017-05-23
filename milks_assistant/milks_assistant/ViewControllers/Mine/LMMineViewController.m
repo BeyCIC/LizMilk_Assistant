@@ -23,6 +23,9 @@
     
     UIImage *userHeaderImg;
     
+    NSString *userNickname;
+    
+    UITextField *userNickNameTxt;
 }
 
 @end
@@ -50,12 +53,22 @@
     if (!userHeaderImg) {
         userHeaderImg = [UIImage imageNamed:@"lizhead"];
     }
+    
+    userNickname = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserNickName];
+    if (!userNickname || [userNickname isEqualToString:@""]) {
+        userNickname = @"Lizzie liu";
+    }
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
+    userNickname = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserNickName];
+    if (!userNickname || [userNickname isEqualToString:@""]) {
+        userNickname = @"Lizzie liu";
+    }
     [_tableView reloadData];
 }
 
@@ -95,10 +108,10 @@
         LuHeaderCell* cell = [[LuHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"header"];
         cell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 180);
         [cell.headerIcon addTarget:self action:@selector(changeHeader:) forControlEvents:UIControlEventTouchUpInside];
-//        [cell setUserHeader:@"lizhead"];
         [cell.headerIcon setBackgroundImage:userHeaderImg forState:UIControlStateNormal];
-        [cell setUserName:@"Lizzie Liu"];
+        [cell setUserName:userNickname];
         cell.name.delegate = self;
+        userNickNameTxt = cell.name;
         return cell;
     }
     static NSString* identifier = @"tableCell";
@@ -232,6 +245,8 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [[NSUserDefaults standardUserDefaults] setObject:textField.text forKey:LoginUserNickName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self.view endEditing:YES];
     return YES;
 }
@@ -316,6 +331,8 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [[NSUserDefaults standardUserDefaults] setObject:userNickNameTxt.text forKey:LoginUserNickName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self.view endEditing:YES];
 }
 
