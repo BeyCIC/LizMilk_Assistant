@@ -8,7 +8,7 @@
 
 #import "LMHYSLizzieHelpViewController.h"
 
-#define LizGraduationSummary   @"未来，希望我能全力以赴地为一件件事努力，踏实专注、不博二图；希望去体验生活的多彩灿烂，周游值得一去的特色景点；心中长久怀揣的心愿，活得精致；希望能以工作的专业取得尊重，以品格的完满获得信任；希望享受经历，着服过程，问心无愧；希望家人朋友健康顺心，我会友善地对待遇到的每一个人；希望我能拥有一个温暖安心的家，有人与我携手同心将来的年月；希望永欢热泪盈眶，不改初心；温柔地讲不愿屈将地把现实推倒，希望我会记得自己，别人会记得我，我会记得别人。/n 我爱你 磊璐"
+#define LizGraduationSummary   @"未来，希望我能全力以赴地为一件件事努力，踏实专注、不博二图；希望去体验生活的多彩灿烂，周游值得一去的特色景点；心中长久怀揣的心愿，活得精致；希望能以工作的专业取得尊重，以品格的完满获得信任；希望享受经历，着服过程，问心无愧；希望家人朋友健康顺心，我会友善地对待遇到的每一个人；希望我能拥有一个温暖安心的家，有人与我携手同心将来的年月；希望永欢热泪盈眶，不改初心；温柔地讲不愿屈将的把现实推倒，希望我会记得自己，别人会记得我，我会记得别人。/n 我爱你 磊璐"
 
 @interface LMHYSLizzieHelpViewController ()
 
@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = item;
+    self.navigationItem.backBarButtonItem = item;//item是菜单
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationItem.title = @"Lizzie Liu";
     [self initView];
@@ -34,7 +34,7 @@
     UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, (SCREEN_WIDTH - 100), SCREEN_HEIGHT - 130)];
     [backgroundView addSubview:contentLab];
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;//省略号放在最后
     paraStyle.alignment = NSTextAlignmentLeft;
     paraStyle.lineSpacing = 10; //设置行间距
     paraStyle.hyphenationFactor = 1.0;

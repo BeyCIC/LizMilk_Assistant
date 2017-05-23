@@ -44,17 +44,17 @@
     UIButton *registerBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-140)/2, offsetY + 110, 140, 40)];
     [registerBtn setTitle:@"立即注册" forState:UIControlStateNormal];
     [registerBtn setBackgroundColor:RGBCOLOR(29, 195, 38)];
-    [registerBtn addTarget:self action:@selector(register:) forControlEvents:UIControlEventTouchUpInside];
+    [registerBtn addTarget:self action:@selector(register:) //增加响应函数
+          forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *switchLab = [[UILabel alloc] initWithFrame:CGRectMake(30, offsetY + 170, SCREEN_WIDTH - 60, 20)];
     switchLab.text = @"或者";
-    switchLab.textAlignment = NSTextAlignmentCenter;
+    switchLab.textAlignment = NSTextAlignmentCenter;//居中
     switchLab.textColor = [UIColor grayColor];
-    switchLab.font = [UIFont systemFontOfSize:15];
+    switchLab.font = [UIFont systemFontOfSize:15];//字体大小
     
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"立即登录"];
-    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName value:[NSNumber numberWithInt:kCTUnderlineStyleSingle] range:(NSRange){0,[attString length]}];
-    
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"立即登录"];//富文本，增加下划线
+    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName value:[NSNumber numberWithInt:kCTUnderlineStyleSingle] range:(NSRange){0,[attString length]}];//下划线区域
     UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-80)/2, offsetY + 210, 80, 30)];
 //    [loginBtn setTitle:@"立即登录" forState:UIControlStateNormal];
     [loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -80,9 +80,9 @@
         [self showAlertWithTitle:@"提示" msg:@"请输入" ok:nil cancel:@"确定"];
         return;
     }
-    [[NSUserDefaults standardUserDefaults] setValue:userText.text forKey:LoginUserName];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(registerSuc)]) {
+    [[NSUserDefaults standardUserDefaults] setValue:userText.text forKey:LoginUserName];//缓存机制，保存个人信息
+    [[NSUserDefaults standardUserDefaults] synchronize];//同步：立即起作用
+    if(self.delegate && [self.delegate respondsToSelector:@selector(registerSuc)]) {    //：前面是函数名，后面是参数名， （）参数类型
         [self.delegate registerSuc];
     }
 }
@@ -95,7 +95,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Dispose of any resources that can be recreated.回收机制
 }
 
 /*
