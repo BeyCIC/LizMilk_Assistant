@@ -175,6 +175,7 @@
 
 #define LoginUserName           @"loginUserName"
 #define LoginUserHeader           @"loginUserHeader"
+#define LoginUserNickName           @"loginUserNickName"
 
 #define LogInPostnotificationName @"LogInPostnotificationName"
 

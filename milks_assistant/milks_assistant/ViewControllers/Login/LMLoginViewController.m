@@ -79,7 +79,7 @@
 - (void)loginAction:(id)sender {
     
     if ([userText.text isEqualToString:@""] || [pwdText.text isEqualToString:@""]) {
-        [self showAlertWithTitle:@"提示" msg:@"请输入" ok:nil cancel:@"确定"];
+        [self showAlertWithTitle:@"提示" msg:@"输入格式错误" ok:nil cancel:@"确定"];
         return;
     }
     [[NSUserDefaults standardUserDefaults] setValue:userText.text forKey:LoginUserName];
