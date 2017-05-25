@@ -2,7 +2,7 @@
 //  UPWSizeUtil.m
 //  wallet
 //
-//  Created by qcao on 14/12/6.
+//  Create by qcao on 14/12/6.
 //  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
 

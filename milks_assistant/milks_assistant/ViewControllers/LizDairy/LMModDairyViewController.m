@@ -2,7 +2,7 @@
 //  LMAddDairyViewController.m
 //  milks_assistant
 //
-//  Created by Jason Huang on 17/4/4.
+//  Create by Jason Huang on 17/4/4.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
@@ -73,8 +73,9 @@
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(modeFinished:)]) {
             [self.delegate modeFinished:_dataInfo];
+            [self.navigationController popViewControllerAnimated:YES];
         }
-        [self.navigationController popViewControllerAnimated:YES];
+        
     }
 }
 

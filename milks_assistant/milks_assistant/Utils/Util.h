@@ -2,7 +2,7 @@
 //  Util.h
 //  wallet_international
 //
-//  Created by JasonHuang on 16/9/6.
+//  Create by JasonHuang on 16/9/6.
 //  Copyright © 2016年 任杰. All rights reserved.
 //
 

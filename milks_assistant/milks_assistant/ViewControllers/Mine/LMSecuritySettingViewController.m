@@ -2,7 +2,7 @@
 //  LMSecuritySettingViewController.m
 //  milks_assistant
 //
-//  Created by JasonHuang on 2017/5/2.
+//  Create by JasonHuang on 2017/5/2.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 

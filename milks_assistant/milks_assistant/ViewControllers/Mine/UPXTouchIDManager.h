@@ -2,7 +2,7 @@
 //  UPXTouchIDManager.h
 //  wallet
 //
-//  Created by mac on 16/6/22.
+//  Create by mac on 16/6/22.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 

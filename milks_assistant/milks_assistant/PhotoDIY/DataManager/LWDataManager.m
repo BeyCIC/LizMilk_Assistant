@@ -2,7 +2,7 @@
 //  LWDataManager.m
 //  PhotoDIY
 //
-//  Created by luowei on 16/7/5.
+//  Create by luowei on 16/7/5.
 //  Copyright (c) 2016 wodedata. All rights reserved.
 //
 

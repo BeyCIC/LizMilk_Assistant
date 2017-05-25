@@ -2,7 +2,7 @@
 //  PhotoDIYViewController.m
 //  milks_assistant
 //
-//  Created by Jason Huang on 17/4/22.
+//  Create by Jason Huang on 17/4/22.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
@@ -10,9 +10,19 @@
 #import "LWContentView.h"
 #import "Categorys.h"
 #import "LWImageZoomView.h"
+#import "LMMaskViewController.h"
+#import "HYScratchCardView.h"
+#import "UPWMUserInterfaceManager.h"
+
+#define kBitsPerComponent (8)
+#define kBitsPerPixel (32)
+#define kPixelChannelCount (4)
 
 @interface PhotoDIYViewController ()<UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     UIAlertController *actionSheet;
+    HYScratchCardView *scatchView;
+    
+   
 }
 
 @end
@@ -40,6 +50,14 @@
     _contentView = [[LWContentView alloc] initWithFrame:CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
     _toolBar = [[LWToolBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44 - 64, SCREEN_WIDTH, 44)];
     [self.view addSubview:_contentView];
+    scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
+    UIImage * image = [UIImage imageNamed:@"panda"];
+    //顶图
+    scatchView.surfaceImage = image;
+    //低图
+    scatchView.image = [self transToMosaicImage:image blockLevel:10];
+    scatchView.hidden = YES;
+    [_contentView addSubview:scatchView];
 //    _toolBar.backgroundColor  = [UIColor redColor];
     [self.view addSubview:_toolBar];
     
@@ -61,16 +79,40 @@
     
     [self.view addSubview:rightSaveBtn];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetMaskImage) name:@"resetMaskImage" object:nil];
     // Do any additional setup after loading the view.
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor blackColor];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)savaContentImage:(UIButton*)sender {
-    [self.contentView saveImage];
+    if (!scatchView.isHidden) {
+        
+//            self.imageLayer.contents = (id)image.CGImage;
+//            self.imageLayer.contents = (id)image.CGImage;
+//        UIImage *image = [UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)((id)scatchView.shapeLayer.contents)];
+        UIImage *image = [scatchView getDrawImage];
+        UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+        [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+            if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                
+            }
+            else {
+                
+            }
+        }];
+    
+    } else {
+        [self.contentView saveImage];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -94,7 +136,6 @@
 
 
 - (IBAction)selPhotoAction:(id)sender {
-    
     actionSheet  = [UIAlertController alertControllerWithTitle:@"选择" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
@@ -133,20 +174,139 @@
         return;
     }
     [self.contentView loadPhoto:selImage];
+    [self maskLoadImage:selImage];
 }
 
 - (IBAction)filterAction:(id)sender {
+     scatchView.hidden = YES;
     [self.contentView showFilters];
 }
 
 - (IBAction)cropAction:(id)sender {
+    scatchView.hidden = YES;
     [self.contentView showOrHideCropView];
 }
 
 - (IBAction)drawAction:(id)sender {
-    [self.contentView showDrawView];
+
+//    LMMaskViewController *maskCtl = [[LMMaskViewController alloc] init];
+//    [self.navigationController pushViewController:maskCtl animated:YES];
+//    [self.contentView showDrawView];
+//    [self maskLoadImage];
+    [_contentView showDrawView];
+    scatchView.hidden = NO;
 }
 
+
+- (void)resetMaskImage {
+    if (scatchView) {
+        [scatchView removeFromSuperview];
+    }
+    
+    scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
+    UIImage * image = [UIImage imageNamed:@"panda"];
+    //顶图
+    scatchView.surfaceImage = image;
+    //低图
+    scatchView.image = [self transToMosaicImage:image blockLevel:10];
+    scatchView.hidden = NO;
+    [_contentView addSubview:scatchView];
+}
+
+- (void)maskLoadImage:(UIImage*)image {
+
+    //顶图
+    scatchView.surfaceImage = image;
+    //低图
+    scatchView.image = [self transToMosaicImage:image blockLevel:10];
+}
+
+- (UIImage *)transToMosaicImage:(UIImage*)orginImage blockLevel:(NSUInteger)level
+{
+    //获取BitmapData
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGImageRef imgRef = orginImage.CGImage;
+    CGFloat width = CGImageGetWidth(imgRef);
+    CGFloat height = CGImageGetHeight(imgRef);
+    CGContextRef context = CGBitmapContextCreate (nil,
+                                                  width,
+                                                  height,
+                                                  kBitsPerComponent,        //每个颜色值8bit
+                                                  width*kPixelChannelCount, //每一行的像素点占用的字节数，每个像素点的ARGB四个通道各占8个bit
+                                                  colorSpace,
+                                                  kCGImageAlphaPremultipliedLast);
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imgRef);
+    unsigned char *bitmapData = CGBitmapContextGetData (context);
+    
+    //这里把BitmapData进行马赛克转换,就是用一个点的颜色填充一个level*level的正方形
+    unsigned char pixel[kPixelChannelCount] = {0};
+    NSUInteger index,preIndex;
+    for (NSUInteger i = 0; i < height - 1 ; i++) {
+        for (NSUInteger j = 0; j < width - 1; j++) {
+            index = i * width + j;
+            if (i % level == 0) {
+                if (j % level == 0) {
+                    memcpy(pixel, bitmapData + kPixelChannelCount*index, kPixelChannelCount);
+                }else{
+                    memcpy(bitmapData + kPixelChannelCount*index, pixel, kPixelChannelCount);
+                }
+            } else {
+                preIndex = (i-1)*width +j;
+                memcpy(bitmapData + kPixelChannelCount*index, bitmapData + kPixelChannelCount*preIndex, kPixelChannelCount);
+            }
+        }
+    }
+    
+    NSInteger dataLength = width*height* kPixelChannelCount;
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, bitmapData, dataLength, NULL);
+    //创建要输出的图像
+    CGImageRef mosaicImageRef = CGImageCreate(width, height,
+                                              kBitsPerComponent,
+                                              kBitsPerPixel,
+                                              width*kPixelChannelCount ,
+                                              colorSpace,
+                                              kCGBitmapByteOrderDefault,
+                                              provider,
+                                              NULL, NO,
+                                              kCGRenderingIntentDefault);
+    CGContextRef outputContext = CGBitmapContextCreate(nil,
+                                                       width,
+                                                       height,
+                                                       kBitsPerComponent,
+                                                       width*kPixelChannelCount,
+                                                       colorSpace,
+                                                       kCGImageAlphaPremultipliedLast);
+    CGContextDrawImage(outputContext, CGRectMake(0.0f, 0.0f, width, height), mosaicImageRef);
+    CGImageRef resultImageRef = CGBitmapContextCreateImage(outputContext);
+    UIImage *resultImage = nil;
+    if([UIImage respondsToSelector:@selector(imageWithCGImage:scale:orientation:)]) {
+        float scale = [[UIScreen mainScreen] scale];
+        resultImage = [UIImage imageWithCGImage:resultImageRef scale:scale orientation:UIImageOrientationUp];
+    } else {
+        resultImage = [UIImage imageWithCGImage:resultImageRef];
+    }
+    //释放
+    if(resultImageRef){
+        CFRelease(resultImageRef);
+    }
+    if(mosaicImageRef){
+        CFRelease(mosaicImageRef);
+    }
+    if(colorSpace){
+        CGColorSpaceRelease(colorSpace);
+    }
+    if(provider){
+        CGDataProviderRelease(provider);
+    }
+    if(context){
+        CGContextRelease(context);
+    }
+    if(outputContext){
+        CGContextRelease(outputContext);
+    }
+    return resultImage ;
+    
+}
 
 
 - (IBAction)saveAction:(id)sender {

@@ -53,6 +53,8 @@
 		503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60271E8FA24400D3AF51 /* JSONKeyMapper.m */; };
 		503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */; };
 		503A60361E8FA28400D3AF51 /* LizzieDiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */; };
+		50627ACB1ED6FE7400CA20EC /* HYScratchCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50627ACA1ED6FE7400CA20EC /* HYScratchCardView.m */; };
+		50627ACE1ED6FFE000CA20EC /* LMMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50627ACD1ED6FFE000CA20EC /* LMMaskViewController.m */; };
 		507F5D7F1E8FA58000FDD2CB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D7E1E8FA58000FDD2CB /* libsqlite3.0.tbd */; };
 		507F5D811E8FA58B00FDD2CB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D801E8FA58B00FDD2CB /* CoreTelephony.framework */; };
 		507F5D841E8FA59500FDD2CB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D821E8FA59500FDD2CB /* AddressBook.framework */; };
@@ -223,6 +225,10 @@
 		503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		503A60341E8FA28400D3AF51 /* LizzieDiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LizzieDiaryModel.h; sourceTree = "<group>"; };
 		503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LizzieDiaryModel.m; sourceTree = "<group>"; };
+		50627AC91ED6FE7400CA20EC /* HYScratchCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYScratchCardView.h; sourceTree = "<group>"; };
+		50627ACA1ED6FE7400CA20EC /* HYScratchCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYScratchCardView.m; sourceTree = "<group>"; };
+		50627ACC1ED6FFE000CA20EC /* LMMaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMaskViewController.h; sourceTree = "<group>"; };
+		50627ACD1ED6FFE000CA20EC /* LMMaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMMaskViewController.m; sourceTree = "<group>"; };
 		507F5D7E1E8FA58000FDD2CB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		507F5D801E8FA58B00FDD2CB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		507F5D821E8FA59500FDD2CB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -380,8 +386,12 @@
 		501658521EAAE3530023DE54 /* PhotoDIY */ = {
 			isa = PBXGroup;
 			children = (
+				50627AC91ED6FE7400CA20EC /* HYScratchCardView.h */,
+				50627ACA1ED6FE7400CA20EC /* HYScratchCardView.m */,
 				501658581EAAE62D0023DE54 /* PhotoDIYViewController.h */,
 				501658591EAAE62D0023DE54 /* PhotoDIYViewController.m */,
+				50627ACC1ED6FFE000CA20EC /* LMMaskViewController.h */,
+				50627ACD1ED6FFE000CA20EC /* LMMaskViewController.m */,
 			);
 			path = PhotoDIY;
 			sourceTree = "<group>";
@@ -1143,6 +1153,7 @@
 				501658801EAAE6EC0023DE54 /* LWInkLine.m in Sources */,
 				5016587D1EAAE6EC0023DE54 /* LWScratchView.m in Sources */,
 				503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */,
+				50627ACE1ED6FFE000CA20EC /* LMMaskViewController.m in Sources */,
 				5016588B1EAAE7120023DE54 /* StoreManager.m in Sources */,
 				503A602E1E8FA24400D3AF51 /* NSArray+JSONModel.m in Sources */,
 				503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */,
@@ -1157,6 +1168,7 @@
 				50209FDA1EBEF78600D60E0C /* LMModDairyViewController.m in Sources */,
 				50EFFB921E9E01B6005330FA /* UPWLoadingView.m in Sources */,
 				503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */,
+				50627ACB1ED6FE7400CA20EC /* HYScratchCardView.m in Sources */,
 				509364A71EB86CA000EEBBEB /* AliPayItem.m in Sources */,
 				509364AE1EB86CC500EEBBEB /* SetpasswordViewController.m in Sources */,
 				50EFFB841E9E0193005330FA /* UPWSizeUtil.m in Sources */,
@@ -1313,7 +1325,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lizzie.milksAsstant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1331,8 +1343,9 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unionpay.chspintl111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lizzie.milksAsstant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;

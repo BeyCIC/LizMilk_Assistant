@@ -2,7 +2,7 @@
 //  LMLoginViewController.m
 //  milks_assistant
 //
-//  Created by JasonHuang on 2017/5/7.
+//  Create by JasonHuang on 2017/5/7.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 

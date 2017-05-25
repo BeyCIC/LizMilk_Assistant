@@ -2,7 +2,7 @@
 //  LWContentView.h
 //  PhotoDIY
 //
-//  Created by JasonHuang on 16/7/4.
+//  Create by JasonHuang on 16/7/4.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
@@ -20,13 +20,14 @@
 @class LWFilterImageView;
 @class LWPhotosBar;
 @class LWFilterBar;
+@class HYScratchCardView;
 
 @interface LWContentView : UIView<PDPhotoPickerProtocol>
 
 @property(nonatomic,strong)  LWImageZoomView *zoomView;
 @property(nonatomic,strong)  LWFilterImageView *filterView;
 @property(nonatomic,strong)  LWImageCropView *cropView;
-@property(nonatomic,strong)  LWDrawView *drawView;
+@property(nonatomic,strong)  HYScratchCardView *drawView;
 
 @property(nonatomic,strong)  LWFilterBar *filterBar;
 @property(nonatomic,strong)  LWFilterCollectionView *filterCollectionView;

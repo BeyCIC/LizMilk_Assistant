@@ -2,7 +2,7 @@
 //  GPUImageHistogramEqualizationFilter.h
 //  FilterShowcase
 //
-//  Created by Adam Marcus on 19/08/2014.
+//  Create by Adam Marcus on 19/08/2014.
 //  Copyright (c) 2014 Sunset Lake Software LLC. All rights reserved.
 //
 

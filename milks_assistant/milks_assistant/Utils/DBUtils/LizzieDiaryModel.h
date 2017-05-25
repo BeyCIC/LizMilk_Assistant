@@ -2,7 +2,7 @@
 //  UPWAppInfoModel.h
 //  wallet
 //
-//  Created by qcao on 14/11/4.
+//  Create by qcao on 14/11/4.
 //  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
 

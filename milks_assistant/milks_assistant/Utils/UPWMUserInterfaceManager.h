@@ -2,7 +2,7 @@
 //  UPWMUserInterfaceManager.h
 //  wallet_merchant
 //
-//  Created by renjie on 2017/1/6.
+//  Create by renjie on 2017/1/6.
 //  Copyright © 2017年 任杰. All rights reserved.
 //
 

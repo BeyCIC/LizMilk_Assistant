@@ -1,13 +1,13 @@
 //
-//  LMFeedBackViewController.h
+//  LMMaskViewController.h
 //  milks_assistant
 //
-//  Create by JasonHuang on 2017/5/7.
+//  Created by JasonHuang on 2017/5/25.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
 #import "LMBaseViewController.h"
 
-@interface LMFeedBackViewController : LMBaseViewController
+@interface LMMaskViewController : LMBaseViewController
 
 @end

@@ -2,7 +2,7 @@
 //  DashBoardCollectionViewCell.h
 //  MoveDemo
 //
-//  Created by lulu on 16/8/12.
+//  Create by lulu on 16/8/12.
 //  Copyright © 2016年 lulu. All rights reserved.
 //
 

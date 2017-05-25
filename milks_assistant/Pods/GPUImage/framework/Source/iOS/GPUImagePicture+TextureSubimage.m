@@ -2,7 +2,7 @@
 //  GPUImagePicture+TextureSubimage.m
 //  GPUImage
 //
-//  Created by Jack Wu on 2014-05-28.
+//  Create by Jack Wu on 2014-05-28.
 //  Copyright (c) 2014 Brad Larson. All rights reserved.
 //
 

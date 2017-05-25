@@ -2,7 +2,7 @@
 //  SetpasswordViewController.m
 //  AliPayDemo
 //
-//  Created by JasonHuang on 15/7/15.
+//  Create by JasonHuang on 15/7/15.
 //  Copyright (c) 2015年 JasonHuang. All rights reserved.
 //
 
