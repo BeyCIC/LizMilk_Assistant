@@ -2,7 +2,7 @@
 //  GPUImageMovieComposition.m
 //  Givit
 //
-//  Created by Sean Meiners on 2013/01/25.
+//  Create by Sean Meiners on 2013/01/25.
 //
 //
 

@@ -2,7 +2,7 @@
 //  FMDatabaseAdditions.m
 //  fmkit
 //
-//  Created by August Mueller on 10/30/05.
+//  Create by August Mueller on 10/30/05.
 //  Copyright 2005 Flying Meat Inc.. All rights reserved.
 //
 

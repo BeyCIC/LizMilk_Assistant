@@ -2,7 +2,7 @@
 //  DWTimingDataInfo.h
 //  DearWhere
 //
-//  Created by lgp on 13-12-19.
+//  Create by lgp on 13-12-19.
 //  Copyright (c) 2013年 lgp. All rights reserved.
 //
 

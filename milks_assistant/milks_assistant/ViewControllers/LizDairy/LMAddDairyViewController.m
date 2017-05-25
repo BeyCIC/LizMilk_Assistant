@@ -2,7 +2,7 @@
 //  LMAddDairyViewController.m
 //  milks_assistant
 //
-//  Created by Jason Huang on 17/4/4.
+//  Create by Jason Huang on 17/4/4.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
@@ -40,6 +40,7 @@
     _editView = [[UITextView alloc] initWithFrame:CGRectMake(15, 80, SCREEN_WIDTH-30, 350)];
     _editView.delegate = self;
     _editView.textColor = [UIColor blackColor];
+    _editView.font = [UIFont systemFontOfSize:18];
     
     sureBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-35)/2.0, 450,35, 35)];
     [sureBtn setBackgroundImage:[UIImage imageNamed:@"sure_btn"] forState:UIControlStateNormal];

@@ -2,7 +2,7 @@
 //  UPRotateAnimationView.h
 //  UPWallet
 //
-//  Created by wxzhao on 14-8-2.
+//  Create by wxzhao on 14-8-2.
 //  Copyright (c) 2014年 unionpay. All rights reserved.
 //
 

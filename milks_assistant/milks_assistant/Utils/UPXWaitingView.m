@@ -2,7 +2,7 @@
 //  UPXWaitingView.m
 //  UPClientV3
 //
-//  Created by TZ_JSKFZX_CAOQ on 13-6-13.
+//  Create by TZ_JSKFZX_CAOQ on 13-6-13.
 //
 //
 

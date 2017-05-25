@@ -2,7 +2,7 @@
 //  LWFilterCollectionView.m
 //  PhotoDIY
 //
-//  Created by luowei on 16/7/5.
+//  Create by luowei on 16/7/5.
 //  Copyright © 2016年 wodedata. All rights reserved.
 //
 

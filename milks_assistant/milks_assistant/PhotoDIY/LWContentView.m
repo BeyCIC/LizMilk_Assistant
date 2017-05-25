@@ -2,7 +2,7 @@
 //  LWContentView.m
 //  PhotoDIY
 //
-//  Created by JasonHuang on 16/7/4.
+//  Create by JasonHuang on 16/7/4.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
@@ -32,7 +32,7 @@
         
         _drawView = [[LWDrawView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _photosBar = [[LWPhotosBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 144, frame.size.width, 144)];
-        _filterBar = [[LWFilterBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 150, frame.size.width, 150)];
+        _filterBar = [[LWFilterBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 70, frame.size.width, 150)];
         
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];

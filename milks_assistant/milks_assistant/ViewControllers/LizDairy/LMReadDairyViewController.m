@@ -2,7 +2,7 @@
 //  LMReadDairyViewController.m
 //  milks_assistant
 //
-//  Created by Jason Huang on 17/4/4.
+//  Create by Jason Huang on 17/4/4.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
@@ -34,6 +34,7 @@
     UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
     self.navigationItem.rightBarButtonItem = phoneButton;
     [self initView];
+   
     // Do any additional setup after loading the view.
 }
 
@@ -58,7 +59,7 @@
     _dairyContent.textColor = [UIColor purpleColor];
     _dairyContent.numberOfLines = 0;
     _dairyContent.lineBreakMode = NSLineBreakByCharWrapping;
-    _dairyContent.font = [UIFont systemFontOfSize:16];
+    _dairyContent.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:_dairyContent];
     
     _contentStr = _dairyInfo.diaryContent;

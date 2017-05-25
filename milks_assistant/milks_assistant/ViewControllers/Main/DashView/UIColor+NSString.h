@@ -2,7 +2,7 @@
 //  UIColor+NSString.h
 //  Categories
 //
-//  Created by yu on 15/12/27.
+//  Create by yu on 15/12/27.
 //  Copyright © 2015年 yu. All rights reserved.
 //
 

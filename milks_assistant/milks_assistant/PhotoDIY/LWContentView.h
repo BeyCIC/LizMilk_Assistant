@@ -2,7 +2,7 @@
 //  LWContentView.h
 //  PhotoDIY
 //
-//  Created by JasonHuang on 16/7/4.
+//  Create by JasonHuang on 16/7/4.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 

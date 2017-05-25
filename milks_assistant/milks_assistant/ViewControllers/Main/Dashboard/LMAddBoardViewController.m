@@ -2,7 +2,7 @@
 //  LMModBoardViewController.m
 //  milks_assistant
 //
-//  Created by JasonHuang on 2017/5/7.
+//  Create by JasonHuang on 2017/5/7.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
     _editView = [[UITextView alloc] initWithFrame:CGRectMake(15, 80, SCREEN_WIDTH-30, 150)];
     _editView.delegate = self;
     _editView.textColor = [UIColor blackColor];
-    
+    _editView.font = [UIFont systemFontOfSize:18];
 //    sureBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 250, SCREEN_WIDTH-60, 35)];
     sureBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-35)/2.0, 450,35, 35)];
     [sureBtn setBackgroundImage:[UIImage imageNamed:@"sure_btn"] forState:UIControlStateNormal];

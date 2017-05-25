@@ -2,7 +2,7 @@
 //  UPWLoadingView.h
 //  wallet
 //
-//  Created by qcao on 14/10/22.
+//  Create by qcao on 14/10/22.
 //  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
 
