@@ -72,7 +72,7 @@
 
 - (UIColor *)getFreeInkColorWithIndex:(NSInteger)index {
     NSArray *colorArr = [[LWConfigManager sharedInstance] getStandardColorArray];
-    return colorArr[index];
+    return colorArr[1];
 }
 
 

@@ -73,8 +73,9 @@
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(modeFinished:)]) {
             [self.delegate modeFinished:_dataInfo];
+            [self.navigationController popViewControllerAnimated:YES];
         }
-        [self.navigationController popViewControllerAnimated:YES];
+        
     }
 }
 
