@@ -9,19 +9,19 @@
 #import "LMDairyListViewController.h"
 #import "LMAddDairyViewController.h"
 #import "LMReadDairyViewController.h"
-#import "Util.h"
+#import "Util.h"//工具类，静态函数
 
 @interface LMDairyListViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
     UITableView *_mainTable;
-    NSMutableArray *_dataArr;
+    NSMutableArray *_dataArr;//初始化数组，保存日记内容
 }
 
 @end
 
 @implementation LMDairyListViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil//面板
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -32,7 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setTitle:@"磊璐的日记"];
     UIColor * color = [UIColor whiteColor];
     //这里我们设置的是颜色，还可以设置shadow等，具体可以参见api
     NSDictionary * dict = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];

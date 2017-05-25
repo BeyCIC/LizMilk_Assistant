@@ -35,28 +35,28 @@
     [backgroundView addSubview:contentLab];
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineBreakMode = NSLineBreakByCharWrapping;//省略号放在最后
-    paraStyle.alignment = NSTextAlignmentLeft;
+    paraStyle.alignment = NSTextAlignmentLeft;//左对齐
     paraStyle.lineSpacing = 10; //设置行间距
     paraStyle.hyphenationFactor = 1.0;
-    paraStyle.firstLineHeadIndent = 2.0;
+    paraStyle.firstLineHeadIndent = 2.0;//缩进
     paraStyle.paragraphSpacingBefore = 0.0;
-    paraStyle.headIndent = 0;
-    paraStyle.tailIndent = 0;
+    paraStyle.headIndent = 0;//头间距
+    paraStyle.tailIndent = 0;//尾间距
     
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor colorWithWhite:0.5 alpha:1], NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.5f
                           };
     NSString *heartSay =  @"“对我来讲，你永远都不是一个简洁的选项，而是一个麻烦但生动的人。他们忙着嘉奖你的乖巧，许诺一个更敞亮的未来给你。这些我都没有。但我宽纵你成为自己。”";
     NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:heartSay attributes:dic];
     
-    contentLab.attributedText = attributeStr;
+    contentLab.attributedText = attributeStr;//富文本
     contentLab.textAlignment = NSTextAlignmentLeft;
-    contentLab.numberOfLines =  0;
-    [contentLab sizeToFit];
+    contentLab.numberOfLines =  0;//无数行
+    [contentLab sizeToFit];//自适应
     [self.view addSubview:backgroundView];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    [super didReceiveMemoryWarning];//内存警告
     // Dispose of any resources that can be recreated.
 }
 
