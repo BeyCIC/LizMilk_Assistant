@@ -1,7 +1,7 @@
 //
 //  PhotoDIYViewController.m
 //  milks_assistant
-//
+//  爱你一生一世，刘磊璐
 //  Create by Jason Huang on 17/4/22.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -99,15 +99,31 @@
 //            self.imageLayer.contents = (id)image.CGImage;
 //        UIImage *image = [UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)((id)scatchView.shapeLayer.contents)];
         UIImage *image = [scatchView getDrawImage];
-        UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
-        [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
-            if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
-                
-            }
-            else {
-                
+        ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
+        [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error) {
+            if (error) {
+                UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存失败" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                    if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }];
+            }else{
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                    if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }];
             }
         }];
+        
+        
     
     } else {
         [self.contentView saveImage];

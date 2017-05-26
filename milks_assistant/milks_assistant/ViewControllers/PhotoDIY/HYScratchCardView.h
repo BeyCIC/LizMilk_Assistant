@@ -1,9 +1,9 @@
 //
 //  HYScratchCardView.h
 //  Test
-//
-//  Created by Shadow on 14-5-23.
-//  Copyright (c) 2014年 Shadow. All rights reserved.
+//  爱你一生一世，刘磊璐
+//  Created by JasonHuang on 17-5-25.
+//  Copyright (c) 2017年 JasonHuang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
