@@ -21,8 +21,8 @@
 @interface PhotoDIYViewController ()<UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     UIAlertController *actionSheet;
     HYScratchCardView *scatchView;
-    
-   
+    UIImage *selectImage;
+    UIButton *_deleteBtn;
 }
 
 @end
@@ -48,10 +48,22 @@
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     _contentView = [[LWContentView alloc] initWithFrame:CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
-    _toolBar = [[LWToolBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44 - 64, SCREEN_WIDTH, 44)];
+    _toolBar = [[LWToolBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 40 - 64, SCREEN_WIDTH, 44)];
     [self.view addSubview:_contentView];
-    scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
-    UIImage * image = [UIImage imageNamed:@"panda"];
+    
+    selectImage = [UIImage imageNamed:@"panda"];
+    if (scatchView) {
+        [scatchView removeFromSuperview];
+    }
+    CGFloat height = selectImage.size.height*SCREEN_WIDTH/selectImage.size.width;
+    if (height < (SCREEN_HEIGHT - 44 - 64)) {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, ((SCREEN_HEIGHT - 44 - 64)-height)/2.0, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    } else
+    {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    }
+    
+    UIImage * image = selectImage;
     //顶图
     scatchView.surfaceImage = image;
     //低图
@@ -67,8 +79,8 @@
     [_toolBar.drawBtn addTarget:self action:@selector(drawAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView loadDefaultImage];
     
-//    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
-//    self.navigationItem.rightBarButtonItem = phoneButton;
+
+    
     
     UIButton *rightSaveBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 60, 40)];
     [rightSaveBtn setTitle:@"保存" forState:UIControlStateNormal];
@@ -78,6 +90,12 @@
     [rightSaveBtn addTarget:self action:@selector(savaContentImage:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:rightSaveBtn];
+    
+    _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 50, 30, 30, 30)];
+    [_deleteBtn setImage:[UIImage imageNamed:@"draw_clear"] forState:UIControlStateNormal];
+    [_deleteBtn addTarget:self action:@selector(resetMaskImage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_deleteBtn];
+    _deleteBtn.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetMaskImage) name:@"resetMaskImage" object:nil];
     // Do any additional setup after loading the view.
@@ -189,17 +207,20 @@
     if (!selImage) {
         return;
     }
+    selectImage = selImage;
     [self.contentView loadPhoto:selImage];
     [self maskLoadImage:selImage];
 }
 
 - (IBAction)filterAction:(id)sender {
      scatchView.hidden = YES;
+    _deleteBtn.hidden = YES;
     [self.contentView showFilters];
 }
 
 - (IBAction)cropAction:(id)sender {
     scatchView.hidden = YES;
+    _deleteBtn.hidden = YES;
     [self.contentView showOrHideCropView];
 }
 
@@ -211,16 +232,24 @@
 //    [self maskLoadImage];
     [_contentView showDrawView];
     scatchView.hidden = NO;
+    _deleteBtn.hidden = NO;
 }
 
 
 - (void)resetMaskImage {
+    [_contentView showDrawView];
     if (scatchView) {
         [scatchView removeFromSuperview];
     }
     
-    scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
-    UIImage * image = [UIImage imageNamed:@"panda"];
+    CGFloat height = selectImage.size.height*SCREEN_WIDTH/selectImage.size.width;
+    if (height < (SCREEN_HEIGHT - 44 - 64)) {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, ((SCREEN_HEIGHT - 44 - 64)-height)/2.0, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    } else
+    {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    }
+    UIImage * image = selectImage;
     //顶图
     scatchView.surfaceImage = image;
     //低图
@@ -231,10 +260,26 @@
 
 - (void)maskLoadImage:(UIImage*)image {
 
+    
+    if (scatchView) {
+        [scatchView removeFromSuperview];
+    }
+    scatchView = nil;
+    CGFloat height = selectImage.size.height*SCREEN_WIDTH/selectImage.size.width;
+    if (height < (SCREEN_HEIGHT - 44 - 64)) {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, ((SCREEN_HEIGHT - 44 - 64)-height)/2.0, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    } else
+    {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    }
+    UIImage * image1 = selectImage;
     //顶图
-    scatchView.surfaceImage = image;
+    scatchView.surfaceImage = image1;
     //低图
-    scatchView.image = [self transToMosaicImage:image blockLevel:10];
+    scatchView.image = [self transToMosaicImage:image1 blockLevel:10];
+    scatchView.hidden = NO;
+    [_contentView addSubview:scatchView];
+    [_contentView showDrawView];
 }
 
 - (UIImage *)transToMosaicImage:(UIImage*)orginImage blockLevel:(NSUInteger)level

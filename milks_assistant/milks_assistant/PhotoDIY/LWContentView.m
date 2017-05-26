@@ -38,7 +38,7 @@
         _drawView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _photosBar = [[LWPhotosBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 144, frame.size.width, 144)];
         _filterBar = [[LWFilterBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 70, frame.size.width, 150)];
-        
+        _drawView.hidden  = YES;
         UIImage * image = [UIImage imageNamed:@"panda"];
         //顶图
         _drawView.surfaceImage = image;
@@ -235,7 +235,10 @@
 
     LWDataManager *dm = [LWDataManager sharedInstance];
     [self reloadImage:dm.currentImage];
-
+    _drawView.hidden = YES;
+    if (_drawView) {
+            [_drawView removeFromSuperview];
+    }
 }
 
 #pragma mark -

@@ -1,7 +1,7 @@
 //
 //  WelcomeViewController.m
 //  wallet
-//
+//  爱你一生一世，刘磊璐
 //  Create by TZ_JSKFZX_CAOQ on 14-9-24.
 //  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
