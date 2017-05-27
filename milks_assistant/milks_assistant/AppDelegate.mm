@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DBConnection.h"
 #import "Util.h"
+#import "LMTouchIDManager.h"
 
 @interface AppDelegate ()
 
@@ -34,6 +35,19 @@
     [window setRootViewController:_rootViewController];
     [window makeKeyAndVisible];//系统函数：让这个界面显示
     [self setWindow:window];
+    
+//    [[LMTouchIDManager sharedInstance] presentTouchIDVC];
+//    if ([[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+//        //使用指纹解锁
+//        [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
+////            [wself.view removeFromSuperview];
+//            //在手势密码完成之后绘制tab
+////            [UP_NC postNotificationName:kNCAfterPatternAction object:@"TouchIDViewController"];
+//        } FailureResult:^(LAError result){
+//            //验证不成功或取消无操作
+//        }];
+//    }
+//    
     return YES;
 }
 

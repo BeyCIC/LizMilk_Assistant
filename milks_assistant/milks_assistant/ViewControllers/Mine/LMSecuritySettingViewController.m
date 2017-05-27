@@ -9,7 +9,7 @@
 #import "LMSecuritySettingViewController.h"
 #import "KeychainData.h"
 #import "SetpasswordViewController.h"
-#import "UPXTouchIDManager.h"
+#import "LMTouchIDManager.h"
 
 @interface LMSecuritySettingViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
@@ -24,13 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
     
     _mainTable.delegate = self;
     _mainTable.dataSource = self;
     _mainTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_mainTable];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationItem.title = @"密码锁";
     // Do any additional setup after loading the view.
 }
 
@@ -69,7 +70,11 @@
     } else {
         cell.textLabel.text = @"指纹解锁";
         UISwitch *touchSwitch = [[UISwitch alloc] init];
+        if ([[LMTouchIDManager sharedInstance] currentUserOpenTouchID]) {
+            [touchSwitch setOn:YES];
+        }
          touchSwitch.frame = CGRectMake(SCREEN_WIDTH - touchSwitch.frame.size.width - 30, (44-touchSwitch.frame.size.height)/2, touchSwitch.frame.size.width, touchSwitch.frame.size.height);
+        [touchSwitch addTarget:self action:@selector(touchSwitch:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:touchSwitch];
     }
     
@@ -91,27 +96,26 @@
 
 - (void)touchSwitch:(UISwitch*)sender {
     
-    if (![[UPXTouchIDManager sharedInstance] isTouchIdAvailable] && sender.isOn) {
+    
+    if (![[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
         [self showAlertWithTitle:@"提示" msg:@"您的手机未开启touchID验证" ok:@"确定" cancel:nil];
-    } else {
-         __weak typeof(self) wself = self;
-        [[UPXTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
-            [[UPXTouchIDManager sharedInstance] saveHadSetTouchIDUsersString:kHasSetTouchIDValue];
-//            [wself showFlashInfo:@"指纹解锁已开启" withImage:[]];
+    } else if([[LMTouchIDManager sharedInstance] isTouchIdAvailable] && sender.isOn)
+    {
+//         __weak typeof(self) wself = self;
+        [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
+            [[LMTouchIDManager sharedInstance] saveHadSetTouchIDUsersString:kHasSetTouchIDValue];
             [self showAlertWithTitle:@"提示" msg:@"指纹解锁已开启" ok:@"确定" cancel:nil];
         } FailureResult:^(LAError result){
             [sender setOn:NO];
             switch (result) {
                 case LAErrorAuthenticationFailed: {
                     // 认证失败 showflash
-//                    [wself showFlashInfo:UP_STR(@"String_TouchID_Failed_Title")];
                     [self showAlertWithTitle:@"提示" msg:@"认证失败" ok:@"确定" cancel:nil];
                     break;
                 }
                 case LAErrorTouchIDLockout: {
                     // 认证失败 showflash
                     [self showAlertWithTitle:@"提示" msg:@"认证失败" ok:@"确定" cancel:nil];
-//                    [wself showFlashInfo:UP_STR(@"String_TouchID_Failed_Title")];
                     break;
                 }
                 default: {

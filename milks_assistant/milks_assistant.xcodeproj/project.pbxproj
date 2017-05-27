@@ -33,7 +33,7 @@
 		50209FDE1EBF1F8E00D60E0C /* LMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FDD1EBF1F8E00D60E0C /* LMRegisterViewController.m */; };
 		50209FE11EBF294100D60E0C /* LMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE01EBF294100D60E0C /* LMLoginViewController.m */; };
 		50209FE41EBF2D3000D60E0C /* LMFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */; };
-		50209FE71EBF586E00D60E0C /* UPXTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE61EBF586E00D60E0C /* UPXTouchIDManager.m */; };
+		50209FE71EBF586E00D60E0C /* LMTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50209FE61EBF586E00D60E0C /* LMTouchIDManager.m */; };
 		503A5FF81E8F9D6A00D3AF51 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */; };
 		503A60041E8F9DA900D3AF51 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFB1E8F9DA900D3AF51 /* FMDatabase.m */; };
 		503A60051E8F9DA900D3AF51 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A5FFD1E8F9DA900D3AF51 /* FMDatabaseAdditions.m */; };
@@ -53,6 +53,7 @@
 		503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60271E8FA24400D3AF51 /* JSONKeyMapper.m */; };
 		503A60331E8FA24400D3AF51 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */; };
 		503A60361E8FA28400D3AF51 /* LizzieDiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */; };
+		5060929F1ED94BA2000DA02B /* LMTouchIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060929E1ED94BA2000DA02B /* LMTouchIDViewController.m */; };
 		50627ACB1ED6FE7400CA20EC /* HYScratchCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50627ACA1ED6FE7400CA20EC /* HYScratchCardView.m */; };
 		50627ACE1ED6FFE000CA20EC /* LMMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50627ACD1ED6FFE000CA20EC /* LMMaskViewController.m */; };
 		507F5D7F1E8FA58000FDD2CB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F5D7E1E8FA58000FDD2CB /* libsqlite3.0.tbd */; };
@@ -183,8 +184,8 @@
 		50209FE01EBF294100D60E0C /* LMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLoginViewController.m; sourceTree = "<group>"; };
 		50209FE21EBF2D3000D60E0C /* LMFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFeedBackViewController.h; sourceTree = "<group>"; };
 		50209FE31EBF2D3000D60E0C /* LMFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFeedBackViewController.m; sourceTree = "<group>"; };
-		50209FE51EBF586E00D60E0C /* UPXTouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPXTouchIDManager.h; sourceTree = "<group>"; };
-		50209FE61EBF586E00D60E0C /* UPXTouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPXTouchIDManager.m; sourceTree = "<group>"; };
+		50209FE51EBF586E00D60E0C /* LMTouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTouchIDManager.h; sourceTree = "<group>"; };
+		50209FE61EBF586E00D60E0C /* LMTouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTouchIDManager.m; sourceTree = "<group>"; };
 		503A5FF51E8F9D6A00D3AF51 /* dbConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbConfig.h; sourceTree = "<group>"; };
 		503A5FF61E8F9D6A00D3AF51 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		503A5FF71E8F9D6A00D3AF51 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
@@ -225,6 +226,8 @@
 		503A60291E8FA24400D3AF51 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		503A60341E8FA28400D3AF51 /* LizzieDiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LizzieDiaryModel.h; sourceTree = "<group>"; };
 		503A60351E8FA28400D3AF51 /* LizzieDiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LizzieDiaryModel.m; sourceTree = "<group>"; };
+		5060929D1ED94BA2000DA02B /* LMTouchIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTouchIDViewController.h; sourceTree = "<group>"; };
+		5060929E1ED94BA2000DA02B /* LMTouchIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTouchIDViewController.m; sourceTree = "<group>"; };
 		50627AC91ED6FE7400CA20EC /* HYScratchCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYScratchCardView.h; sourceTree = "<group>"; };
 		50627ACA1ED6FE7400CA20EC /* HYScratchCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYScratchCardView.m; sourceTree = "<group>"; };
 		50627ACC1ED6FFE000CA20EC /* LMMaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMMaskViewController.h; sourceTree = "<group>"; };
@@ -814,8 +817,10 @@
 		508B3ED31E8E440900C5CA2D /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				50209FE51EBF586E00D60E0C /* UPXTouchIDManager.h */,
-				50209FE61EBF586E00D60E0C /* UPXTouchIDManager.m */,
+				50209FE51EBF586E00D60E0C /* LMTouchIDManager.h */,
+				50209FE61EBF586E00D60E0C /* LMTouchIDManager.m */,
+				5060929D1ED94BA2000DA02B /* LMTouchIDViewController.h */,
+				5060929E1ED94BA2000DA02B /* LMTouchIDViewController.m */,
 				508B3F191E8E537000C5CA2D /* LMMineViewController.h */,
 				508B3F1A1E8E537000C5CA2D /* LMMineViewController.m */,
 				509364AF1EB86E6700EEBBEB /* LMSecuritySettingViewController.h */,
@@ -982,7 +987,7 @@
 				TargetAttributes = {
 					508B3E941E8E40C800C5CA2D = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = A4QPFDUUYG;
+						DevelopmentTeam = 2QUQNU7965;
 						ProvisioningStyle = Automatic;
 					};
 					508B3EAD1E8E40C800C5CA2D = {
@@ -1150,6 +1155,7 @@
 				5016587C1EAAE6EC0023DE54 /* LWDrawView.m in Sources */,
 				50EFFBAC1E9E1429005330FA /* UIColor+NSString.m in Sources */,
 				501658841EAAE6EC0023DE54 /* LWFilterCollectionView.m in Sources */,
+				5060929F1ED94BA2000DA02B /* LMTouchIDViewController.m in Sources */,
 				501658801EAAE6EC0023DE54 /* LWInkLine.m in Sources */,
 				5016587D1EAAE6EC0023DE54 /* LWScratchView.m in Sources */,
 				503A60321E8FA24400D3AF51 /* JSONKeyMapper.m in Sources */,
@@ -1179,7 +1185,7 @@
 				50CF34AE1ECC41D0004CEE47 /* LMHYSLizzieHelpViewController.m in Sources */,
 				5016587A1EAAE6EC0023DE54 /* LWImageCropView.m in Sources */,
 				50EFFBAA1E9E1429005330FA /* DashBoardModel.m in Sources */,
-				50209FE71EBF586E00D60E0C /* UPXTouchIDManager.m in Sources */,
+				50209FE71EBF586E00D60E0C /* LMTouchIDManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,11 +1327,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = A4QPFDUUYG;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lizzie.milksAsstant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lizzie.milksAsstant11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1339,11 +1345,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = A4QPFDUUYG;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/milks_assistant/milks.pch";
 				INFOPLIST_FILE = milks_assistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lizzie.milksAsstant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lizzie.milksAsstant11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -180,29 +180,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "milks_assistant/ViewControllers/PhotoDIY/PhotoDIYViewController.m"
-            timestampString = "517412305.478531"
+            timestampString = "517489039.989198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "-savaContentImage:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "milks_assistant/ViewControllers/PhotoDIY/HYScratchCardView.m"
-            timestampString = "517412305.478531"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-clearDrawBoard"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PhotoDIYViewController savaContentImage:]"
+                  moduleName = "milks_assistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasonhuang/Documents/private/milk/milks_assistant/milks_assistant/ViewControllers/PhotoDIY/PhotoDIYViewController.m"
+                  timestampString = "517562159.710658"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PhotoDIYViewController savaContentImage:]"
+                  moduleName = "milks_assistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasonhuang/Documents/private/milk/milks_assistant/milks_assistant/ViewControllers/PhotoDIY/PhotoDIYViewController.m"
+                  timestampString = "517562159.712164"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "484">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -235,6 +251,118 @@
             endingLineNumber = "74"
             landmarkName = "-sureAction:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "milks_assistant/ViewControllers/PhotoDIY/PhotoDIYViewController.m"
+            timestampString = "517489039.989198"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "-resetMaskImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "milks_assistant/ViewControllers/PhotoDIY/PhotoDIYViewController.m"
+            timestampString = "517489039.989198"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-drawAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "milks_assistant/ViewControllers/PhotoDIY/HYScratchCardView.m"
+            timestampString = "517488296.609405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-dealloc"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "milks_assistant/ViewControllers/Main/Dashboard/DashBoardViewController.m"
+            timestampString = "517561309.540416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "milks_assistant/ViewControllers/Main/Dashboard/DashBoardViewController.m"
+            timestampString = "517561347.250375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[DashBoardViewController viewDidLoad]_block_invoke"
+                  moduleName = "milks_assistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasonhuang/Documents/private/milk/milks_assistant/milks_assistant/ViewControllers/Main/Dashboard/DashBoardViewController.m"
+                  timestampString = "517562159.737216"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[DashBoardViewController viewDidLoad]_block_invoke_2"
+                  moduleName = "milks_assistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasonhuang/Documents/private/milk/milks_assistant/milks_assistant/ViewControllers/Main/Dashboard/DashBoardViewController.m"
+                  timestampString = "517562159.738669"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

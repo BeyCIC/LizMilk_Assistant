@@ -1,7 +1,7 @@
 //
 //  LWContentView.m
 //  PhotoDIY
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 16/7/4.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
@@ -380,33 +380,50 @@
     LWDataManager *dm = [LWDataManager sharedInstance];
 
     [self.filterView.filter forceProcessingAtSize:dm.currentImage.size];
-    self.hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+//    self.hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     [self.filterView.sourcePicture processImageUpToFilter:self.filterView.filter
                                       withCompletionHandler:^(UIImage *processedImage) {
                                           if (!processedImage) {
-                                              UIImageWriteToSavedPhotosAlbum(dm.currentImage, self, nil, nil);
+                                              [self saveImageToPhotos:dm.currentImage];
                                           } else {
-                                              UIImageWriteToSavedPhotosAlbum(processedImage, self, nil, nil);
+                                              [self saveImageToPhotos:processedImage];
+                                              
                                           }
-                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                              self.hud.mode = MBProgressHUDModeText;
-                                              self.hud.label.text = @"Save Success";
-                                              [self.hud hideAnimated:YES afterDelay:0];
-                                          });
-                                          
-                                         
                                       }];
-    [self.hud hideAnimated:YES afterDelay:3.0];
-    [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
-        if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+//    [self.hud hideAnimated:YES afterDelay:2.0];
+    
+}
+
+- (void)saveImageToPhotos:(UIImage*)image {
+    ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
+    [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error) {
+//        [self.hud hideAnimated:YES];
+        if (error) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存失败" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                    if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }];
+            });
             
-        }
-        else {
-            
+        }else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                    if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }];
+            });
         }
     }];
 }
-
 
 - (void)recovery {
     LWDataManager *dm = [LWDataManager sharedInstance];

@@ -1,27 +1,26 @@
 //
-//  UPXTouchIDManager.m
-//  wallet
-//
-//  Create by JasonHuang on 16/6/22.
+//  LMTouchIDManager.m
+//  Create by JasonHuang on 17/5/22.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
-#import "UPXTouchIDManager.h"
+#import "LMTouchIDManager.h"
 #import "Util.h"
 #import "KeychainItemWrapper.h"
 #import "AppDelegate.h"
 #import "WelcomeViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import "LMTouchIDViewController.h"
 
 #define kUserKeyId [[NSString alloc] initWithFormat:@"%@%@",@"jason", @"lizzie"]
 
-@implementation UPXTouchIDManager
+@implementation LMTouchIDManager
 
 + (instancetype)sharedInstance {
-    static UPXTouchIDManager *instance = nil;
+    static LMTouchIDManager *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[UPXTouchIDManager alloc] init];
+        instance = [[LMTouchIDManager alloc] init];
     });
     return instance;
 }
@@ -102,41 +101,16 @@
 
 #pragma mark - 弹出TouchID页面
 - (void)presentTouchIDVC {
-    if ([self shouldShowTouchID]) {
-//        if (_touchIDVC) {
-//            [_touchIDVC.view removeFromSuperview];
-//        }
-//        _touchIDVC = [[UPXTouchIDViewController alloc] init];
-//        [_touchIDVC.view setFrame:CGRectMake(0, 0, UP_IPHONESIZE.width, UP_IPHONESIZE.height)];
-//        [UP_App_KeyWindow addSubview:_touchIDVC.view];
-    } else {
-        [UP_NC postNotificationName:@"" object:@"TouchIDManager"];
-    }    
+    
+    if (_touchIDVC) {
+        [_touchIDVC.view removeFromSuperview];
+    }
+    _touchIDVC = [[LMTouchIDViewController alloc] init];
+    [_touchIDVC.view setFrame:CGRectMake(0, 0, UP_IPHONESIZE.width, UP_IPHONESIZE.height)];
+    _touchIDVC.view.backgroundColor = [UIColor redColor];
+    [UP_App_KeyWindow addSubview:_touchIDVC.view];
 }
 
-- (BOOL)shouldShowTouchID {
-    BOOL result = NO;
-
-    //手势密码超时时间
-//    NSTimeInterval interval = [UP_STR(@"String_LocalTimeoutInterval") doubleValue];
-
-//    //从后台进入前台设置
-//    if ((UP_SHDAT.hasLogin && ([UP_App backgroundInterval] >= interval))&& [self currentUserOpenTouchID]) {
-//        result = YES;
-//    }
-    
-    //第二次进入客户端时设置（非从后台进入前台）
-//    if ((UP_SHDAT.hasLogin) && [self currentUserOpenTouchID])
-//    {
-//        //只有当tabbar初始化完成了才在这个入口启动手势密码
-//        UITabBarController *aTabBarController = UP_App.rootViewController.tabBarController;
-//        if ((aTabBarController.viewControllers.count == 0)||(!aTabBarController.viewControllers)) {
-//            result = YES;
-//        }
-//    }
-    
-    return result;
-}
 
 #pragma mark - TouchId 验证
 - (void)evaluatePolicy:(NSString *)localizedReason

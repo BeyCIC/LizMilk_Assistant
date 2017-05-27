@@ -10,6 +10,7 @@
 #import "UPWMUserInterfaceManager.h"
 #import "KeychainData.h"
 #import "SetpasswordViewController.h"
+#import "LMTouchIDManager.h"
 
 @interface LMBaseViewController ()
 
@@ -46,12 +47,32 @@
             
             self.gestureCtl = [[SetpasswordViewController alloc] init];
             self.gestureCtl.string = @"验证密码";
-            [self presentViewController:self.gestureCtl animated:YES completion:nil];
+            [self presentViewController:self.gestureCtl animated:YES completion:^{
+                if ([[LMTouchIDManager sharedInstance] currentUserSetTouchID]) {
+                    if ([[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+                        //使用指纹解锁
+                        [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
+                            [self.gestureCtl dismissViewControllerAnimated:YES completion:nil];
+                        } FailureResult:^(LAError result){
+                            //验证不成功或取消无操作
+                        }];
+                    } else {
+                    }
+                }
+            }];
+            
+        } else if ([[LMTouchIDManager sharedInstance] currentUserSetTouchID]) {
+            if ([[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+                //使用指纹解锁
+                [[LMTouchIDManager sharedInstance] presentTouchIDVC];
+            } else {
+            }
         }
         
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isEnterBackground"];
     }
 }
+
 
 - (void)showAlertWithTitle:(NSString *)title msg:(NSString *)msg ok:(NSString *)ok cancel:(NSString *)cancel{
     

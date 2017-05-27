@@ -1,17 +1,17 @@
 //
-//  UPXTouchIDManager.h
-//  wallet
+//  LMTouchIDManager.h
 //
-//  Create by mac on 16/6/22.
+//  Create by JasonHuang on 17/5/22.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <LocalAuthentication/LocalAuthentication.h>
+#import "LMTouchIDViewController.h"
 
-//@class UPXTouchIDViewController;
+//@class LMTouchIDViewController;
 
-@interface UPXTouchIDManager : NSObject
+@interface LMTouchIDManager : NSObject
 
 #define kTouchIDKeyChainIdentifer    @"touchIDKeyChainIdentifer1"
 #define kKeyChainHadSetTouchIDUsersKey   kSecValueData
@@ -27,7 +27,7 @@
  */
 typedef void(^TouchIdValidationFailureBack)(LAError result);
 
-//@property (nonatomic, strong)  UPXTouchIDViewController *touchIDVC;
+@property (nonatomic, strong)  LMTouchIDViewController *touchIDVC;
 
 // 单例
 + (instancetype) sharedInstance;
