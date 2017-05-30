@@ -153,7 +153,8 @@
 }
 
 - (void)loginOtherAccount{
-    
+    [self.view removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"TouchIDManagerOtherAccount" object:nil];
 }
 
 //把方形button或view变成圆形

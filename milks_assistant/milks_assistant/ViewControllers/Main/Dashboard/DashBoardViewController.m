@@ -170,6 +170,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:LogoutPostnotificationName object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:LogInPostnotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"TouchIDManagerOtherAccount" object:nil];
     
     
 }
@@ -181,7 +182,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)login:(NSNotification*)notification {
-    
+    [self loginBtnaction];
 }
 
 - (void)registerSuc {
@@ -193,7 +194,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     if (registerVC) {
         [registerVC dismissViewControllerAnimated:YES completion:nil];
     }
-    
+    if (self.gestureCtl) {
+        [self.gestureCtl dismissViewControllerAnimated:YES completion:nil];
+    }
     
     if (!loginVC) {
         loginVC = [[LMLoginViewController alloc] init];
