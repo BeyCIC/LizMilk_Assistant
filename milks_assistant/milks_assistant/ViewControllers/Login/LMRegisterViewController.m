@@ -71,7 +71,7 @@
     [self.view addSubview:registerBtn];
     [self.view addSubview:switchLab];
     [self.view addSubview:loginBtn];
-    [self.view addSubview:shareBtn];
+//    [self.view addSubview:shareBtn];
 }
 
 - (void)register:(UIButton*)sender {
