@@ -1,9 +1,9 @@
 //
 //  FMDatabasePool.m
 //  fmdb
-//
-//  Create by August Mueller on 6/22/11.
-//  Copyright 2011 Flying Meat Inc. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 6/22/11.
+//  Copyright 2011 JasonHuang All rights reserved.
 //
 
 #import "FMDatabasePool.h"

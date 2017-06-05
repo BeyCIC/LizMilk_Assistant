@@ -1,8 +1,8 @@
 //
 //  UIImage+Resize.m
-//
-//  Create by Olivier Halligon on 12/08/09.
-//  Copyright 2009 AliSoftware. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 12/08/09.
+//  Copyright 2009 JasonHuang. All rights reserved.
 //
 
 #import "UIImage+Resize.h"

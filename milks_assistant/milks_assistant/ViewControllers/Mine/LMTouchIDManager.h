@@ -1,6 +1,6 @@
 //
 //  LMTouchIDManager.h
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 17/5/22.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //

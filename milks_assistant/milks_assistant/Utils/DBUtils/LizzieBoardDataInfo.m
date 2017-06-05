@@ -1,9 +1,9 @@
 //
 //  DWTimingDataInfo.m
-//  DearWhere
-//
-//  Create by lgp on 13-12-19.
-//  Copyright (c) 2013年 lgp. All rights reserved.
+//    
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 13-12-19.
+//  Copyright (c) 2013年 JasonHuang. All rights reserved.
 //
 
 #import "LizzieBoardDataInfo.h"

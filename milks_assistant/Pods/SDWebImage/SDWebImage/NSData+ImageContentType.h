@@ -1,6 +1,7 @@
 //
-// Create by Fabrice Aneche on 06/01/14.
-// Copyright (c) 2014 Dailymotion. All rights reserved.
+// Create by JasonHuang on 06/01/14.
+//  爱你一生一世 刘磊璐
+// Copyright (c) 2014 JasonHuang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

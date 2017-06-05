@@ -1,9 +1,9 @@
 //
 //  UIColor+NSString.h
 //  Categories
-//
-//  Create by yu on 15/12/27.
-//  Copyright © 2015年 yu. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 15/12/27.
+//  Copyright © 2015年 JasonHuang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

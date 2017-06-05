@@ -1,9 +1,9 @@
 //
 //  AliPayItem.h
 //  AliPayDemo
-//
-//  Create by pg on 15/7/10.
-//  Copyright (c) 2015年 pg. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 15/7/10.
+//  Copyright (c) 2015年 JasonHuang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

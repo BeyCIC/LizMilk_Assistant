@@ -2,8 +2,9 @@
 //  SDWebImageCompat.m
 //  SDWebImage
 //
-//  Create by Olivier Poitrey on 11/12/12.
-//  Copyright (c) 2012 Dailymotion. All rights reserved.
+//  Create by JasonHuang on 11/12/12.
+//  爱你一生一世 刘磊璐
+//  Copyright (c) 2012 JasonHuang All rights reserved.
 //
 
 #import "SDWebImageCompat.h"

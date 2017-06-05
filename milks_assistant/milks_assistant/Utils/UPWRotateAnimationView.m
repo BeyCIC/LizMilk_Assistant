@@ -1,9 +1,9 @@
 //
 //  UPRotateAnimationView.m
 //  UPWallet
-//
-//  Create by wxzhao on 14-8-2.
-//  Copyright (c) 2014年 unionpay. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 14-8-2.
+//  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
 
 #import "UPWRotateAnimationView.h"

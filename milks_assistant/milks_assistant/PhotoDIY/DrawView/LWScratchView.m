@@ -1,9 +1,9 @@
 //
 //  LWScratchView.m
 //  PhotoDIY
-//
-//  Create by luowei on 16/9/30.
-//  Copyright © 2016年 wodedata. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 16/9/30.
+//  Copyright © 2016年 JasonHuang. All rights reserved.
 //  马赛克草稿用的
 
 #import "LWScratchView.h"

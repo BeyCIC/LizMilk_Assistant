@@ -1,8 +1,8 @@
 //
 //  LWScrawlView.h
 //  PhotoDIY
-//
-//  Create by luowei on 16/9/30.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 16/9/30.
 //  Copyright © 2016年 wodedata. All rights reserved.
 //  涂鸦视图
 
