@@ -266,8 +266,8 @@
         [imagepicker.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
         [imagepicker.navigationBar setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
         imagepicker.navigationBar.tintColor = [UIColor blackColor];
-        UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(Back:)];
-        imagepicker.navigationController.navigationItem.leftBarButtonItem = phoneButton;
+//        UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(Back:)];
+//        imagepicker.navigationController.navigationItem.leftBarButtonItem = phoneButton;
         
         UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;

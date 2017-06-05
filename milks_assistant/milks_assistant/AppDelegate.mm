@@ -28,6 +28,7 @@
     } else {
          [[NSUserDefaults standardUserDefaults] setInteger:YES forKey:@"firstLoad"];
     }
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//手机上端的状态栏
     CGRect screenBounds = [[UIScreen mainScreen] bounds];//获取当前手机屏幕的边界大小
     UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];//创建视窗，设置大小
@@ -97,7 +98,7 @@
     }
     
     
-    if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//消息表
+    if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//日记表
         [dbConnection createTable:TABLE_NAME_DIARY withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
     }
     if (![dbConnection isTableOK:TABLE_NAME_BOARD]) {//消息表
