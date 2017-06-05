@@ -52,7 +52,7 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:_editView];
     [self.view addSubview:sureBtn];
-    self.navigationItem.title = @"日记";
+    self.navigationItem.title = @"Diary";
 //    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_sure_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(sureAction:)];
 //    self.navigationItem.rightBarButtonItem = phoneButton;
 }

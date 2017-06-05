@@ -43,7 +43,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"日记";
+    self.navigationItem.title = @"Diary";
     self.view.backgroundColor = [UIColor whiteColor];
     [self initView];
     // Do any additional setup after loading the view.

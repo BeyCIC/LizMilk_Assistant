@@ -98,7 +98,7 @@
     //登录其他账户
     UIButton *otherAccountLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [otherAccountLoginBtn setFrame:CGRectMake(kScreenWidth/2-75, kScreenHeight-30, 150, 30)];
-    [otherAccountLoginBtn setTitle:@"登录其他账户" forState:UIControlStateNormal];
+    [otherAccountLoginBtn setTitle:@"Other accounts" forState:UIControlStateNormal];
     [otherAccountLoginBtn addTarget:self action:@selector(loginOtherAccount) forControlEvents:UIControlEventTouchUpInside];
     [otherAccountLoginBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [otherAccountLoginBtn setTitleColor:kNormalBtnTitleColor forState:UIControlStateNormal];
@@ -107,7 +107,7 @@
     //使用指纹解锁
     UIButton *touchIDBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [touchIDBtn setFrame:CGRectMake(0, CGRectGetMinY(logoImgView.frame), kScreenWidth, logoImgView.frame.size.height + 50)];
-    [touchIDBtn setTitle:@"指纹解锁" forState:UIControlStateNormal];
+    [touchIDBtn setTitle:@"Fingerprints are unlocked" forState:UIControlStateNormal];
     [touchIDBtn addTarget:self action:@selector(useTouchID) forControlEvents:UIControlEventTouchUpInside];
     [touchIDBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [touchIDBtn setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];

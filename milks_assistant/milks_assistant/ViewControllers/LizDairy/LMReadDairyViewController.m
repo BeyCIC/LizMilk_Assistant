@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
+    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Modify" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
     self.navigationItem.rightBarButtonItem = phoneButton;
     [self initView];
    

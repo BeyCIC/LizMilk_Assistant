@@ -5,8 +5,8 @@
   Created by yeahugo on 13-6-17.
   Copyright (c) 2013年 Umeng. All rights reserved.
 */
-"button_cancel" = "取消";
-"button_ok" = "确定";
+"button_cancel" = "Cancel";
+"button_ok" = "Sure";
 "button_start" = "开启";
 
 "button_close" = "关闭";

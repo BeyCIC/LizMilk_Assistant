@@ -30,7 +30,7 @@
     //    _hys = [[HYScratchCardView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.view.bounds)/2-150, CGRectGetMaxY(self.view.bounds)/2-150, 300, 300)];
     _hys = [[HYScratchCardView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64)];
     UIImage * image = [UIImage imageNamed:@"panda"];
-    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(savaImage)];
+    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(savaImage)];
     self.navigationItem.rightBarButtonItem = phoneButton;
     self.navigationItem.title = @"绘图";
     //顶图

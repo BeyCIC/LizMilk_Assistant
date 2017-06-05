@@ -125,7 +125,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"便签";
+    self.navigationItem.title = @"Note";
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_add_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(photoDIY:)];

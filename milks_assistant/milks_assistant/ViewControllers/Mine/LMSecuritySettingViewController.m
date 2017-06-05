@@ -31,7 +31,7 @@
     _mainTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_mainTable];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.navigationItem.title = @"密码锁";
+    self.navigationItem.title = @"Security Setting";
     // Do any additional setup after loading the view.
 }
 
@@ -56,7 +56,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"手势密码";
+        cell.textLabel.text = @"Gesture Password";
         UISwitch *gesSwitch = [[UISwitch alloc] init];
         gesSwitch.frame = CGRectMake(SCREEN_WIDTH - gesSwitch.frame.size.width - 30, (44-gesSwitch.frame.size.height)/2, gesSwitch.frame.size.width, gesSwitch.frame.size.height);
         [gesSwitch addTarget:self action:@selector(gesSwitchAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -68,9 +68,9 @@
         }
         [cell addSubview:gesSwitch];
     } else {
-        cell.textLabel.text = @"指纹解锁";
+        cell.textLabel.text = @"Touch ID";
         UISwitch *touchSwitch = [[UISwitch alloc] init];
-        if ([[LMTouchIDManager sharedInstance] currentUserOpenTouchID]) {
+        if ([[LMTouchIDManager sharedInstance] currentUserOpenTouchID] && [[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
             [touchSwitch setOn:YES];
         }
          touchSwitch.frame = CGRectMake(SCREEN_WIDTH - touchSwitch.frame.size.width - 30, (44-touchSwitch.frame.size.height)/2, touchSwitch.frame.size.width, touchSwitch.frame.size.height);
@@ -98,24 +98,24 @@
     
     
     if (![[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
-        [self showAlertWithTitle:@"提示" msg:@"您的手机未开启touchID验证" ok:@"确定" cancel:nil];
+        [self showAlertWithTitle:@"Prompt" msg:@"您的手机未开启touchID验证" ok:@"Sure" cancel:nil];
     } else if([[LMTouchIDManager sharedInstance] isTouchIdAvailable] && sender.isOn)
     {
 //         __weak typeof(self) wself = self;
         [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
             [[LMTouchIDManager sharedInstance] saveHadSetTouchIDUsersString:kHasSetTouchIDValue];
-            [self showAlertWithTitle:@"提示" msg:@"指纹解锁已开启" ok:@"确定" cancel:nil];
+            [self showAlertWithTitle:@"Prompt" msg:@"Fingerprint unlocking is on" ok:@"Sure" cancel:nil];
         } FailureResult:^(LAError result){
             [sender setOn:NO];
             switch (result) {
                 case LAErrorAuthenticationFailed: {
                     // 认证失败 showflash
-                    [self showAlertWithTitle:@"提示" msg:@"认证失败" ok:@"确定" cancel:nil];
+                    [self showAlertWithTitle:@"Prompt" msg:@"Authentication failed" ok:@"Sure" cancel:nil];
                     break;
                 }
                 case LAErrorTouchIDLockout: {
                     // 认证失败 showflash
-                    [self showAlertWithTitle:@"提示" msg:@"认证失败" ok:@"确定" cancel:nil];
+                    [self showAlertWithTitle:@"Prompt" msg:@"Authentication failed" ok:@"Sure" cancel:nil];
                     break;
                 }
                 default: {

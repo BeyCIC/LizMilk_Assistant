@@ -400,7 +400,7 @@
 //        [self.hud hideAnimated:YES];
         if (error) {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存失败" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"Save failed" cancelButtonTitle:@"Sure" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
                     if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
                         
                     }
@@ -412,7 +412,7 @@
             
         }else{
             dispatch_sync(dispatch_get_main_queue(), ^{
-                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"Save Successfully" cancelButtonTitle:@"Sure" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
                     if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
                         
                     }

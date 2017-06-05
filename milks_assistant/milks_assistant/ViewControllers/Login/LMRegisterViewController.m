@@ -30,30 +30,30 @@
     NSInteger offsetY = 100;
     self.view.backgroundColor = [UIColor whiteColor];
     userText = [[UITextField alloc] initWithFrame:CGRectMake(30, offsetY, SCREEN_WIDTH-60, 30)];
-    userText.placeholder = @"请输入邮箱";
+    userText.placeholder = @"Please input your email";
     
     UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(30, offsetY + 30, SCREEN_WIDTH-60, 0.7)];
     line1.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
     
     pwdText = [[UITextField alloc] initWithFrame:CGRectMake(30, offsetY + 50, SCREEN_WIDTH-60, 30)];
-    pwdText.placeholder = @"请输入密码";
+    pwdText.placeholder = @"Please enter your password";
     pwdText.secureTextEntry = YES;
     UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(30, offsetY + 80, SCREEN_WIDTH-60, 0.7)];
     line2.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
     
     UIButton *registerBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-140)/2, offsetY + 110, 140, 40)];
-    [registerBtn setTitle:@"立即注册" forState:UIControlStateNormal];
+    [registerBtn setTitle:@"Sign Up" forState:UIControlStateNormal];
     [registerBtn setBackgroundColor:RGBCOLOR(29, 195, 38)];
     [registerBtn addTarget:self action:@selector(register:) //增加响应函数
           forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *switchLab = [[UILabel alloc] initWithFrame:CGRectMake(30, offsetY + 170, SCREEN_WIDTH - 60, 20)];
-    switchLab.text = @"或者";
+    switchLab.text = @"Or";
     switchLab.textAlignment = NSTextAlignmentCenter;//居中
     switchLab.textColor = [UIColor grayColor];
     switchLab.font = [UIFont systemFontOfSize:15];//字体大小
     
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"立即登录"];//富文本，增加下划线
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Log In"];//富文本，增加下划线
     [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName value:[NSNumber numberWithInt:kCTUnderlineStyleSingle] range:(NSRange){0,[attString length]}];//下划线区域
     UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-80)/2, offsetY + 210, 80, 30)];
 //    [loginBtn setTitle:@"立即登录" forState:UIControlStateNormal];
@@ -77,7 +77,7 @@
 - (void)register:(UIButton*)sender {
     
     if ([userText.text isEqualToString:@""] || [pwdText.text isEqualToString:@""]) {
-        [self showAlertWithTitle:@"提示" msg:@"输入格式错误" ok:nil cancel:@"确定"];
+        [self showAlertWithTitle:@"Prompt" msg:@"The input format is incorrect" ok:nil cancel:@"Sure"];
         return;
     }
     [[NSUserDefaults standardUserDefaults] setValue:userText.text forKey:LoginUserName];//缓存机制，保存个人信息
