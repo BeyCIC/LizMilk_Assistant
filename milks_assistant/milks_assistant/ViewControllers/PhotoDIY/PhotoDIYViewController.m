@@ -21,8 +21,8 @@
 @interface PhotoDIYViewController ()<UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     UIAlertController *actionSheet;
     HYScratchCardView *scatchView;
-    
-   
+    UIImage *selectImage;
+    UIButton *_deleteBtn;
 }
 
 @end
@@ -48,10 +48,22 @@
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     _contentView = [[LWContentView alloc] initWithFrame:CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
-    _toolBar = [[LWToolBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44 - 64, SCREEN_WIDTH, 44)];
+    _toolBar = [[LWToolBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 40 - 64, SCREEN_WIDTH, 44)];
     [self.view addSubview:_contentView];
-    scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
-    UIImage * image = [UIImage imageNamed:@"panda"];
+    
+    selectImage = [UIImage imageNamed:@"panda"];
+    if (scatchView) {
+        [scatchView removeFromSuperview];
+    }
+    CGFloat height = selectImage.size.height*SCREEN_WIDTH/selectImage.size.width;
+    if (height < (SCREEN_HEIGHT - 44 - 64)) {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, ((SCREEN_HEIGHT - 44 - 64)-height)/2.0, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    } else
+    {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    }
+    
+    UIImage * image = selectImage;
     //顶图
     scatchView.surfaceImage = image;
     //低图
@@ -67,17 +79,23 @@
     [_toolBar.drawBtn addTarget:self action:@selector(drawAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView loadDefaultImage];
     
-//    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
-//    self.navigationItem.rightBarButtonItem = phoneButton;
+
+    
     
     UIButton *rightSaveBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 60, 40)];
-    [rightSaveBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [rightSaveBtn setTitle:@"Save" forState:UIControlStateNormal];
     rightSaveBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     [rightSaveBtn setTitleColor:RGBCOLOR(59, 196, 250) forState:UIControlStateNormal];
 //    [rightSaveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [rightSaveBtn addTarget:self action:@selector(savaContentImage:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:rightSaveBtn];
+    
+    _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 50, 30, 30, 30)];
+    [_deleteBtn setImage:[UIImage imageNamed:@"draw_clear"] forState:UIControlStateNormal];
+    [_deleteBtn addTarget:self action:@selector(resetMaskImage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_deleteBtn];
+    _deleteBtn.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetMaskImage) name:@"resetMaskImage" object:nil];
     // Do any additional setup after loading the view.
@@ -103,7 +121,7 @@
         [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error) {
             if (error) {
                 UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
-                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存失败" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"Save failed" cancelButtonTitle:@"Sure" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
                     if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
                         
                     }
@@ -112,7 +130,7 @@
                     }
                 }];
             }else{
-                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"Save Successfully" cancelButtonTitle:@"Sure" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
                     if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
                         
                     }
@@ -152,23 +170,23 @@
 
 
 - (IBAction)selPhotoAction:(id)sender {
-    actionSheet  = [UIAlertController alertControllerWithTitle:@"选择" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    actionSheet  = [UIAlertController alertControllerWithTitle:@"Select" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIImagePickerController *imagepicker = [[UIImagePickerController alloc] init];
         imagepicker.delegate = self;
         imagepicker.allowsEditing = NO;
         
-        UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"Album" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             [self presentViewController:imagepicker animated:YES completion:nil];
         }];
         
-        UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"Take pictures" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self presentViewController:imagepicker animated:YES completion:nil];
         }];
-        UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
         }];
         [actionSheet addAction:libActon];
@@ -177,7 +195,7 @@
         [self presentViewController:actionSheet animated:YES completion:nil];
         
     } else{
-        [self showAlertWithTitle:@"提示" msg:@"请设置访问权限" ok:@"确定" cancel:nil];
+        [self showAlertWithTitle:@"Prompt" msg:@"Please set the access permissions" ok:@"Sure" cancel:nil];
     }
 
 //    [self.contentView showPhotos];
@@ -189,17 +207,20 @@
     if (!selImage) {
         return;
     }
+    selectImage = selImage;
     [self.contentView loadPhoto:selImage];
     [self maskLoadImage:selImage];
 }
 
 - (IBAction)filterAction:(id)sender {
      scatchView.hidden = YES;
+    _deleteBtn.hidden = YES;
     [self.contentView showFilters];
 }
 
 - (IBAction)cropAction:(id)sender {
     scatchView.hidden = YES;
+    _deleteBtn.hidden = YES;
     [self.contentView showOrHideCropView];
 }
 
@@ -211,16 +232,24 @@
 //    [self maskLoadImage];
     [_contentView showDrawView];
     scatchView.hidden = NO;
+    _deleteBtn.hidden = NO;
 }
 
 
 - (void)resetMaskImage {
+    [_contentView showDrawView];
     if (scatchView) {
         [scatchView removeFromSuperview];
     }
     
-    scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
-    UIImage * image = [UIImage imageNamed:@"panda"];
+    CGFloat height = selectImage.size.height*SCREEN_WIDTH/selectImage.size.width;
+    if (height < (SCREEN_HEIGHT - 44 - 64)) {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, ((SCREEN_HEIGHT - 44 - 64)-height)/2.0, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    } else
+    {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    }
+    UIImage * image = selectImage;
     //顶图
     scatchView.surfaceImage = image;
     //低图
@@ -231,10 +260,26 @@
 
 - (void)maskLoadImage:(UIImage*)image {
 
+    
+    if (scatchView) {
+        [scatchView removeFromSuperview];
+    }
+    scatchView = nil;
+    CGFloat height = selectImage.size.height*SCREEN_WIDTH/selectImage.size.width;
+    if (height < (SCREEN_HEIGHT - 44 - 64)) {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, ((SCREEN_HEIGHT - 44 - 64)-height)/2.0, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    } else
+    {
+        scatchView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, selectImage.size.height*SCREEN_WIDTH/selectImage.size.width)];
+    }
+    UIImage * image1 = selectImage;
     //顶图
-    scatchView.surfaceImage = image;
+    scatchView.surfaceImage = image1;
     //低图
-    scatchView.image = [self transToMosaicImage:image blockLevel:10];
+    scatchView.image = [self transToMosaicImage:image1 blockLevel:10];
+    scatchView.hidden = NO;
+    [_contentView addSubview:scatchView];
+    [_contentView showDrawView];
 }
 
 - (UIImage *)transToMosaicImage:(UIImage*)orginImage blockLevel:(NSUInteger)level

@@ -1,8 +1,8 @@
 //
 //  UPWLoadingView.m
 //  wallet
-//
-//  Create by qcao on 14/10/22.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 14/10/22.
 //  Copyright (c) 2014年 JasonHuang. All rights reserved.
 //
 

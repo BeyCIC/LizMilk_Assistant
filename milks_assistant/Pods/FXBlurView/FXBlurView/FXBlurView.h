@@ -2,9 +2,9 @@
 //  FXBlurView.h
 //
 //  Version 1.6.4
-//
-//  Create by Nick Lockwood on 25/08/2013.
-//  Copyright (c) 2013 Charcoal Design
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 25/08/2013.
+//  Copyright (c) 2013 JasonHuang Design
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:

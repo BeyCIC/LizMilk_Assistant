@@ -1,8 +1,8 @@
 //
 //  UPToast.m
 //  UPClientV3
-//
-//  Create by TZ_JSKFZX_CAOQ on 13-5-28.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 13-5-28.
 //
 //
 

@@ -1,8 +1,8 @@
 //
 //  GPUImageMovieComposition.m
 //  Givit
-//
-//  Create by Sean Meiners on 2013/01/25.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 2013/01/25.
 //
 //
 

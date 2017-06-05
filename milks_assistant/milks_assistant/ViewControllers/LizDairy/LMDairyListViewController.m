@@ -1,7 +1,7 @@
 //
 //  LMDairyViewController.m
 //  milks_assistant
-//
+//  爱你一生一世，刘磊璐
 //  Create by Jason Huang on 17/4/4.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -43,7 +43,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"日记";
+    self.navigationItem.title = @"Diary";
     self.view.backgroundColor = [UIColor whiteColor];
     [self initView];
     // Do any additional setup after loading the view.

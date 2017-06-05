@@ -1,6 +1,7 @@
 #import "GPUImageFilter.h"
 /**
- * Create by Alaric Cole
+ //  爱你一生一世 刘磊璐
+ * Create by JasonHuang
  * Allows adjustment of color temperature in terms of what an image was effectively shot in. This means higher Kelvin values will warm the image, while lower values will cool it. 
  
  */

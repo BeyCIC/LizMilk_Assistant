@@ -1,7 +1,7 @@
 //
 //  LMSecuritySettingViewController.m
 //  milks_assistant
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 2017/5/2.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -9,7 +9,7 @@
 #import "LMSecuritySettingViewController.h"
 #import "KeychainData.h"
 #import "SetpasswordViewController.h"
-#import "UPXTouchIDManager.h"
+#import "LMTouchIDManager.h"
 
 @interface LMSecuritySettingViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
@@ -24,13 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
     
     _mainTable.delegate = self;
     _mainTable.dataSource = self;
     _mainTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_mainTable];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationItem.title = @"Security Setting";
     // Do any additional setup after loading the view.
 }
 
@@ -55,7 +56,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"手势密码";
+        cell.textLabel.text = @"Gesture Password";
         UISwitch *gesSwitch = [[UISwitch alloc] init];
         gesSwitch.frame = CGRectMake(SCREEN_WIDTH - gesSwitch.frame.size.width - 30, (44-gesSwitch.frame.size.height)/2, gesSwitch.frame.size.width, gesSwitch.frame.size.height);
         [gesSwitch addTarget:self action:@selector(gesSwitchAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -67,9 +68,13 @@
         }
         [cell addSubview:gesSwitch];
     } else {
-        cell.textLabel.text = @"指纹解锁";
+        cell.textLabel.text = @"Touch ID";
         UISwitch *touchSwitch = [[UISwitch alloc] init];
+        if ([[LMTouchIDManager sharedInstance] currentUserOpenTouchID] && [[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+            [touchSwitch setOn:YES];
+        }
          touchSwitch.frame = CGRectMake(SCREEN_WIDTH - touchSwitch.frame.size.width - 30, (44-touchSwitch.frame.size.height)/2, touchSwitch.frame.size.width, touchSwitch.frame.size.height);
+        [touchSwitch addTarget:self action:@selector(touchSwitch:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:touchSwitch];
     }
     
@@ -91,27 +96,26 @@
 
 - (void)touchSwitch:(UISwitch*)sender {
     
-    if (![[UPXTouchIDManager sharedInstance] isTouchIdAvailable] && sender.isOn) {
-        [self showAlertWithTitle:@"提示" msg:@"您的手机未开启touchID验证" ok:@"确定" cancel:nil];
-    } else {
-         __weak typeof(self) wself = self;
-        [[UPXTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
-            [[UPXTouchIDManager sharedInstance] saveHadSetTouchIDUsersString:kHasSetTouchIDValue];
-//            [wself showFlashInfo:@"指纹解锁已开启" withImage:[]];
-            [self showAlertWithTitle:@"提示" msg:@"指纹解锁已开启" ok:@"确定" cancel:nil];
+    
+    if (![[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+        [self showAlertWithTitle:@"Prompt" msg:@"您的手机未开启touchID验证" ok:@"Sure" cancel:nil];
+    } else if([[LMTouchIDManager sharedInstance] isTouchIdAvailable] && sender.isOn)
+    {
+//         __weak typeof(self) wself = self;
+        [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
+            [[LMTouchIDManager sharedInstance] saveHadSetTouchIDUsersString:kHasSetTouchIDValue];
+            [self showAlertWithTitle:@"Prompt" msg:@"Fingerprint unlocking is on" ok:@"Sure" cancel:nil];
         } FailureResult:^(LAError result){
             [sender setOn:NO];
             switch (result) {
                 case LAErrorAuthenticationFailed: {
                     // 认证失败 showflash
-//                    [wself showFlashInfo:UP_STR(@"String_TouchID_Failed_Title")];
-                    [self showAlertWithTitle:@"提示" msg:@"认证失败" ok:@"确定" cancel:nil];
+                    [self showAlertWithTitle:@"Prompt" msg:@"Authentication failed" ok:@"Sure" cancel:nil];
                     break;
                 }
                 case LAErrorTouchIDLockout: {
                     // 认证失败 showflash
-                    [self showAlertWithTitle:@"提示" msg:@"认证失败" ok:@"确定" cancel:nil];
-//                    [wself showFlashInfo:UP_STR(@"String_TouchID_Failed_Title")];
+                    [self showAlertWithTitle:@"Prompt" msg:@"Authentication failed" ok:@"Sure" cancel:nil];
                     break;
                 }
                 default: {

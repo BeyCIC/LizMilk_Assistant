@@ -43,15 +43,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         //添加imageview（surfaceImageView）到self上
-        self.surfaceImageView = [[UIImageView alloc]initWithFrame:self.bounds];
+        self.surfaceImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, frame.size.width, frame.size.height)];
         [self addSubview:self.surfaceImageView];
         //添加layer（imageLayer）到self上
         self.imageLayer = [CALayer layer];
-        self.imageLayer.frame = self.bounds;
+        self.imageLayer.frame = CGRectMake(0, 20, frame.size.width, frame.size.height);
         [self.layer addSublayer:self.imageLayer];
         
         self.shapeLayer = [CAShapeLayer layer];
-        self.shapeLayer.frame = self.bounds;
+        self.shapeLayer.frame = CGRectMake(0, 20, frame.size.width, frame.size.height);
         self.shapeLayer.lineCap = kCALineCapRound;
         self.shapeLayer.lineJoin = kCALineJoinRound;
         self.shapeLayer.lineWidth = 50.f;
@@ -62,12 +62,6 @@
         self.imageLayer.mask = self.shapeLayer;
         
         self.path = CGPathCreateMutable();
-        
-        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 50, 80, 30, 30)];
-        //        _deleteBtn.backgroundColor = [UIColor redColor];
-        [_deleteBtn setImage:[UIImage imageNamed:@"draw_clear"] forState:UIControlStateNormal];
-        [_deleteBtn addTarget:self action:@selector(clearDrawBoard) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_deleteBtn];
     }
     return self;
 }

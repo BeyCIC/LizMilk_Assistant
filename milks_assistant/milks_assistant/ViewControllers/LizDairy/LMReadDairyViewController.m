@@ -1,7 +1,7 @@
 //
 //  LMReadDairyViewController.m
 //  milks_assistant
-//
+//  爱你一生一世，刘磊璐
 //  Create by Jason Huang on 17/4/4.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
+    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Modify" style:UIBarButtonItemStylePlain target:self action:@selector(modDairy)];
     self.navigationItem.rightBarButtonItem = phoneButton;
     [self initView];
    

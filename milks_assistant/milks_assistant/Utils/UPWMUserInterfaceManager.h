@@ -1,9 +1,9 @@
 //
 //  UPWMUserInterfaceManager.h
 //  wallet_merchant
-//
-//  Create by renjie on 2017/1/6.
-//  Copyright © 2017年 任杰. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 2017/1/6.
+//  Copyright © 2017年 JasonHuang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,9 +1,9 @@
 //
 //  Util.h
 //  wallet_international
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 16/9/6.
-//  Copyright © 2016年 任杰. All rights reserved.
+//  Copyright © 2016年 JasonHuang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

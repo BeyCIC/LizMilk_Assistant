@@ -1,7 +1,7 @@
 //
 //  LMMineViewController.m
 //  milks_assistant
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 17/3/31.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -43,7 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"我的";
+    self.navigationItem.title = @"Mine";
     self.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self initView];
     NSData *imageData = [[NSUserDefaults standardUserDefaults] objectForKey:LoginUserHeader];
@@ -80,7 +80,7 @@
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [_tableView reloadData];
     [self.view addSubview:_tableView];
-    _tableSource = @[@"客服热线",@"帮助中心",@"意见反馈",@"密码锁"];
+    _tableSource = @[@"Customer Service",@"Help Center",@"Feedback",@"Security Setting"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -127,7 +127,7 @@
             UIButton *loginOutBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 4.5, SCREEN_WIDTH - 50, 35)];
             [self setRoundBtn:loginOutBtn];
             [loginOutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
-            [loginOutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+            [loginOutBtn setTitle:@"Log Out" forState:UIControlStateNormal];
             [loginOutBtn setBackgroundColor:RGBCOLOR(57, 139, 251)];
             [cell.contentView addSubview:loginOutBtn];
         }
@@ -170,7 +170,7 @@
             UIButton *loginOutBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 4.5 + 100, SCREEN_WIDTH - 60, 35)];
             [self setRoundBtn:loginOutBtn];
             [loginOutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
-            [loginOutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+            [loginOutBtn setTitle:@"Log Out" forState:UIControlStateNormal];
             [loginOutBtn setBackgroundColor:RGBCOLOR(57, 139, 251)];
             [footer addSubview:loginOutBtn];
             return footer;
@@ -253,7 +253,7 @@
 
 - (void)changeHeader:(UIButton*)sender {
     
-  UIAlertController *actionSheet  = [UIAlertController alertControllerWithTitle:@"选择" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+  UIAlertController *actionSheet  = [UIAlertController alertControllerWithTitle:@"Select" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIImagePickerController *imagepicker = [[UIImagePickerController alloc] init];
@@ -266,19 +266,19 @@
         [imagepicker.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
         [imagepicker.navigationBar setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
         imagepicker.navigationBar.tintColor = [UIColor blackColor];
-        UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(Back:)];
-        imagepicker.navigationController.navigationItem.leftBarButtonItem = phoneButton;
+//        UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(Back:)];
+//        imagepicker.navigationController.navigationItem.leftBarButtonItem = phoneButton;
         
-        UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *libActon = [UIAlertAction actionWithTitle:@"Album" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             [self presentViewController:imagepicker animated:YES completion:nil];
         }];
         
-        UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *takeActon = [UIAlertAction actionWithTitle:@"Take Pictures" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self.navigationController presentViewController:imagepicker animated:YES completion:nil];
         }];
-        UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
         }];
         [actionSheet addAction:libActon];
@@ -286,7 +286,7 @@
         [actionSheet addAction:cancelActon];
         [self presentViewController:actionSheet animated:YES completion:nil];
     } else{
-        [self showAlertWithTitle:@"提示" msg:@"请设置访问权限" ok:@"确定" cancel:nil];
+        [self showAlertWithTitle:@"Prompt" msg:@"Please set the access permissions" ok:@"Sure" cancel:nil];
     }
 
 }
@@ -305,9 +305,9 @@
     });
     
     
-    UIAlertController *alertSheet  = [UIAlertController alertControllerWithTitle:@"确定要更改吗？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertSheet  = [UIAlertController alertControllerWithTitle:@"Are you sure？" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *sureActon = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *sureActon = [UIAlertAction actionWithTitle:@"Sure" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         userHeaderImg = selImage;
         NSData *imageData = UIImagePNGRepresentation(userHeaderImg);
@@ -316,7 +316,7 @@
         
         
     }];
-    UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancelActon = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             LuHeaderCell* cell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
@@ -346,7 +346,7 @@
 - (void)forgotPassword
 {
     [KeychainData forgotPsw];
-    [self hudAction:@"忘记密码"];
+    [self hudAction:@"Forget Password"];
 }
 
 - (void)hudAction:(NSString *)contextStr
@@ -382,7 +382,7 @@
         [self presentViewController:setpass animated:YES completion:nil];
         
     } else {
-        [self hudAction:@"还没有设置密码，不能直接登录"];
+        [self hudAction:@"Has not set a password, can not log directly"];
     }
 }
 
@@ -417,7 +417,7 @@
     
         _headerIcon.layer.masksToBounds = YES;
         _name.textAlignment = NSTextAlignmentCenter;
-        _name.placeholder = @"昵称";
+        _name.placeholder = @"Nickname";
         [self.contentView addSubview:_headerIcon];
         [self.contentView addSubview:_name];
     };

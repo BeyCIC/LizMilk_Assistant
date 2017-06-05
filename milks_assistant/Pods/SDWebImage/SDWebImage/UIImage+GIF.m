@@ -2,8 +2,9 @@
 //  UIImage+GIF.m
 //  LBGIFImage
 //
-//  Create by Laurin Brandner on 06.01.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 06.01.12.
+//  Copyright (c) 2012 JasonHuang. All rights reserved.
 //
 
 #import "UIImage+GIF.h"

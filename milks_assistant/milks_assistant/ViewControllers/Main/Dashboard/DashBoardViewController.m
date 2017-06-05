@@ -1,7 +1,7 @@
 //
 //  DashBoardViewController.m
 //  MoveDemo
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 16/8/15.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
@@ -23,6 +23,7 @@
 #import "LMModBoardViewController.h"
 #import "LMRegisterViewController.h"
 #import "LMLoginViewController.h"
+#import "LMTouchIDManager.h"
 
 @interface DashBoardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,registerSuccessDelegate,loginVCdelegate>
 {
@@ -124,7 +125,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     // 设置导航栏上面字体的颜色
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"便签";
+    self.navigationItem.title = @"Note";
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_add_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(photoDIY:)];
@@ -145,12 +146,31 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
             
             self.gestureCtl = [[SetpasswordViewController alloc] init];
             self.gestureCtl.string = @"验证密码";
-            [self presentViewController:self.gestureCtl animated:YES completion:nil];
+            [self presentViewController:self.gestureCtl animated:YES completion:^{
+                if ([[LMTouchIDManager sharedInstance] currentUserSetTouchID]) {
+                    if ([[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+                        //使用指纹解锁
+                        [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
+                            [self.gestureCtl dismissViewControllerAnimated:YES completion:nil];
+                        } FailureResult:^(LAError result){
+                            //验证不成功或取消无操作
+                        }];
+                    } else {
+                    }
+                }
+            }];
+            
+        } else if ([[LMTouchIDManager sharedInstance] currentUserSetTouchID]) {
+            if ([[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+                [[LMTouchIDManager sharedInstance] presentTouchIDVC];
+            } else {
+            }
         }
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:LogoutPostnotificationName object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:LogInPostnotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"TouchIDManagerOtherAccount" object:nil];
     
     
 }
@@ -162,7 +182,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 }
 
 - (void)login:(NSNotification*)notification {
-    
+    [self loginBtnaction];
 }
 
 - (void)registerSuc {
@@ -173,6 +193,9 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 - (void)loginBtnaction {
     if (registerVC) {
         [registerVC dismissViewControllerAnimated:YES completion:nil];
+    }
+    if (self.gestureCtl) {
+        [self.gestureCtl dismissViewControllerAnimated:YES completion:nil];
     }
     
     if (!loginVC) {

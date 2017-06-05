@@ -1,9 +1,9 @@
 //
 //  FMDatabaseAdditions.h
 //  fmkit
-//
-//  Create by August Mueller on 10/30/05.
-//  Copyright 2005 Flying Meat Inc.. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 10/30/05.
+//  Copyright 2005 JasonHuang.. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

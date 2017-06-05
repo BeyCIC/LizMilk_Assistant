@@ -1,7 +1,7 @@
 //
 //  LMFeedBackViewController.m
 //  milks_assistant
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 2017/5/7.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"意见反馈";
+    self.navigationItem.title = @"Feedback";
     [self initView];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = item;
@@ -34,7 +34,7 @@
     line1.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
     
     UITextField *userEmail = [[UITextField alloc] initWithFrame:CGRectMake(15, 105, SCREEN_WIDTH-30, 35)];
-    userEmail.placeholder = @"填写邮箱";
+    userEmail.placeholder = @"Fill in the mailbox";
     
     UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(15, 140, SCREEN_WIDTH - 30, 0.7)];
     line2.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
@@ -45,9 +45,10 @@
     inputText.font = [UIFont systemFontOfSize:16];
     placeLab = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-60, 60)];
 
-    [placeLab setTitle:@"请告诉我们您遇到的问题或想反馈的意见" forState:UIControlStateNormal];
+    [placeLab setTitle:@"Please tell us any questions or feedback you may have" forState:UIControlStateNormal];
     [placeLab setTitleColor:[UIColor colorWithWhite:0.8 alpha:1] forState:UIControlStateNormal];
     placeLab.titleLabel.font = [UIFont systemFontOfSize:16];
+    placeLab.titleLabel.numberOfLines = 0;
     placeLab.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     placeLab.userInteractionEnabled = YES;
     [inputText addSubview:placeLab];

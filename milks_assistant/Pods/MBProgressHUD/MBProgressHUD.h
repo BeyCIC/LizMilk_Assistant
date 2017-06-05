@@ -1,7 +1,8 @@
 //
 //  MBProgressHUD.h
 //  Version 1.0.0
-//  Create by Matej Bukovinski on 2.4.09.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 2.4.09.
 //
 
 // This code is distributed under the terms and conditions of the MIT license. 

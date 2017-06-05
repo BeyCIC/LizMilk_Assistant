@@ -1,9 +1,9 @@
 //
 //  GPUImageHistogramEqualizationFilter.m
 //  FilterShowcase
-//
-//  Create by Adam Marcus on 19/08/2014.
-//  Copyright (c) 2014 Sunset Lake Software LLC. All rights reserved.
+//  爱你一生一世 刘磊璐
+//  Create by JasonHuang on 19/08/2014.
+//  Copyright (c) 2014 JasonHuang. All rights reserved.
 //
 
 #import "GPUImageHistogramEqualizationFilter.h"

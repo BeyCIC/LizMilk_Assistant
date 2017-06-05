@@ -1,7 +1,7 @@
 //
 //  LWContentView.m
 //  PhotoDIY
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 16/7/4.
 //  Copyright © 2016年 JasonHuang. All rights reserved.
 //
@@ -38,7 +38,7 @@
         _drawView = [[HYScratchCardView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _photosBar = [[LWPhotosBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 144, frame.size.width, 144)];
         _filterBar = [[LWFilterBar alloc] initWithFrame:CGRectMake(0, frame.size.height - 70, frame.size.width, 150)];
-        
+        _drawView.hidden  = YES;
         UIImage * image = [UIImage imageNamed:@"panda"];
         //顶图
         _drawView.surfaceImage = image;
@@ -235,7 +235,10 @@
 
     LWDataManager *dm = [LWDataManager sharedInstance];
     [self reloadImage:dm.currentImage];
-
+    _drawView.hidden = YES;
+    if (_drawView) {
+            [_drawView removeFromSuperview];
+    }
 }
 
 #pragma mark -
@@ -377,33 +380,50 @@
     LWDataManager *dm = [LWDataManager sharedInstance];
 
     [self.filterView.filter forceProcessingAtSize:dm.currentImage.size];
-    self.hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+//    self.hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     [self.filterView.sourcePicture processImageUpToFilter:self.filterView.filter
                                       withCompletionHandler:^(UIImage *processedImage) {
                                           if (!processedImage) {
-                                              UIImageWriteToSavedPhotosAlbum(dm.currentImage, self, nil, nil);
+                                              [self saveImageToPhotos:dm.currentImage];
                                           } else {
-                                              UIImageWriteToSavedPhotosAlbum(processedImage, self, nil, nil);
+                                              [self saveImageToPhotos:processedImage];
+                                              
                                           }
-                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                              self.hud.mode = MBProgressHUDModeText;
-                                              self.hud.label.text = @"Save Success";
-                                              [self.hud hideAnimated:YES afterDelay:0];
-                                          });
-                                          
-                                         
                                       }];
-    [self.hud hideAnimated:YES afterDelay:3.0];
-    [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"保存成功" cancelButtonTitle:@"确定" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
-        if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+//    [self.hud hideAnimated:YES afterDelay:2.0];
+    
+}
+
+- (void)saveImageToPhotos:(UIImage*)image {
+    ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
+    [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error) {
+//        [self.hud hideAnimated:YES];
+        if (error) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"Save failed" cancelButtonTitle:@"Sure" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                    if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }];
+            });
             
-        }
-        else {
-            
+        }else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [[UPWMUserInterfaceManager sharedManager] showAlertWithTitle:nil message:@"Save Successfully" cancelButtonTitle:@"Sure" otherButtonTitle:nil completeBlock:^(UPXAlertView *alertView, NSInteger buttonIndex) {
+                    if(buttonIndex==[UPXAlertView cancelButtonIndex]) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }];
+            });
         }
     }];
 }
-
 
 - (void)recovery {
     LWDataManager *dm = [LWDataManager sharedInstance];

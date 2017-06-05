@@ -1,7 +1,7 @@
 //
 //  LMAddDairyViewController.m
 //  milks_assistant
-//
+//  爱你一生一世，刘磊璐
 //  Create by Jason Huang on 17/4/4.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -52,7 +52,7 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:_editView];
     [self.view addSubview:sureBtn];
-    self.navigationItem.title = @"日记";
+    self.navigationItem.title = @"Diary";
 //    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_sure_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(sureAction:)];
 //    self.navigationItem.rightBarButtonItem = phoneButton;
 }

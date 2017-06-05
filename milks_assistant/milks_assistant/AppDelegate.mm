@@ -1,7 +1,7 @@
 //
 //  AppDelegate.m
 //  milks_assistant
-//
+//  爱你一生一世 刘磊璐
 //  Create by JasonHuang on 17/3/31.
 //  Copyright © 2017年 JasonHuang. All rights reserved.
 //
@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DBConnection.h"
 #import "Util.h"
+#import "LMTouchIDManager.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,7 @@
     } else {
          [[NSUserDefaults standardUserDefaults] setInteger:YES forKey:@"firstLoad"];
     }
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];//手机上端的状态栏
     CGRect screenBounds = [[UIScreen mainScreen] bounds];//获取当前手机屏幕的边界大小
     UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];//创建视窗，设置大小
@@ -34,6 +36,19 @@
     [window setRootViewController:_rootViewController];
     [window makeKeyAndVisible];//系统函数：让这个界面显示
     [self setWindow:window];
+    
+//    [[LMTouchIDManager sharedInstance] presentTouchIDVC];
+//    if ([[LMTouchIDManager sharedInstance] isTouchIdAvailable]) {
+//        //使用指纹解锁
+//        [[LMTouchIDManager sharedInstance] evaluatePolicy: @"通过Home键验证已有手机指纹" fallbackTitle:@"" SuccesResult:^{
+////            [wself.view removeFromSuperview];
+//            //在手势密码完成之后绘制tab
+////            [UP_NC postNotificationName:kNCAfterPatternAction object:@"TouchIDViewController"];
+//        } FailureResult:^(LAError result){
+//            //验证不成功或取消无操作
+//        }];
+//    }
+//    
     return YES;
 }
 
@@ -83,7 +98,7 @@
     }
     
     
-    if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//消息表
+    if (![dbConnection isTableOK:TABLE_NAME_DIARY]) {//日记表
         [dbConnection createTable:TABLE_NAME_DIARY withArguments:@"userId text,userName text,diaryContent text,mood text,time text,location text"];
     }
     if (![dbConnection isTableOK:TABLE_NAME_BOARD]) {//消息表
